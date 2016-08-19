@@ -1,6 +1,6 @@
 /*
  * sp_image_proc_util.cpp
- *
+ *jaigj
  *  Created on: 20 באפר 2016
  *      Author: DorAlt
  */
