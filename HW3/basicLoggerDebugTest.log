@@ -1,0 +1,17 @@
+---ERROR---
+- file: sp_logger_unit_test.c
+- function: basicLoggerDebugTest
+- line: 36
+- message: MSGA
+---WARNING---
+- file: sp_logger_unit_test.c
+- function: basicLoggerDebugTest
+- line: 37
+- message: MSGB
+---INFO---
+- message: MSGC
+---DEBUG---
+- file: sp_logger_unit_test.c
+- function: basicLoggerDebugTest
+- line: 39
+- message: MSGD

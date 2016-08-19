@@ -1,0 +1,44 @@
+Compare: 0
+11.110000
+-1.000000
+message: 0
+e9 value: 99.990000
+message: 1
+message: 1
+e9 value: 99.990000
+message: 0
+message: 99
+message: 1
+message: 99
+1
+q3 OK
+q4 OK
+4, 3, -1, -1
+Size of q1: 3
+Size of q5: 2
+Size of q6: -1
+Min value of q1: 11.110000
+Max value of q1: 33.330000
+message: 4
+message: 4
+message: 1
+message: 3
+message: 3
+message: 3
+Min value of q1: 11.110000
+Max value of q1: 44.440000
+IsEmpty for q5: 0
+IsFull for q5: 0
+IsEmpty for q1: 0
+IsFull for q1: 1
+e14 value: 12.120000
+e15 value: 13.130000
+e15 value: 15.150000
+Min value of q7: 12.120000
+Max value of q7: 13.130000
+Min value of q7: 13.130000
+Max value of q7: 13.130000
+Min value of q7: -1.000000
+Max value of q7: -1.000000
+message: 2
+testQueue ended successfully!!!

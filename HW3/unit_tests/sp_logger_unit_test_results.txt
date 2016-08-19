@@ -1,0 +1,8 @@
+basicLoggerTest  PASSS
+basicLoggerErrorTest  PASSS
+basicLoggerDebugTest  PASSS
+basicLoggerWarningTest  PASSS
+basicLoggerInfoTest  PASSS
+basicLoggerMsgTest  PASSS
+basicLoggerArgumentTest  PASSS
+basicLoggerDestroyUndefinedTest  PASSS

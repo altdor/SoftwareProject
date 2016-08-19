@@ -1,0 +1,7 @@
+spPointCreate for p1 OK
+spPointCreate for p2 OK
+spPointCreate for p3 OK
+p4 index is: 1
+p5 index is: 1
+After destroy of p1
+p5 index after p4 destroy is: 1
