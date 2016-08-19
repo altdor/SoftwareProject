@@ -22,7 +22,7 @@
 
 using namespace cv;
 /*
- * Calculates the RGB channels histogram. The histogram will be stored in a
+ * Calculates the RGB channels histogram. The histogram will be stored in
  * two dimensional array of dimensions 3XnBins . The first row is the
  * red channel histogram, the second row is the green channel histogram
  * and the third row is the blue channel histogram.
