@@ -5,7 +5,7 @@
  *      Author: yahav
  */
 #include "SPKDArray.h"
-#include "SPPoint.c"
+#include "SPPoint.h"
 #include <stdio.h>
 #include <stdlib.h>
 

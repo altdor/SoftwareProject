@@ -1,0 +1,37 @@
+15:13:52 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+
+15:13:52 Build Finished (took 138ms)
+

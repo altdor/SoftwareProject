@@ -1,0 +1,31 @@
+/*
+ * main.c
+
+ *
+ *  Created on: 21 баев 2016
+ *      Author: DorAlt
+ */
+
+#include <stdbool.h>
+#incule <stdin.h>
+char* spImagesDirectory;
+char* spImagesPrefix;
+char* spImagesSuffix;
+int spNumOfImages;
+int spPCADimension = 20;
+char* spPCAFileName = "pca.yml";
+int spNumOfFeatures = 100;
+bool spExtractionMode = true;
+int spNumOfSimilarImages = 1;
+enum spKDTreeSplitMethod = MAX_SPREAD;
+int spKNN = 1;
+bool spMinimalGUI = false;
+int spLoggerLevel = 3;
+char* spLoggerFilename = "stdout";
+
+int main(){
+
+}
+
+
+

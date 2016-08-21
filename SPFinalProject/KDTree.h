@@ -1,4 +1,5 @@
-## Type for defining the point
+
+#define KDTREE_H_
 
 typedef struct sp_KDTree_Node* SPKDTreeNode;
 
@@ -10,5 +11,5 @@ typedef enum sp_kd_tree_msg_t {
 	SP_KDTREE_SUCCESS
 } SP_KDTREE_MSG;
 
-##build a tree
+
 KDTreeNode buildKDTree(SPKDArray array, int depth)

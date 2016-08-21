@@ -3,6 +3,10 @@
 	<name>SPFinalProject</name>
 	<comment></comment>
 	<projects>
+		<project>project22222</project>
+		<project>targil1</project>
+		<project>targil2</project>
+		<project>targil3</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

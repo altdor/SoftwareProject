@@ -1,0 +1,2263 @@
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:53:09 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+13:53:30 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:53:30 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:53:31 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+13:55:16 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:55:16 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:55:17 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+13:55:34 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:55:35 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:55:36 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+13:55:39 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:55:40 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:55:41 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+13:56:20 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:56:20 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:56:21 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:1:1: error: stray '##' in program
+ ## Type for defining the point
+ ^
+..\KDTree.h:1:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'for'
+ ## Type for defining the point
+         ^
+..\KDTree.h:13:1: error: stray '##' in program
+ ##build a tree
+ ^
+..\KDTree.h:13:3: error: unknown type name 'build'
+ ##build a tree
+   ^
+..\KDTree.h:13:11: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'tree'
+ ##build a tree
+           ^
+..\KDTree.h:13:11: error: unknown type name 'tree'
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+13:56:35 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:56:36 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:56:37 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:1:1: error: stray '##' in program
+ ## Type for defining the point
+ ^
+..\KDTree.h:1:9: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'for'
+ ## Type for defining the point
+         ^
+..\KDTree.h:13:1: error: stray '##' in program
+ ##build a tree
+ ^
+..\KDTree.h:13:3: error: unknown type name 'build'
+ ##build a tree
+   ^
+..\KDTree.h:13:11: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'tree'
+ ##build a tree
+           ^
+..\KDTree.h:13:11: error: unknown type name 'tree'
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+13:57:48 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:57:48 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:57:49 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+13:57:54 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:57:55 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:57:56 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+..\KDTree.h:1:0: error: unterminated #ifndef
+ #ifndef KDTREE_H_
+ ^
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+13:58:24 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:58:24 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:58:25 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+..\KDTree.h:1:0: error: unterminated #ifndef
+ #ifndef KDTREE_H_
+ ^
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+13:58:36 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:58:37 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:58:38 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+13:58:57 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:58:58 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:58:58 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+In file included from ..\SPPoint.c:12:0:
+..\SPPoint.h:110:2: error: #endif without #if
+ #endif /* SPPOINT_H_ */
+  ^
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+13:59:08 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:59:08 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:59:09 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+In file included from ..\SPKDArray.c:8:0:
+..\SPPoint.h:110:2: error: #endif without #if
+ #endif /* SPPOINT_H_ */
+  ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+13:59:26 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:59:27 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:59:28 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+13:59:30 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:59:31 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:59:32 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+13:59:39 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+13:59:39 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+13:59:40 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+14:01:22 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:01:22 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:01:23 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+14:01:40 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:01:41 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:01:42 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+14:02:29 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:02:30 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:02:31 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:04:32 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:04:33 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:04:34 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+14:05:00 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:05:01 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:05:02 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+14:05:04 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:05:04 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:05:05 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:05:42 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:05:43 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:05:44 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+14:06:23 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:06:23 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:06:24 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:06:29 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:06:29 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:06:30 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+..\KDTree.c:6:21: fatal error: SPLoger.h: No such file or directory
+ #include "SPLoger.h"
+                     ^
+compilation terminated.
+Info: Nothing to build for try
+14:06:46 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:06:46 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:06:47 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+14:06:55 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:06:55 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:06:56 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+14:07:04 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:07:04 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:07:05 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:07:10 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:07:11 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:07:11 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+14:15:18 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:15:18 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:15:19 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+14:26:16 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:26:17 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:26:18 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:7:1: warning: data definition has no type or storage class
+ spImagesDirectory;
+ ^
+..\main.c:7:1: warning: type defaults to 'int' in declaration of 'spImagesDirectory' [-Wimplicit-int]
+..\main.c:8:1: warning: data definition has no type or storage class
+ spImagesPrefix;
+ ^
+..\main.c:8:1: warning: type defaults to 'int' in declaration of 'spImagesPrefix' [-Wimplicit-int]
+..\main.c:9:1: warning: data definition has no type or storage class
+ spImagesSuffix;
+ ^
+..\main.c:9:1: warning: type defaults to 'int' in declaration of 'spImagesSuffix' [-Wimplicit-int]
+..\main.c:10:1: warning: data definition has no type or storage class
+ spNumOfImages;
+ ^
+..\main.c:10:1: warning: type defaults to 'int' in declaration of 'spNumOfImages' [-Wimplicit-int]
+..\main.c:11:1: warning: data definition has no type or storage class
+ spPCADimension = 20;
+ ^
+..\main.c:11:1: warning: type defaults to 'int' in declaration of 'spPCADimension' [-Wimplicit-int]
+..\main.c:12:1: warning: data definition has no type or storage class
+ spPCAFileName = pca.yml;
+ ^
+..\main.c:12:1: warning: type defaults to 'int' in declaration of 'spPCAFileName' [-Wimplicit-int]
+..\main.c:12:17: error: 'pca' undeclared here (not in a function)
+ spPCAFileName = pca.yml;
+                 ^
+..\main.c:13:1: warning: data definition has no type or storage class
+ spNumOfFeatures = 100;
+ ^
+..\main.c:13:1: warning: type defaults to 'int' in declaration of 'spNumOfFeatures' [-Wimplicit-int]
+..\main.c:14:1: warning: data definition has no type or storage class
+ spExtractionMode = true;
+ ^
+..\main.c:14:1: warning: type defaults to 'int' in declaration of 'spExtractionMode' [-Wimplicit-int]
+..\main.c:14:20: error: 'true' undeclared here (not in a function)
+ spExtractionMode = true;
+                    ^
+..\main.c:15:1: warning: data definition has no type or storage class
+ spNumOfSimilarImages = 1;
+ ^
+..\main.c:15:1: warning: type defaults to 'int' in declaration of 'spNumOfSimilarImages' [-Wimplicit-int]
+..\main.c:16:1: warning: data definition has no type or storage class
+ spKDTreeSplitMethod = MAX_SPREAD;
+ ^
+..\main.c:16:1: warning: type defaults to 'int' in declaration of 'spKDTreeSplitMethod' [-Wimplicit-int]
+..\main.c:16:23: error: 'MAX_SPREAD' undeclared here (not in a function)
+ spKDTreeSplitMethod = MAX_SPREAD;
+                       ^
+..\main.c:17:1: warning: data definition has no type or storage class
+ spKNN = 1;
+ ^
+..\main.c:17:1: warning: type defaults to 'int' in declaration of 'spKNN' [-Wimplicit-int]
+..\main.c:18:1: warning: data definition has no type or storage class
+ spMinimalGUI = false;
+ ^
+..\main.c:18:1: warning: type defaults to 'int' in declaration of 'spMinimalGUI' [-Wimplicit-int]
+..\main.c:18:16: error: 'false' undeclared here (not in a function)
+ spMinimalGUI = false;
+                ^
+..\main.c:19:1: warning: data definition has no type or storage class
+ spLoggerLevel = 3;
+ ^
+..\main.c:19:1: warning: type defaults to 'int' in declaration of 'spLoggerLevel' [-Wimplicit-int]
+..\main.c:20:1: warning: data definition has no type or storage class
+ spLoggerFilename = stdout;
+ ^
+..\main.c:20:1: warning: type defaults to 'int' in declaration of 'spLoggerFilename' [-Wimplicit-int]
+..\main.c:20:20: error: 'stdout' undeclared here (not in a function)
+ spLoggerFilename = stdout;
+                    ^
+Info: Nothing to build for try
+14:26:30 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:26:30 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:26:31 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:26:52 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:26:53 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:26:54 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+..\main.c:7:1: warning: data definition has no type or storage class
+ spImagesDirectory;
+ ^
+..\main.c:7:1: warning: type defaults to 'int' in declaration of 'spImagesDirectory' [-Wimplicit-int]
+..\main.c:8:1: warning: data definition has no type or storage class
+ spImagesPrefix;
+ ^
+..\main.c:8:1: warning: type defaults to 'int' in declaration of 'spImagesPrefix' [-Wimplicit-int]
+..\main.c:9:1: warning: data definition has no type or storage class
+ spImagesSuffix;
+ ^
+..\main.c:9:1: warning: type defaults to 'int' in declaration of 'spImagesSuffix' [-Wimplicit-int]
+..\main.c:10:1: warning: data definition has no type or storage class
+ spNumOfImages;
+ ^
+..\main.c:10:1: warning: type defaults to 'int' in declaration of 'spNumOfImages' [-Wimplicit-int]
+..\main.c:11:1: warning: data definition has no type or storage class
+ spPCADimension = 20;
+ ^
+..\main.c:11:1: warning: type defaults to 'int' in declaration of 'spPCADimension' [-Wimplicit-int]
+..\main.c:12:1: warning: data definition has no type or storage class
+ spPCAFileName = "pca.yml";
+ ^
+..\main.c:12:1: warning: type defaults to 'int' in declaration of 'spPCAFileName' [-Wimplicit-int]
+..\main.c:12:17: warning: initialization makes integer from pointer without a cast
+ spPCAFileName = "pca.yml";
+                 ^
+..\main.c:13:1: warning: data definition has no type or storage class
+ spNumOfFeatures = 100;
+ ^
+..\main.c:13:1: warning: type defaults to 'int' in declaration of 'spNumOfFeatures' [-Wimplicit-int]
+..\main.c:14:1: warning: data definition has no type or storage class
+ spExtractionMode = true;
+ ^
+..\main.c:14:1: warning: type defaults to 'int' in declaration of 'spExtractionMode' [-Wimplicit-int]
+..\main.c:14:20: error: 'true' undeclared here (not in a function)
+ spExtractionMode = true;
+                    ^
+..\main.c:15:1: warning: data definition has no type or storage class
+ spNumOfSimilarImages = 1;
+ ^
+..\main.c:15:1: warning: type defaults to 'int' in declaration of 'spNumOfSimilarImages' [-Wimplicit-int]
+..\main.c:16:1: warning: data definition has no type or storage class
+ spKDTreeSplitMethod = MAX_SPREAD;
+ ^
+..\main.c:16:1: warning: type defaults to 'int' in declaration of 'spKDTreeSplitMethod' [-Wimplicit-int]
+..\main.c:16:23: error: 'MAX_SPREAD' undeclared here (not in a function)
+ spKDTreeSplitMethod = MAX_SPREAD;
+                       ^
+..\main.c:17:1: warning: data definition has no type or storage class
+ spKNN = 1;
+ ^
+..\main.c:17:1: warning: type defaults to 'int' in declaration of 'spKNN' [-Wimplicit-int]
+..\main.c:18:1: warning: data definition has no type or storage class
+ spMinimalGUI = false;
+ ^
+..\main.c:18:1: warning: type defaults to 'int' in declaration of 'spMinimalGUI' [-Wimplicit-int]
+..\main.c:18:16: error: 'false' undeclared here (not in a function)
+ spMinimalGUI = false;
+                ^
+..\main.c:19:1: warning: data definition has no type or storage class
+ spLoggerLevel = 3;
+ ^
+..\main.c:19:1: warning: type defaults to 'int' in declaration of 'spLoggerLevel' [-Wimplicit-int]
+..\main.c:20:1: warning: data definition has no type or storage class
+ spLoggerFilename = "stdout";
+ ^
+..\main.c:20:1: warning: type defaults to 'int' in declaration of 'spLoggerFilename' [-Wimplicit-int]
+..\main.c:20:20: warning: initialization makes integer from pointer without a cast
+ spLoggerFilename = "stdout";
+                    ^
+..\main.c: In function 'main':
+..\main.c:24:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Nothing to build for try
+14:28:27 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:28:28 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:28:29 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+14:28:32 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:28:32 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:28:33 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:29:26 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:29:27 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:29:28 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+14:29:31 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:29:32 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:29:32 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+14:31:50 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:31:51 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+Info: Nothing to build for try
+14:32:20 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:32:21 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:32:22 **** Rebuild of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\KDTree.c:15:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:18:32: error: expected ')' before ';' token
+  if(array->size == 0 || depth<0;)
+                                ^
+..\KDTree.c:19:3: warning: return makes pointer from integer without a cast
+   return SP_KDTREE_INVALID_ARGUMENT;
+   ^
+..\KDTree.c:42:4: warning: implicit declaration of function 'medianX' [-Wimplicit-function-declaration]
+    SPPoint l = medianX(array);
+    ^
+..\KDTree.c:42:16: warning: initialization makes pointer from integer without a cast
+    SPPoint l = medianX(array);
+                ^
+..\KDTree.c:43:40: error: dereferencing pointer to incomplete type
+    left,right = spKdarraySplit(array, l->data[0]);
+                                        ^
+..\KDTree.c:43:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, l->data[0]);
+        ^
+..\KDTree.c:44:18: error: dereferencing pointer to incomplete type
+    kdtree->Dim =l->data[0];
+                  ^
+..\KDTree.c:48:4: warning: implicit declaration of function 'medianY' [-Wimplicit-function-declaration]
+    SPPoint l = medianY(array);
+    ^
+..\KDTree.c:48:16: warning: initialization makes pointer from integer without a cast
+    SPPoint l = medianY(array);
+                ^
+..\KDTree.c:49:40: error: dereferencing pointer to incomplete type
+    left,right = spKdarraySplit(array, l->data[1]);
+                                        ^
+..\KDTree.c:49:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, l->data[1]);
+        ^
+..\KDTree.c:50:18: error: dereferencing pointer to incomplete type
+    kdtree->Dim =l->data[1];
+                  ^
+..\KDTree.c:52:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1)
+                              ^
+..\KDTree.c:17:14: note: expected 'SPKDArray' but argument is of type 'SPKDTreeNode'
+ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+              ^
+..\KDTree.c:53:3: error: expected ';' before 'kdtree'
+   kdtree->left = buildKDTree(right, depth+1)
+   ^
+..\KDTree.c:30:11: warning: unused variable 'l' [-Wunused-variable]
+   SPPoint l;
+           ^
+Info: Nothing to build for try
+14:34:12 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:34:13 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:34:14 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\KDTree.c:15:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:18:32: error: expected ')' before ';' token
+  if(array->size == 0 || depth<0;)
+                                ^
+..\KDTree.c:19:3: warning: return makes pointer from integer without a cast
+   return SP_KDTREE_INVALID_ARGUMENT;
+   ^
+..\KDTree.c:42:4: warning: implicit declaration of function 'medianX' [-Wimplicit-function-declaration]
+    SPPoint l = medianX(array);
+    ^
+..\KDTree.c:42:16: warning: initialization makes pointer from integer without a cast
+    SPPoint l = medianX(array);
+                ^
+..\KDTree.c:43:40: error: dereferencing pointer to incomplete type
+    left,right = spKdarraySplit(array, l->data[0]);
+                                        ^
+..\KDTree.c:43:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, l->data[0]);
+        ^
+..\KDTree.c:44:18: error: dereferencing pointer to incomplete type
+    kdtree->Dim =l->data[0];
+                  ^
+..\KDTree.c:48:4: warning: implicit declaration of function 'medianY' [-Wimplicit-function-declaration]
+    SPPoint l = medianY(array);
+    ^
+..\KDTree.c:48:16: warning: initialization makes pointer from integer without a cast
+    SPPoint l = medianY(array);
+                ^
+..\KDTree.c:49:40: error: dereferencing pointer to incomplete type
+    left,right = spKdarraySplit(array, l->data[1]);
+                                        ^
+..\KDTree.c:49:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, l->data[1]);
+        ^
+..\KDTree.c:50:18: error: dereferencing pointer to incomplete type
+    kdtree->Dim =l->data[1];
+                  ^
+..\KDTree.c:52:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1)
+                              ^
+..\KDTree.c:17:14: note: expected 'SPKDArray' but argument is of type 'SPKDTreeNode'
+ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+              ^
+..\KDTree.c:53:3: error: expected ';' before 'kdtree'
+   kdtree->left = buildKDTree(right, depth+1)
+   ^
+..\KDTree.c:30:11: warning: unused variable 'l' [-Wunused-variable]
+   SPPoint l;
+           ^
+Info: Nothing to build for try
+14:34:17 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:34:18 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:34:19 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\KDTree.c:15:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:18:32: error: expected ')' before ';' token
+  if(array->size == 0 || depth<0;)
+                                ^
+..\KDTree.c:19:3: warning: return makes pointer from integer without a cast
+   return SP_KDTREE_INVALID_ARGUMENT;
+   ^
+..\KDTree.c:42:4: warning: implicit declaration of function 'medianX' [-Wimplicit-function-declaration]
+    SPPoint l = medianX(array);
+    ^
+..\KDTree.c:42:16: warning: initialization makes pointer from integer without a cast
+    SPPoint l = medianX(array);
+                ^
+..\KDTree.c:43:40: error: dereferencing pointer to incomplete type
+    left,right = spKdarraySplit(array, l->data[0]);
+                                        ^
+..\KDTree.c:43:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, l->data[0]);
+        ^
+..\KDTree.c:44:18: error: dereferencing pointer to incomplete type
+    kdtree->Dim =l->data[0];
+                  ^
+..\KDTree.c:48:4: warning: implicit declaration of function 'medianY' [-Wimplicit-function-declaration]
+    SPPoint l = medianY(array);
+    ^
+..\KDTree.c:48:16: warning: initialization makes pointer from integer without a cast
+    SPPoint l = medianY(array);
+                ^
+..\KDTree.c:49:40: error: dereferencing pointer to incomplete type
+    left,right = spKdarraySplit(array, l->data[1]);
+                                        ^
+..\KDTree.c:49:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, l->data[1]);
+        ^
+..\KDTree.c:50:18: error: dereferencing pointer to incomplete type
+    kdtree->Dim =l->data[1];
+                  ^
+..\KDTree.c:52:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1)
+                              ^
+..\KDTree.c:17:14: note: expected 'SPKDArray' but argument is of type 'SPKDTreeNode'
+ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+              ^
+..\KDTree.c:53:3: error: expected ';' before 'kdtree'
+   kdtree->left = buildKDTree(right, depth+1)
+   ^
+..\KDTree.c:30:11: warning: unused variable 'l' [-Wunused-variable]
+   SPPoint l;
+           ^
+Info: Nothing to build for try
+14:36:15 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:36:16 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:36:17 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:9:22: fatal error: cstdbool.h: No such file or directory
+ #include <cstdbool.h>
+                      ^
+compilation terminated.
+Info: Nothing to build for try
+14:40:35 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:40:36 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:40:37 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:9:22: fatal error: cstdbool.h: No such file or directory
+ #include <cstdbool.h>
+                      ^
+compilation terminated.
+Info: Nothing to build for try
+14:40:42 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+14:40:43 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+14:40:44 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+15:02:57 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:02:58 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:02:59 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
+15:12:47 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:12:47 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:12:48 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+15:12:59 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:13:00 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:13:01 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPList.o "..\\SPList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for try
+15:13:30 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:13:31 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:13:32 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:80:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:80:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for try
+15:13:51 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:13:51 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:13:52 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:19:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:24:15: warning: initialization from incompatible pointer type
+  SPPoint* p = (SPPoint)malloc(size*sizeof(SPPoint));
+               ^
+..\SPKDArray.c:33:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:34:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:42:3: warning: implicit declaration of function 'qsort_r' [-Wimplicit-function-declaration]
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+   ^
+..\SPKDArray.c:42:34: error: 'compByAxis' undeclared (first use in this function)
+   qsort_r(p,size,sizeof(SPPoint),compByAxis,i);
+                                  ^
+..\SPKDArray.c:42:34: note: each undeclared identifier is reported only once for each function it appears in
+..\SPKDArray.c:44:12: warning: assignment makes integer from pointer without a cast
+    a[i][j] = p[j];
+            ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:57:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+Info: Nothing to build for try
