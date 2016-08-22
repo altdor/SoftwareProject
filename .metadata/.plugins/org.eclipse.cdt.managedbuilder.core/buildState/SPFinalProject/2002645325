@@ -1,16 +1,15 @@
 #
-#Sun Aug 21 16:07:30 IDT 2016
+#Mon Aug 22 15:06:10 IDT 2016
 Debug/SPConfig.o=1
 SPKDArray.h=1
 Debug/SPFinalProject.exe=1
+SPLogger.c=1
 main.cpp=1
 Debug/main.o=1
 SPKDArray.c=1
 SPConfig.c=1
 KDTree.h=1
-SPBPriorityQueue.h=1
+Debug/SPLogger.o=1
 Debug/SPKDArray.o=1
 Debug/KDTree.o=1
 KDTree.c=1
-Debug/SPBPriorityQueue.o=1
-SPBPriorityQueue.c=1

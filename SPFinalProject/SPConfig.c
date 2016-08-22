@@ -13,17 +13,16 @@ typedef struct sp_config_t {
 	char* spImagesPrefix;
 	char* spImagesSuffix;
 	int spNumOfImages;
-	int spPCADimension = 20;
-	char* spPCAFileName = "pca.yml";
-	int spNumOfFeatures = 100;
-	bool spExtractionMode = true;
-	int spNumOfSimilarImages = 1;
-	enum spKDTreeSplitMethod = MAX_SPREAD;
-	int spKNN = 1;
-	bool spMinimalGUI = false;
-	int spLoggerLevel = 3;
-	char* spLoggerFilename = "stdout";
-};
+	int spPCADimension;
+	char* spPCAFileName;
+	int spNumOfFeatures;
+	bool spExtractionMode;
+	int spNumOfSimilarImages;
+	int spKNN;
+	bool spMinimalGUI;
+	int spLoggerLevel;
+	char* spLoggerFilename;
+}SP_CONFIG;
 /**
  * Creates a new system configuration struct. The configuration struct
  * is initialized based on the configuration file given by 'filename'.
@@ -51,9 +50,12 @@ typedef struct sp_config_t {
 #define BUFSIZE
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 	assert(msg!=NULL);
+	SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+	char input[4];
 	char* string=NULL;
     FILE* fp
 	int n=0,i=0;
+    dfult(cnfg);
 	if(filename == NULL)
 		return SP_CONFIG_INVALID_ARGUMENT;
     fp = fopen("argv1","r");
@@ -63,22 +65,51 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     if(string == NULL)
     	return SP_CONFIG_ALLOC_FAIL;
     while((n = fread(string,1, BUFSIZE,fp))>0){
+    	int start;
     	trim(*string);
     	if (string[0]!="#"){
     		if(strchr(string,"#") != NULL){
     			return SP_CONFIG_INVALID_ARGUMENT;
     		}
+    		start = strchr(string,"=") + 1
     		if(strstr(string,"spImagesDirectory")){
-
+    			cnfg->spImagesDirectory = (char*)malloc(n-start*sizeof(char));
+    			strncpy(cnfg->spImagesDirectory, string+start, n-start);
+    			trim(*cnfg->spImagesDirectory);
+    			input[0]=1;
+    			if(n-start ==0 || strchr(cnfg->spImagesDirectory," ")!=NULL){
+    				return SP_CONFIG_INVALID_STRING
+    			}
     		}
     		else if(strstr(string,"spImagesPrefix")){
-
+    			cnfg->spImagesPrefix = (char*)malloc(n-start*sizeof(char));
+    			strncpy(cnfg->spImagesPrefix, string+start, n-start);
+    			trim(*cnfg->spImagesPrefix);
+    			input[1]=1;
+    			if(n-start ==0 || strchr(cnfg->spImagesPrefix," ")!=NULL){
+    			    return SP_CONFIG_INVALID_STRING
+    			}
     		}
     		else if(strstr(string,"spImagesSuffix")){
-
+    			cnfg->spImagesSuffix = (char*)malloc(n-start*sizeof(char));
+    			strncpy(cnfg->spImagesSuffix, string+start, n-start);
+    			trim(*cnfg->spImagesSuffix);
+    			input[2]=1;
+    			if(n-start ==0 || strchr(cnfg->spImagesSuffix," ")!=NULL){
+    				return SP_CONFIG_INVALID_STRING
+    			}
     		}
     		else if(strstr(string,"spNumOfImages")){
+    			char* temp = (char*)malloc(n-start*sizeof(char))
 
+    			strncpy(temp, string+start, n-start);
+    			trim(*temp);
+    			cnfg->spImagesSuffix = atoi(temp);
+    			if(n-start ==0 || cnfg->spImagesSuffix<=0){
+    			    	return SP_CONFIG_INVALID_INTEGER
+    			 }
+
+    			input[3]=1;
     		}
     		else if(strstr(string,"spPCADimension")){
 
@@ -110,6 +141,9 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     		else if(strstr(string,"spExtractionMode")){
 
     		}
+    		else{
+    			return SP_CONFIG_INVALID_STRING;
+    		}
     	}
     }
 }
@@ -134,4 +168,19 @@ void trim(char* String)
     {
         String[dest] = '\0';
     }
+}
+
+void dfult(SP_CONFIG confg){
+		confg->spPCADimension = 20
+		confg->spPCAFileName = (char*)malloc(BUFSIZE)
+		confg->spPCAFileName = "pca.yml";
+		confg->spNumOfFeatures = 100;
+		confg->spExtractionMode = true;
+		confg->spNumOfSimilarImages = 1;
+		enum SP_KDTREE_SPLIT_METHOD = MAX_SPREAD;
+		confg->spKNN = 1;
+		confg->spMinimalGUI = false;
+		confg->spLoggerLevel = 3;
+		confg->spLoggerFilename = (char*)malloc(BUFSIZE)
+		confg->spLoggerFilename = "stdout";
 }

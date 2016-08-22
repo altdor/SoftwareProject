@@ -22,7 +22,12 @@ typedef enum sp_config_msg_t {
 	SP_CONFIG_INDEX_OUT_OF_RANGE,
 	SP_CONFIG_SUCCESS
 } SP_CONFIG_MSG;
+typedef enum spKDTreeSplitMethod {
+	MAX_SPREAD,
+	RANDOM,
+	INCREMENTAL
 
+} SP_KDTREE_SPLIT_METHOD;
 typedef struct sp_config_t* SPConfig;
 
 /**
