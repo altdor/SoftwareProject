@@ -7,6 +7,7 @@
 
 #ifndef SPKDARRAY_H_
 #define SPKDARRAY_H_
+#include "SPPoint.h"
 
 /** Type for defining the KD-ARRAY **/
 typedef struct sp_kdarray_t* SPKDArray;

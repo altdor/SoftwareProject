@@ -109,3 +109,8 @@ int compByAxis (const void* p1, const void* p2){
     return (spPointGetAxisCoor(a->point,a->axis)-spPointGetAxisCoor(b->point,b->axis));
 }
 
+int main(){
+	int a = 3;
+	printf("%d",a);
+	return 0;
+}
