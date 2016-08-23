@@ -55,7 +55,9 @@ typedef struct sp_config_t* SPConfig;
  *
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
-
+SP_CONFIG_MSG checkinput(char input[4]);
+void dfult(SPConfig confg);
+void trim(char* String);
 /*
  * Returns true if spExtractionMode = true, false otherwise.
  *
