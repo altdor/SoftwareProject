@@ -1,11 +1,62 @@
-15:06:10 **** Incremental Build of configuration Debug for project SPFinalProject ****
+16:00:36 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
-g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
-cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
-..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
- #include <cstdio.h>
-                    ^
-compilation terminated.
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\SPKDArray.c:10:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
 
-15:06:10 Build Finished (took 140ms)
+16:00:36 Build Finished (took 196ms)
 

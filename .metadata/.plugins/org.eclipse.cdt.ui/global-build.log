@@ -3096,3 +3096,1274 @@ cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not
                     ^
 compilation terminated.
 Info: Nothing to build for try
+07:55:25 **** Rebuild of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+07:55:26 **** Rebuild of configuration Debug for project 2009 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.c" 
+gcc -o 2009.exe main.o 
+07:55:28 **** Rebuild of configuration Debug for project 2010 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o 2010.exe main.o 
+07:55:29 **** Rebuild of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.c" 
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+07:55:30 **** Rebuild of configuration Debug for project 2012 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.c" 
+gcc -o 2012.exe main.o 
+Info: Nothing to build for HomeWork
+07:55:31 **** Rebuild of configuration Debug for project exman2013 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.c" 
+gcc -o exman2013.exe main.o 
+07:55:32 **** Rebuild of configuration Debug for project hw1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MathIsFun.o "..\\MathIsFun.c" 
+gcc -o hw1.exe main.o MathIsFun.o 
+07:55:33 **** Rebuild of configuration Debug for project hw2 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main_aux.o "..\\main_aux.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o sp_image_proc_util.o "..\\sp_image_proc_util.cpp" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o hw2.exe sp_image_proc_util.o main_aux.o main.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+07:55:36 **** Rebuild of configuration Debug for project project22222 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o sp_image_proc_util.o "..\\sp_image_proc_util.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main_aux.o "..\\main_aux.cpp" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o project22222.exe sp_image_proc_util.o main_aux.o main.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+07:55:40 **** Rebuild of configuration Debug for project targil1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MathIsFun.o "..\\MathIsFun.c" 
+gcc -o targil1.exe main.o MathIsFun.o 
+07:55:41 **** Rebuild of configuration Debug for project targil2 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o sp_image_proc_util.o "..\\sp_image_proc_util.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main_aux.o "..\\main_aux.cpp" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o targil2.exe sp_image_proc_util.o main_aux.o main.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+07:55:45 **** Rebuild of configuration Debug for project targil3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_bpqueue_unit_test.o" "..\\unit_tests\\sp_bpqueue_unit_test.c" 
+..\unit_tests\sp_bpqueue_unit_test.c:15:13: warning: 'testQueue' defined but not used [-Wunused-function]
+ static bool testQueue()
+             ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_list_unit_test.o" "..\\unit_tests\\sp_list_unit_test.c" 
+..\unit_tests\sp_list_unit_test.c:21:13: warning: 'testElementCreate' defined but not used [-Wunused-function]
+ static bool testElementCreate() {
+             ^
+..\unit_tests\sp_list_unit_test.c:28:13: warning: 'testElementCompare' defined but not used [-Wunused-function]
+ static bool testElementCompare() {
+             ^
+..\unit_tests\sp_list_unit_test.c:47:13: warning: 'testElementGetIndex' defined but not used [-Wunused-function]
+ static bool testElementGetIndex() {
+             ^
+..\unit_tests\sp_list_unit_test.c:64:13: warning: 'testElementSetIndex' defined but not used [-Wunused-function]
+ static bool testElementSetIndex() {
+             ^
+..\unit_tests\sp_list_unit_test.c:78:13: warning: 'testIsElementGetValue' defined but not used [-Wunused-function]
+ static bool testIsElementGetValue() {
+             ^
+..\unit_tests\sp_list_unit_test.c:94:13: warning: 'testElementSetValue' defined but not used [-Wunused-function]
+ static bool testElementSetValue() {
+             ^
+..\unit_tests\sp_list_unit_test.c:109:13: warning: 'testElementCopy' defined but not used [-Wunused-function]
+ static bool testElementCopy() {
+             ^
+..\unit_tests\sp_list_unit_test.c:126:13: warning: 'testListCreate' defined but not used [-Wunused-function]
+ static bool testListCreate() {
+             ^
+..\unit_tests\sp_list_unit_test.c:133:13: warning: 'testListCopy' defined but not used [-Wunused-function]
+ static bool testListCopy() {
+             ^
+..\unit_tests\sp_list_unit_test.c:164:13: warning: 'testListGetSize' defined but not used [-Wunused-function]
+ static bool testListGetSize() {
+             ^
+..\unit_tests\sp_list_unit_test.c:182:13: warning: 'testListGetFirst' defined but not used [-Wunused-function]
+ static bool testListGetFirst() {
+             ^
+..\unit_tests\sp_list_unit_test.c:204:13: warning: 'testListGetNext' defined but not used [-Wunused-function]
+ static bool testListGetNext() {
+             ^
+..\unit_tests\sp_list_unit_test.c:220:13: warning: 'testListInsertFirst' defined but not used [-Wunused-function]
+ static bool testListInsertFirst() {
+             ^
+..\unit_tests\sp_list_unit_test.c:243:13: warning: 'testListInsertLast' defined but not used [-Wunused-function]
+ static bool testListInsertLast() {
+             ^
+..\unit_tests\sp_list_unit_test.c:265:13: warning: 'testListInsertBeforeCurrent' defined but not used [-Wunused-function]
+ static bool testListInsertBeforeCurrent() {
+             ^
+..\unit_tests\sp_list_unit_test.c:293:13: warning: 'testListInsertAfterCurrent' defined but not used [-Wunused-function]
+ static bool testListInsertAfterCurrent() {
+             ^
+..\unit_tests\sp_list_unit_test.c:321:13: warning: 'testListClear' defined but not used [-Wunused-function]
+ static bool testListClear() {
+             ^
+..\unit_tests\sp_list_unit_test.c:341:13: warning: 'testListDestroy' defined but not used [-Wunused-function]
+ static bool testListDestroy() {
+             ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_point_unit_test.o" "..\\unit_tests\\sp_point_unit_test.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_logger_unit_test.o" "..\\unit_tests\\sp_logger_unit_test.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPList.o "..\\SPList.c" 
+gcc -o targil3.exe "unit_tests\\sp_point_unit_test.o" "unit_tests\\sp_logger_unit_test.o" "unit_tests\\sp_list_unit_test.o" "unit_tests\\sp_bpqueue_unit_test.o" SPPoint.o SPLogger.o SPListElement.o SPList.o SPBPriorityQueue.o 
+07:55:50 **** Rebuild of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPList.o "..\\SPList.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
+ #include <cstdio.h>
+                    ^
+compilation terminated.
+Info: Nothing to build for try
+07:57:12 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+07:57:13 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+07:57:13 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\KDTree.c:4:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0,
+                 from ..\KDTree.c:8:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
+..\KDTree.c:15:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:19:3: warning: return makes pointer from integer without a cast
+   return SP_KDTREE_INVALID_ARGUMENT;
+   ^
+..\KDTree.c:39:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+    ^
+..\KDTree.c:39:32: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+                                ^
+..\KDTree.c:39:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+    ^
+..\KDTree.c:39:54: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+                                                      ^
+..\KDTree.c:41:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:41:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:45:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+    ^
+..\KDTree.c:45:32: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+                                ^
+..\KDTree.c:45:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+    ^
+..\KDTree.c:45:54: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+                                                      ^
+..\KDTree.c:48:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:48:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:50:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1)
+                              ^
+..\KDTree.c:17:14: note: expected 'SPKDArray' but argument is of type 'SPKDTreeNode'
+ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+              ^
+..\KDTree.c:51:3: error: expected ';' before 'kdtree'
+   kdtree->left = buildKDTree(right, depth+1)
+   ^
+Info: Nothing to build for try
+15:29:35 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:29:36 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:29:37 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
+ #include <cstdio.h>
+                    ^
+compilation terminated.
+Info: Nothing to build for try
+15:29:51 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:29:52 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:29:53 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\SPKDArray.c:10:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
+Info: Nothing to build for try
+15:30:14 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:30:15 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:30:16 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c:25:29: warning: declaration does not declare anything
+  enum SP_KDTREE_SPLIT_METHOD;
+                             ^
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:54:2: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+  ^
+..\SPConfig.c:54:30: warning: incompatible implicit declaration of built-in function 'malloc'
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+                              ^
+..\SPConfig.c:54:44: error: invalid type argument of unary '*' (have 'SP_CONFIG')
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+                                            ^
+..\SPConfig.c:58:2: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'int'
+  int n=0,i=0;
+  ^
+..\SPConfig.c:59:5: warning: implicit declaration of function 'dfult' [-Wimplicit-function-declaration]
+     dfult(cnfg);
+     ^
+..\SPConfig.c:61:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_INVALID_ARGUMENT;
+   ^
+..\SPConfig.c:62:5: error: 'fp' undeclared (first use in this function)
+     fp = fopen("argv1","r");
+     ^
+..\SPConfig.c:62:5: note: each undeclared identifier is reported only once for each function it appears in
+..\SPConfig.c:64:6: warning: return makes pointer from integer without a cast
+      return SP_CONFIG_CANNOT_OPEN_FILE;
+      ^
+..\SPConfig.c:65:5: warning: implicit declaration of function 'calloc' [-Wimplicit-function-declaration]
+     string = (char*)calloc(BUFSIZE,1);
+     ^
+..\SPConfig.c:65:21: warning: incompatible implicit declaration of built-in function 'calloc'
+     string = (char*)calloc(BUFSIZE,1);
+                     ^
+..\SPConfig.c:65:35: error: expected expression before ',' token
+     string = (char*)calloc(BUFSIZE,1);
+                                   ^
+..\SPConfig.c:67:6: warning: return makes pointer from integer without a cast
+      return SP_CONFIG_ALLOC_FAIL;
+      ^
+..\SPConfig.c:68:39: error: expected expression before ',' token
+     while((n = fread(string,1, BUFSIZE,fp))>0){
+                                       ^
+..\SPConfig.c:70:6: warning: implicit declaration of function 'trim' [-Wimplicit-function-declaration]
+      trim(*string);
+      ^
+..\SPConfig.c:71:19: warning: comparison between pointer and integer
+      if (string[0]!="#"){
+                   ^
+..\SPConfig.c:71:19: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\SPConfig.c:72:7: warning: implicit declaration of function 'strchr' [-Wimplicit-function-declaration]
+       if(strchr(string,"#") != NULL){
+       ^
+..\SPConfig.c:72:10: warning: incompatible implicit declaration of built-in function 'strchr'
+       if(strchr(string,"#") != NULL){
+          ^
+..\SPConfig.c:72:24: warning: passing argument 2 of 'strchr' makes integer from pointer without a cast
+       if(strchr(string,"#") != NULL){
+                        ^
+..\SPConfig.c:72:24: note: expected 'int' but argument is of type 'char *'
+..\SPConfig.c:73:8: warning: return makes pointer from integer without a cast
+        return SP_CONFIG_INVALID_ARGUMENT;
+        ^
+..\SPConfig.c:75:15: warning: incompatible implicit declaration of built-in function 'strchr'
+       start = strchr(string,"=") + 1
+               ^
+..\SPConfig.c:75:29: warning: passing argument 2 of 'strchr' makes integer from pointer without a cast
+       start = strchr(string,"=") + 1
+                             ^
+..\SPConfig.c:75:29: note: expected 'int' but argument is of type 'char *'
+..\SPConfig.c:75:13: warning: assignment makes integer from pointer without a cast
+       start = strchr(string,"=") + 1
+             ^
+..\SPConfig.c:76:7: error: expected ';' before 'if'
+       if(strstr(string,"spImagesDirectory")){
+       ^
+..\SPConfig.c:69:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+      int start;
+          ^
+..\SPConfig.c:58:10: warning: unused variable 'i' [-Wunused-variable]
+  int n=0,i=0;
+          ^
+..\SPConfig.c:58:6: warning: variable 'n' set but not used [-Wunused-but-set-variable]
+  int n=0,i=0;
+      ^
+..\SPConfig.c:55:7: warning: unused variable 'input' [-Wunused-variable]
+  char input[4];
+       ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:182:6: warning: conflicting types for 'trim'
+ void trim(char* String)
+      ^
+..\SPConfig.c:70:6: note: previous implicit declaration of 'trim' was here
+      trim(*string);
+      ^
+..\SPConfig.c: In function 'trim':
+..\SPConfig.c:186:5: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+     int len = strlen(String);
+     ^
+..\SPConfig.c:186:15: warning: incompatible implicit declaration of built-in function 'strlen'
+     int len = strlen(String);
+               ^
+..\SPConfig.c:189:5: warning: implicit declaration of function 'isspace' [-Wimplicit-function-declaration]
+     while(isspace(String[src])) src++;
+     ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:204:6: warning: conflicting types for 'dfult'
+ void dfult(SP_CONFIG confg){
+      ^
+..\SPConfig.c:59:5: note: previous implicit declaration of 'dfult' was here
+     dfult(cnfg);
+     ^
+..\SPConfig.c: In function 'dfult':
+..\SPConfig.c:205:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spPCADimension = 20
+        ^
+..\SPConfig.c:206:3: error: expected ';' before 'confg'
+   confg->spPCAFileName = (char*)malloc(BUFSIZE)
+   ^
+..\SPConfig.c:208:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spNumOfFeatures = 100;
+        ^
+..\SPConfig.c:209:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spExtractionMode = true;
+        ^
+..\SPConfig.c:210:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spNumOfSimilarImages = 1;
+        ^
+..\SPConfig.c:211:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->SP_KDTREE_SPLIT_METHOD = MAX_SPREAD;
+        ^
+..\SPConfig.c:212:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spKNN = 1;
+        ^
+..\SPConfig.c:213:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spMinimalGUI = false;
+        ^
+..\SPConfig.c:214:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spLoggerLevel = 3;
+        ^
+..\SPConfig.c:215:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spLoggerFilename = (char*)malloc(BUFSIZE)
+        ^
+..\SPConfig.c:215:36: warning: incompatible implicit declaration of built-in function 'malloc'
+   confg->spLoggerFilename = (char*)malloc(BUFSIZE)
+                                    ^
+..\SPConfig.c:215:36: error: too few arguments to function 'malloc'
+..\SPConfig.c:216:3: error: expected ';' before 'confg'
+   confg->spLoggerFilename = "stdout";
+   ^
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:180:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Nothing to build for try
+15:30:32 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:30:32 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:30:33 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\SPKDArray.c:10:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
+Info: Nothing to build for try
+15:30:45 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:30:46 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:30:46 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
+ #include <cstdio.h>
+                    ^
+compilation terminated.
+Info: Nothing to build for try
+15:47:34 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:47:34 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:47:35 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\KDTree.c:4:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0,
+                 from ..\KDTree.c:8:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
+..\KDTree.c:15:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:19:3: warning: return makes pointer from integer without a cast
+   return SP_KDTREE_INVALID_ARGUMENT;
+   ^
+..\KDTree.c:39:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+    ^
+..\KDTree.c:39:32: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+                                ^
+..\KDTree.c:39:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+    ^
+..\KDTree.c:39:54: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+                                                      ^
+..\KDTree.c:41:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:41:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:45:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+    ^
+..\KDTree.c:45:32: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+                                ^
+..\KDTree.c:45:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+    ^
+..\KDTree.c:45:54: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+                                                      ^
+..\KDTree.c:48:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:48:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:50:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1)
+                              ^
+..\KDTree.c:17:14: note: expected 'SPKDArray' but argument is of type 'SPKDTreeNode'
+ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+              ^
+..\KDTree.c:51:3: error: expected ';' before 'kdtree'
+   kdtree->left = buildKDTree(right, depth+1)
+   ^
+Info: Nothing to build for try
+15:48:39 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:48:40 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:48:41 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPList.o "..\\SPList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:30:2: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+  ^
+..\SPConfig.c:30:30: warning: incompatible implicit declaration of built-in function 'malloc'
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+                              ^
+..\SPConfig.c:30:44: error: invalid type argument of unary '*' (have 'SP_CONFIG')
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+                                            ^
+..\SPConfig.c:34:2: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'int'
+  int n=0,i=0;
+  ^
+..\SPConfig.c:35:5: warning: implicit declaration of function 'dfult' [-Wimplicit-function-declaration]
+     dfult(cnfg);
+     ^
+..\SPConfig.c:37:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_INVALID_ARGUMENT;
+   ^
+..\SPConfig.c:38:5: error: 'fp' undeclared (first use in this function)
+     fp = fopen("argv1","r");
+     ^
+..\SPConfig.c:38:5: note: each undeclared identifier is reported only once for each function it appears in
+..\SPConfig.c:40:6: warning: return makes pointer from integer without a cast
+      return SP_CONFIG_CANNOT_OPEN_FILE;
+      ^
+..\SPConfig.c:41:5: warning: implicit declaration of function 'calloc' [-Wimplicit-function-declaration]
+     string = (char*)calloc(BUFSIZE,1);
+     ^
+..\SPConfig.c:41:21: warning: incompatible implicit declaration of built-in function 'calloc'
+     string = (char*)calloc(BUFSIZE,1);
+                     ^
+..\SPConfig.c:41:35: error: expected expression before ',' token
+     string = (char*)calloc(BUFSIZE,1);
+                                   ^
+..\SPConfig.c:43:6: warning: return makes pointer from integer without a cast
+      return SP_CONFIG_ALLOC_FAIL;
+      ^
+..\SPConfig.c:44:39: error: expected expression before ',' token
+     while((n = fread(string,1, BUFSIZE,fp))>0){
+                                       ^
+..\SPConfig.c:46:6: warning: implicit declaration of function 'trim' [-Wimplicit-function-declaration]
+      trim(*string);
+      ^
+..\SPConfig.c:47:19: warning: comparison between pointer and integer
+      if (string[0]!="#"){
+                   ^
+..\SPConfig.c:47:19: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\SPConfig.c:48:7: warning: implicit declaration of function 'strchr' [-Wimplicit-function-declaration]
+       if(strchr(string,"#") != NULL){
+       ^
+..\SPConfig.c:48:10: warning: incompatible implicit declaration of built-in function 'strchr'
+       if(strchr(string,"#") != NULL){
+          ^
+..\SPConfig.c:48:24: warning: passing argument 2 of 'strchr' makes integer from pointer without a cast
+       if(strchr(string,"#") != NULL){
+                        ^
+..\SPConfig.c:48:24: note: expected 'int' but argument is of type 'char *'
+..\SPConfig.c:49:8: warning: return makes pointer from integer without a cast
+        return SP_CONFIG_INVALID_ARGUMENT;
+        ^
+..\SPConfig.c:51:15: warning: incompatible implicit declaration of built-in function 'strchr'
+       start = strchr(string,"=") + 1
+               ^
+..\SPConfig.c:51:29: warning: passing argument 2 of 'strchr' makes integer from pointer without a cast
+       start = strchr(string,"=") + 1
+                             ^
+..\SPConfig.c:51:29: note: expected 'int' but argument is of type 'char *'
+..\SPConfig.c:51:13: warning: assignment makes integer from pointer without a cast
+       start = strchr(string,"=") + 1
+             ^
+..\SPConfig.c:52:7: error: expected ';' before 'if'
+       if(strstr(string,"spImagesDirectory")){
+       ^
+..\SPConfig.c:45:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+      int start;
+          ^
+..\SPConfig.c:234:5: warning: implicit declaration of function 'checkinput' [-Wimplicit-function-declaration]
+     return checkinput(input);
+     ^
+..\SPConfig.c:234:5: warning: return makes pointer from integer without a cast
+..\SPConfig.c:34:10: warning: unused variable 'i' [-Wunused-variable]
+  int n=0,i=0;
+          ^
+..\SPConfig.c:34:6: warning: variable 'n' set but not used [-Wunused-but-set-variable]
+  int n=0,i=0;
+      ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:236:10: error: conflicting types for 'checkinput'
+ SPConfig checkinput(char input[4]){
+          ^
+..\SPConfig.c:234:12: note: previous implicit declaration of 'checkinput' was here
+     return checkinput(input);
+            ^
+..\SPConfig.c: In function 'checkinput':
+..\SPConfig.c:241:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_MISSING_PREFIX;
+   ^
+..\SPConfig.c:244:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_MISSING_SUFFIX;
+   ^
+..\SPConfig.c:247:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_MISSING_NUM_IMAGES;
+   ^
+..\SPConfig.c:249:2: warning: return makes pointer from integer without a cast
+  return SP_CONFIG_SUCCESS;
+  ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:251:6: warning: conflicting types for 'trim'
+ void trim(char* String)
+      ^
+..\SPConfig.c:46:6: note: previous implicit declaration of 'trim' was here
+      trim(*string);
+      ^
+..\SPConfig.c: In function 'trim':
+..\SPConfig.c:255:5: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+     int len = strlen(String);
+     ^
+..\SPConfig.c:255:15: warning: incompatible implicit declaration of built-in function 'strlen'
+     int len = strlen(String);
+               ^
+..\SPConfig.c:258:5: warning: implicit declaration of function 'isspace' [-Wimplicit-function-declaration]
+     while(isspace(String[src])) src++;
+     ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:273:6: warning: conflicting types for 'dfult'
+ void dfult(SP_CONFIG confg){
+      ^
+..\SPConfig.c:35:5: note: previous implicit declaration of 'dfult' was here
+     dfult(cnfg);
+     ^
+..\SPConfig.c: In function 'dfult':
+..\SPConfig.c:274:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spPCADimension = 20
+        ^
+..\SPConfig.c:275:3: error: expected ';' before 'confg'
+   confg->spPCAFileName = (char*)malloc(BUFSIZE)
+   ^
+..\SPConfig.c:277:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spNumOfFeatures = 100;
+        ^
+..\SPConfig.c:278:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spExtractionMode = true;
+        ^
+..\SPConfig.c:279:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spNumOfSimilarImages = 1;
+        ^
+..\SPConfig.c:280:26: error: expected identifier or '(' before '=' token
+   SP_KDTREE_SPLIT_METHOD = MAX_SPREAD;
+                          ^
+..\SPConfig.c:281:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spKNN = 1;
+        ^
+..\SPConfig.c:282:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spMinimalGUI = false;
+        ^
+..\SPConfig.c:283:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spLoggerLevel = 3;
+        ^
+..\SPConfig.c:284:8: error: invalid type argument of '->' (have 'SP_CONFIG')
+   confg->spLoggerFilename = (char*)malloc(BUFSIZE)
+        ^
+..\SPConfig.c:284:36: warning: incompatible implicit declaration of built-in function 'malloc'
+   confg->spLoggerFilename = (char*)malloc(BUFSIZE)
+                                    ^
+..\SPConfig.c:284:36: error: too few arguments to function 'malloc'
+..\SPConfig.c:285:3: error: expected ';' before 'confg'
+   confg->spLoggerFilename = "stdout";
+   ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:287:6: error: conflicting types for 'spConfigDestroy'
+ void spConfigDestroy(SP_CONFIG cnfg){
+      ^
+In file included from ..\SPConfig.c:10:0:
+..\SPConfig.h:176:6: note: previous declaration of 'spConfigDestroy' was here
+ void spConfigDestroy(SPConfig config);
+      ^
+..\SPConfig.c: In function 'spConfigDestroy':
+..\SPConfig.c:288:2: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  free(cnfg->spImagesDirectory);
+  ^
+..\SPConfig.c:288:2: warning: incompatible implicit declaration of built-in function 'free'
+..\SPConfig.c:288:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesDirectory);
+           ^
+..\SPConfig.c:289:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesPrefix);
+           ^
+..\SPConfig.c:290:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesSuffix);
+           ^
+..\SPConfig.c:291:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spPCAFileName);
+           ^
+..\SPConfig.c:292:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spLoggerFilename);
+           ^
+..\SPConfig.c:293:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesPrefix);
+           ^
+..\SPConfig.c:294:2: error: incompatible type for argument 1 of 'free'
+  free(cnfg);
+  ^
+..\SPConfig.c:294:2: note: expected 'void *' but argument is of type 'SP_CONFIG'
+Info: Nothing to build for try
+15:48:56 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:48:57 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:48:58 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
+ #include <cstdio.h>
+                    ^
+compilation terminated.
+Info: Nothing to build for try
+15:50:38 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:50:38 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:50:39 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
+ #include <cstdio.h>
+                    ^
+compilation terminated.
+Info: Nothing to build for try
+15:59:38 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+15:59:39 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+15:59:40 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.h:8:0,
+                 from ..\SPImageProc.cpp:10:
+..\SPConfig.h:58:12: error: variable or field 'dfult' declared void
+ void dfult(SP_CONFIG confg);
+            ^
+..\SPConfig.h:58:12: error: 'SP_CONFIG' was not declared in this scope
+In file included from ..\SPConfig.h:4:0,
+                 from ..\SPImageProc.h:8,
+                 from ..\SPImageProc.cpp:10:
+..\SPConfig.h:71:1: error: expected ',' or '...' before 'bool'
+ bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
+ ^
+In file included from ..\SPImageProc.h:8:0,
+                 from ..\SPImageProc.cpp:10:
+..\SPConfig.h:71:73: error: expected ')' before ';' token
+ bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
+                                                                         ^
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\SPImageProc.cpp: In constructor 'sp::ImageProc::ImageProc(SPConfig)':
+..\SPImageProc.cpp:155:59: error: 'spConfigIsExtractionMode' was not declared in this scope
+   if ((preprocMode = spConfigIsExtractionMode(config, &msg))) {
+                                                           ^
+Info: Nothing to build for try
+16:00:27 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+16:00:27 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+16:00:28 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+In file included from ..\SPConfig.c:7:0:
+..\SPConfig.h:72:1: error: expected ';', ',' or ')' before '_Bool'
+ bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
+ ^
+Info: Nothing to build for try
+16:00:34 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+16:00:35 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+16:00:36 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
+ SPKDArray spKdarrayInit(SPPoint* arr, int size);
+                         ^
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\SPKDArray.c:10:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
+Info: Nothing to build for try
