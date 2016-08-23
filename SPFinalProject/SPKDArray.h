@@ -24,4 +24,8 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size);
  */
 SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);
 
+/**
+ * compares between two sppoints via axis-coordinate "axis"
+ */
+int compByAxis (const void* p1, const void* p2, void* axis);
 #endif /* SPKDARRAY_H_ */
