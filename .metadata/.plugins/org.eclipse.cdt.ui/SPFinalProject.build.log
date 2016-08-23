@@ -1,11 +1,122 @@
-15:06:10 **** Incremental Build of configuration Debug for project SPFinalProject ****
+07:57:13 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
-g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
-cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
-..\main.cpp:10:20: fatal error: cstdio.h: No such file or directory
- #include <cstdio.h>
-                    ^
-compilation terminated.
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:1:0:
+..\KDTree.h:15:1: error: unknown type name 'KDTreeNode'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+ ^
+..\KDTree.h:15:24: error: unknown type name 'SPKDArray'
+ KDTreeNode buildKDTree(SPKDArray array, int depth)
+                        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarrayInit':
+..\SPKDArray.c:26:19: error: expected expression before 'int'
+  if (arr==NULL || int<=0)
+                   ^
+..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
+  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
+  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+                      ^
+..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
+   (*a)[i] = (int*)malloc(size*sizeof(int));
+           ^
+..\SPKDArray.c:65:14: warning: comparison between pointer and integer
+   if((*a)[i] == NULL){//allocation fails
+              ^
+..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
+  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+  ^
+..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
+  if(pcoor == NULL){//allocation fails
+           ^
+..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->axis=i;
+         ^
+..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->point = tmpArray[j];
+         ^
+..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
+    pcoor->index=j;
+         ^
+..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
+   qsort(p,size,sizeof(SPPCoor),compByAxis);
+                                ^
+In file included from ..\KDTree.c:4:0:
+c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
+ _CRTIMP void __cdecl qsort(void*, size_t, size_t,
+                      ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
+    a[i][j] = p[j]->index;
+                  ^
+..\SPKDArray.c: At top level:
+..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
+ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+                                                     ^
+..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
+ int compByAxis (const void* p1, const void* p2){
+     ^
+In file included from ..\SPKDArray.c:7:0,
+                 from ..\KDTree.c:8:
+..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
+ int compByAxis (const void* p1, const void* p2, void* axis);
+     ^
+..\KDTree.c:15:1: warning: useless storage class specifier in empty declaration
+ };
+ ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:19:3: warning: return makes pointer from integer without a cast
+   return SP_KDTREE_INVALID_ARGUMENT;
+   ^
+..\KDTree.c:39:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+    ^
+..\KDTree.c:39:32: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+                                ^
+..\KDTree.c:39:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+    ^
+..\KDTree.c:39:54: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][0]-array->pointArr[0][0];
+                                                      ^
+..\KDTree.c:41:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:41:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:45:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+    ^
+..\KDTree.c:45:32: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+                                ^
+..\KDTree.c:45:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+    ^
+..\KDTree.c:45:54: error: dereferencing pointer to incomplete type
+    spread = array->pointArr[-1][1]-array->pointArr[1][0];
+                                                      ^
+..\KDTree.c:48:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:48:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:50:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1)
+                              ^
+..\KDTree.c:17:14: note: expected 'SPKDArray' but argument is of type 'SPKDTreeNode'
+ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+              ^
+..\KDTree.c:51:3: error: expected ';' before 'kdtree'
+   kdtree->left = buildKDTree(right, depth+1)
+   ^
 
-15:06:10 Build Finished (took 140ms)
+07:57:15 Build Finished (took 1s.176ms)
 
