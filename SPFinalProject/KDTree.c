@@ -14,10 +14,10 @@ typedef struct sp_KDTree_Node {
 	struct sp_KDTree_Node* right;
 };
 
-SPKDTreeNode buildKDTree(SPKDArray array, int depth){
+KDTree buildKDTree(SPKDArray array, int depth){
 	if(array->size == 0 || depth<0);
 		return SP_KDTREE_INVALID_ARGUMENT;
-	SPKDTreeNode kdtree= (SPKDTreeNode)malloc(sizeof(*kdtree));
+	KDTree kdtree= (KDTree)malloc(sizeof(*kdtree));
 	if(kdtree == NULL){
 				return SP_KDTREE_OUT_OF_MEMORY;
 			}
@@ -28,8 +28,8 @@ SPKDTreeNode buildKDTree(SPKDArray array, int depth){
 	{
 		int spread;
 		int random;
-		SPKDTreeNode left = (SPKDTreeNode)malloc(sizeof(*left));
-		SPKDTreeNode right = (SPKDTreeNode)malloc(sizeof(*right));
+		KDTree left = (KDTree)malloc(sizeof(*left));
+		KDTree right = (KDTree)malloc(sizeof(*right));
 		if(left == NULL || right ==NULL){
 			free(left);
 			free(right);

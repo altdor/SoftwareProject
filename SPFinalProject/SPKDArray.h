@@ -11,6 +11,7 @@
 
 /** Type for defining the KD-ARRAY **/
 typedef struct sp_kdarray_t* SPKDArray;
+typedef struct sp_pcoor_t* SPPCoor;
 
 /**
  * Initializes the kd-array with the data given by arr
@@ -28,5 +29,5 @@ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);
 /**
  * compares between two sppoints via axis-coordinate "axis"
  */
-int compByAxis (const void* p1, const void* p2, void* axis);
+int compByAxis(const void* p1, const void* p2);
 #endif /* SPKDARRAY_H_ */

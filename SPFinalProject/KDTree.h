@@ -1,7 +1,7 @@
 
 #define KDTREE_H_
-
-typedef struct sp_KDTree_Node* SPKDTreeNode;
+#include "SPKDArray.h"
+typedef struct sp_KDTree_Node* KDTree;
 
 typedef enum sp_kd_tree_msg_t {
 	SP_KDTREE_OUT_OF_MEMORY,
@@ -12,4 +12,4 @@ typedef enum sp_kd_tree_msg_t {
 } SP_KDTREE_MSG;
 
 
-KDTreeNode buildKDTree(SPKDArray array, int depth)
+KDTree buildKDTree(SPKDArray array, int depth);

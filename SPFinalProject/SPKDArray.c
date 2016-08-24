@@ -20,24 +20,23 @@ typedef struct sp_pcoor_t{
 	SPPoint point;
 	int axis;
 	int index;
-}SPPCoor;
+};
 
 SPKDArray spKdarrayInit(SPPoint* arr, int size){
-
 	int i,j;
 	int d;
-	SPPCoor** p;
+	SPPCoor* p;
 	int** a;
 	SPKDArray kda;
 	SPPoint* tmpArray;
-	SPPCoor* pcoor;
+	SPPCoor pcoor;
 	if (arr==NULL || size<=0)
 			return NULL;
 	kda = (SPKDArray)malloc(sizeof(*kda));
 	if(kda == NULL){//allocation fails
 		return NULL;
 	}
-	p = (SPPCoor**)malloc(size*sizeof(SPPoint*));//TODO: needs to be an array of pcoors, must check if type correct
+	p = (SPPCoor*)malloc(size*sizeof(*p));//TODO: needs to be an array of pcoors, must check if type correct
 	if(p == NULL){//allocation fails
 		free(kda);
 		return NULL;
@@ -66,7 +65,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			return NULL;
 		}
 	}
-	pcoor = (SPPCoor*)malloc(sizeof(SPPCoor));
+	pcoor = (SPPCoor)malloc(sizeof(*pcoor));
 	if(pcoor == NULL){//allocation fails
 		free(kda);
 		free(p);
@@ -101,7 +100,8 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 SPKDArray spKdarraySplit(SPKDArray kdArr, int coor){
 	int i,j,s;
 	int* x;
-	SPPoint* p1,p2;
+	SPPoint* p1;
+	SPPoint* p2;
 	if (kdArr==NULL||coor<0)
 		return NULL;
 	s = kdArr->size;
@@ -132,8 +132,8 @@ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor){
 }
 
 int compByAxis(const void* p1, const void* p2){
-    SPPCoor* a = (SPPCoor*)p1;
-    SPPCoor* b = (SPPCoor*)p2;
+    SPPCoor a = (SPPCoor)p1;
+    SPPCoor b = (SPPCoor)p2;
     return ((spPointGetAxisCoor(a->point,a->axis))-(spPointGetAxisCoor(b->point,b->axis)));
 }
 

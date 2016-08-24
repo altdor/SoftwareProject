@@ -22,16 +22,17 @@ typedef struct sp_config_t {
 	bool spMinimalGUI;
 	int spLoggerLevel;
 	char* spLoggerFilename;
-}SP_CONFIG;
+};
 
 #define BUFSIZE
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 	assert(msg!=NULL);
-	SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+	SPConfig cnfg = (SPConfig)malloc(sizeof(*cnfg));
 	char input[4];
 	char* string=NULL;
-    FILE* fp
-	int n=0,i=0;
+    FILE* fp;
+	int n=0;
+	int i=0;
     dfult(cnfg);
 	if(filename == NULL){
 		msg= SP_CONFIG_INVALID_ARGUMENT;
@@ -310,7 +311,7 @@ void dfult(SPConfig confg){
 		confg->spLoggerFilename = (char*)malloc(BUFSIZE)
 		confg->spLoggerFilename = "stdout";
 }
-void spConfigDestroy(SP_CONFIG cnfg){
+void spConfigDestroy(SPConfig cnfg){
 	free(cnfg->spImagesDirectory);
 	free(cnfg->spImagesPrefix);
 	free(cnfg->spImagesSuffix);
