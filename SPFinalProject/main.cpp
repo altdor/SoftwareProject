@@ -11,11 +11,12 @@
 #include "spImageProc.h"
 extern "C"{
 #include "KDTree.h"
+#include "SPKDArray.h"
 }
 
 
-/*int main(){
-
-}*/
+int main(){
+	main2();
+}
 
 

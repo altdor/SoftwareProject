@@ -8,7 +8,7 @@
 /**
  * A data-structure which is used for configuring the system.
  */
-
+typedef struct sp_config_t* SPConfig;
 typedef enum sp_config_msg_t {
 	SP_CONFIG_MISSING_DIR,
 	SP_CONFIG_MISSING_PREFIX,
@@ -26,9 +26,8 @@ typedef enum spKDTreeSplitMethod {
 	MAX_SPREAD,
 	RANDOM,
 	INCREMENTAL
+}SP_KDTREE_SPLIT_METHOD;
 
-} SP_KDTREE_SPLIT_METHOD;
-typedef struct sp_config_t* SPConfig;
 
 /**
  * Creates a new system configuration struct. The configuration struct
@@ -55,7 +54,7 @@ typedef struct sp_config_t* SPConfig;
  *
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
-SP_CONFIG_MSG checkinput(char input[4]);
+SP_CONFIG_MSG checkinput(int* input[4]);
 void dfult(SPConfig confg);
 void trim(char* String);
 /*

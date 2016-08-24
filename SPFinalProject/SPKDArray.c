@@ -16,7 +16,7 @@ struct sp_kdarray_t{
 };
 
 /** Type for defining the SPPoints that can be sorted by specific axis coordinate **/
-typedef struct sp_pcoor_t{
+struct sp_pcoor_t{
 	SPPoint point;
 	int axis;
 	int index;
@@ -137,7 +137,7 @@ int compByAxis(const void* p1, const void* p2){
     return ((spPointGetAxisCoor(a->point,a->axis))-(spPointGetAxisCoor(b->point,b->axis)));
 }
 
-int main(){
+int main2(){
 	int a = 3;
 	printf("%d",a);
 	return 0;
