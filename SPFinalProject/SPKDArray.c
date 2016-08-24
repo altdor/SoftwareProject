@@ -23,26 +23,33 @@ typedef struct sp_pcoor_t{
 }SPPCoor;
 
 SPKDArray spKdarrayInit(SPPoint* arr, int size){
-	if (arr==NULL || size<=0)
-		return NULL;
+
 	int i,j;
-	int d = spPointGetDimension(*arr); //need to check if necessary to check that all the dimensions are equall
-	SPKDArray kda = (SPKDArray)malloc(sizeof(*kda));
+	int d;
+	SPPCoor** p;
+	int** a;
+	SPKDArray kda;
+	SPPoint* tmpArray;
+	SPPCoor* pcoor;
+	if (arr==NULL || size<=0)
+			return NULL;
+	kda = (SPKDArray)malloc(sizeof(*kda));
 	if(kda == NULL){//allocation fails
 		return NULL;
 	}
-	SPPCoor** p = (SPPCoor*)malloc(size*sizeof(SPPCoor));//TODO: needs to be an array of pcoors, must check if type correct
+	p = (SPPCoor**)malloc(size*sizeof(SPPoint*));//TODO: needs to be an array of pcoors, must check if type correct
 	if(p == NULL){//allocation fails
 		free(kda);
 		return NULL;
 	}
-	int** a = (int**)malloc(d*sizeof(int*));
+	d = spPointGetDimension(*arr);//need to check if necessary to check that all the dimensions are equall
+	a = (int**)malloc(d*sizeof(int*));
 	if(a == NULL){//allocation fails
 		free(kda);
 		free(p);
 		return NULL;
 	}
-	SPPoint* tmpArray = (SPPoint*)malloc(size*sizeof(SPPoint));
+	tmpArray = (SPPoint*)malloc(size*sizeof(*tmpArray));
 	if(tmpArray == NULL){//allocation fails
 		free(kda);
 		free(p);
@@ -59,7 +66,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			return NULL;
 		}
 	}
-	SPPCoor* pcoor = (SPPCoor*)malloc(sizeof(SPPCoor));
+	pcoor = (SPPCoor*)malloc(sizeof(SPPCoor));
 	if(pcoor == NULL){//allocation fails
 		free(kda);
 		free(p);
@@ -92,13 +99,16 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 }
 
 SPKDArray spKdarraySplit(SPKDArray kdArr, int coor){
+	int i,j,s;
+	int* x;
+	SPPoint* p1,p2;
 	if (kdArr==NULL||coor<0)
 		return NULL;
-	int i,j;
-	int s = kdArr->size;
-	int* x = (int*)malloc(s*sizeof(int));
-	SPPoint* p1 = (SPPoint*)malloc((s-(s/2))*sizeof(SPPoint));
-	SPPoint* p2 = (SPPoint*)malloc((s/2)*sizeof(SPPoint));
+	s = kdArr->size;
+	 x = (int*)malloc(s*sizeof(int));
+	 p1 = (SPPoint*)malloc((s-(s/2))*sizeof(*p1));
+	 p2 = (SPPoint*)malloc((s/2)*sizeof(*p2));
+
 	if(x == NULL)//allocation fails
 		return NULL;
 	if(p1 == NULL){//allocation fails
@@ -127,8 +137,8 @@ int compByAxis(const void* p1, const void* p2){
     return ((spPointGetAxisCoor(a->point,a->axis))-(spPointGetAxisCoor(b->point,b->axis)));
 }
 
-/*int main(){
+int main(){
 	int a = 3;
 	printf("%d",a);
 	return 0;
-}*/
+}

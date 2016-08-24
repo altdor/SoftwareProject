@@ -1,62 +1,172 @@
-16:00:36 **** Incremental Build of configuration Debug for project SPFinalProject ****
+14:08:23 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
-In file included from ..\SPKDArray.c:7:0:
-..\SPKDArray.h:18:25: error: unknown type name 'SPPoint'
- SPKDArray spKdarrayInit(SPPoint* arr, int size);
-                         ^
-..\SPKDArray.c: In function 'spKdarrayInit':
-..\SPKDArray.c:26:19: error: expected expression before 'int'
-  if (arr==NULL || int<=0)
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:30:2: warning: implicit declaration of function 'malloc' [-Wimplicit-function-declaration]
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+  ^
+..\SPConfig.c:30:30: warning: incompatible implicit declaration of built-in function 'malloc'
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+                              ^
+..\SPConfig.c:30:44: error: invalid type argument of unary '*' (have 'SP_CONFIG')
+  SP_CONFIG cnfg = (SP_CONFIG)malloc(sizeof(*cnfg));
+                                            ^
+..\SPConfig.c:34:2: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'int'
+  int n=0,i=0;
+  ^
+..\SPConfig.c:35:5: error: incompatible type for argument 1 of 'dfult'
+     dfult(cnfg);
+     ^
+In file included from ..\SPConfig.c:10:0:
+..\SPConfig.h:59:6: note: expected 'SPConfig' but argument is of type 'SP_CONFIG'
+ void dfult(SPConfig confg);
+      ^
+..\SPConfig.c:37:6: warning: assignment makes pointer from integer without a cast
+   msg= SP_CONFIG_INVALID_ARGUMENT;
+      ^
+..\SPConfig.c:40:5: error: 'fp' undeclared (first use in this function)
+     fp = fopen("argv1","r");
+     ^
+..\SPConfig.c:40:5: note: each undeclared identifier is reported only once for each function it appears in
+..\SPConfig.c:42:9: warning: assignment makes pointer from integer without a cast
+      msg= SP_CONFIG_CANNOT_OPEN_FILE;
+         ^
+..\SPConfig.c:45:5: warning: implicit declaration of function 'calloc' [-Wimplicit-function-declaration]
+     string = (char*)calloc(BUFSIZE,1);
+     ^
+..\SPConfig.c:45:21: warning: incompatible implicit declaration of built-in function 'calloc'
+     string = (char*)calloc(BUFSIZE,1);
+                     ^
+..\SPConfig.c:45:35: error: expected expression before ',' token
+     string = (char*)calloc(BUFSIZE,1);
+                                   ^
+..\SPConfig.c:47:10: warning: assignment makes pointer from integer without a cast
+      msg = SP_CONFIG_ALLOC_FAIL;
+          ^
+..\SPConfig.c:50:39: error: expected expression before ',' token
+     while((n = fread(string,1, BUFSIZE,fp))>0){
+                                       ^
+..\SPConfig.c:52:11: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+      trim(*string);
+           ^
+In file included from ..\SPConfig.c:10:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:53:19: warning: comparison between pointer and integer
+      if (string[0]!="#"){
                    ^
-..\SPKDArray.c:34:2: error: conversion to non-scalar type requested
-  SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
-  ^
-..\SPKDArray.c:45:22: warning: initialization from incompatible pointer type
-  SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
-                      ^
-..\SPKDArray.c:64:11: warning: assignment makes integer from pointer without a cast
-   (*a)[i] = (int*)malloc(size*sizeof(int));
-           ^
-..\SPKDArray.c:65:14: warning: comparison between pointer and integer
-   if((*a)[i] == NULL){//allocation fails
-              ^
-..\SPKDArray.c:73:2: error: conversion to non-scalar type requested
-  SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
-  ^
-..\SPKDArray.c:74:11: error: invalid operands to binary == (have 'SPPCoor' and 'void *')
-  if(pcoor == NULL){//allocation fails
-           ^
-..\SPKDArray.c:82:9: error: invalid type argument of '->' (have 'SPPCoor')
-    pcoor->axis=i;
+..\SPConfig.c:53:19: warning: comparison with string literal results in unspecified behavior [-Waddress]
+..\SPConfig.c:54:7: warning: implicit declaration of function 'strchr' [-Wimplicit-function-declaration]
+       if(strchr(string,"#") != NULL){
+       ^
+..\SPConfig.c:54:10: warning: incompatible implicit declaration of built-in function 'strchr'
+       if(strchr(string,"#") != NULL){
+          ^
+..\SPConfig.c:54:24: warning: passing argument 2 of 'strchr' makes integer from pointer without a cast
+       if(strchr(string,"#") != NULL){
+                        ^
+..\SPConfig.c:54:24: note: expected 'int' but argument is of type 'char *'
+..\SPConfig.c:55:12: warning: assignment makes pointer from integer without a cast
+        msg = SP_CONFIG_INVALID_ARGUMENT;
+            ^
+..\SPConfig.c:58:15: warning: incompatible implicit declaration of built-in function 'strchr'
+       start = strchr(string,"=") + 1
+               ^
+..\SPConfig.c:58:29: warning: passing argument 2 of 'strchr' makes integer from pointer without a cast
+       start = strchr(string,"=") + 1
+                             ^
+..\SPConfig.c:58:29: note: expected 'int' but argument is of type 'char *'
+..\SPConfig.c:58:13: warning: assignment makes integer from pointer without a cast
+       start = strchr(string,"=") + 1
+             ^
+..\SPConfig.c:59:7: error: expected ';' before 'if'
+       if(strstr(string,"spImagesDirectory")){
+       ^
+..\SPConfig.c:51:10: warning: variable 'start' set but not used [-Wunused-but-set-variable]
+      int start;
+          ^
+..\SPConfig.c:256:9: error: incompatible types when assigning to type 'enum SP_CONFIG_MSG *' from type 'SP_CONFIG_MSG'
+     msg = checkinput(input);
          ^
-..\SPKDArray.c:83:9: error: invalid type argument of '->' (have 'SPPCoor')
-    pcoor->point = tmpArray[j];
-         ^
-..\SPKDArray.c:84:9: error: invalid type argument of '->' (have 'SPPCoor')
-    pcoor->index=j;
-         ^
-..\SPKDArray.c:87:32: warning: passing argument 4 of 'qsort' from incompatible pointer type
-   qsort(p,size,sizeof(SPPCoor),compByAxis);
-                                ^
-In file included from ..\SPKDArray.c:10:0:
-c:\mingw\include\stdlib.h:370:22: note: expected 'int (*)(const void *, const void *)' but argument is of type 'int (*)(const void *, const void *, void *)'
- _CRTIMP void __cdecl qsort(void*, size_t, size_t,
-                      ^
-..\SPKDArray.c:89:18: error: invalid type argument of '->' (have 'SPPCoor')
-    a[i][j] = p[j]->index;
-                  ^
-..\SPKDArray.c: At top level:
-..\SPKDArray.c:102:53: error: expected identifier or '(' before '{' token
- SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
-                                                     ^
-..\SPKDArray.c:106:5: error: conflicting types for 'compByAxis'
- int compByAxis (const void* p1, const void* p2){
+..\SPConfig.c:257:12: warning: comparison between pointer and integer
+     if(msg == SP_CONFIG_SUCCESS)
+            ^
+..\SPConfig.c:258:6: error: incompatible types when returning type 'SP_CONFIG' but 'SPConfig' was expected
+      return cnfg;
+      ^
+..\SPConfig.c:259:5: error: incompatible type for argument 1 of 'spConfigDestroy'
+     spConfigDestroy(cnfg);
      ^
-In file included from ..\SPKDArray.c:7:0:
-..\SPKDArray.h:30:5: note: previous declaration of 'compByAxis' was here
- int compByAxis (const void* p1, const void* p2, void* axis);
+In file included from ..\SPConfig.c:10:0:
+..\SPConfig.h:178:6: note: expected 'SPConfig' but argument is of type 'SP_CONFIG'
+ void spConfigDestroy(SPConfig config);
+      ^
+..\SPConfig.c:34:10: warning: unused variable 'i' [-Wunused-variable]
+  int n=0,i=0;
+          ^
+..\SPConfig.c:34:6: warning: variable 'n' set but not used [-Wunused-but-set-variable]
+  int n=0,i=0;
+      ^
+..\SPConfig.c: In function 'trim':
+..\SPConfig.c:281:5: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+     int len = strlen(String);
      ^
+..\SPConfig.c:281:15: warning: incompatible implicit declaration of built-in function 'strlen'
+     int len = strlen(String);
+               ^
+..\SPConfig.c:284:5: warning: implicit declaration of function 'isspace' [-Wimplicit-function-declaration]
+     while(isspace(String[src])) src++;
+     ^
+..\SPConfig.c: In function 'dfult':
+..\SPConfig.c:301:3: error: expected ';' before 'confg'
+   confg->spPCAFileName = (char*)malloc(BUFSIZE)
+   ^
+..\SPConfig.c:306:26: error: expected identifier or '(' before '=' token
+   SP_KDTREE_SPLIT_METHOD = MAX_SPREAD;
+                          ^
+..\SPConfig.c:310:36: warning: incompatible implicit declaration of built-in function 'malloc'
+   confg->spLoggerFilename = (char*)malloc(BUFSIZE)
+                                    ^
+..\SPConfig.c:310:36: error: too few arguments to function 'malloc'
+..\SPConfig.c:311:3: error: expected ';' before 'confg'
+   confg->spLoggerFilename = "stdout";
+   ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:313:6: error: conflicting types for 'spConfigDestroy'
+ void spConfigDestroy(SP_CONFIG cnfg){
+      ^
+In file included from ..\SPConfig.c:10:0:
+..\SPConfig.h:178:6: note: previous declaration of 'spConfigDestroy' was here
+ void spConfigDestroy(SPConfig config);
+      ^
+..\SPConfig.c: In function 'spConfigDestroy':
+..\SPConfig.c:314:2: warning: implicit declaration of function 'free' [-Wimplicit-function-declaration]
+  free(cnfg->spImagesDirectory);
+  ^
+..\SPConfig.c:314:2: warning: incompatible implicit declaration of built-in function 'free'
+..\SPConfig.c:314:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesDirectory);
+           ^
+..\SPConfig.c:315:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesPrefix);
+           ^
+..\SPConfig.c:316:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesSuffix);
+           ^
+..\SPConfig.c:317:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spPCAFileName);
+           ^
+..\SPConfig.c:318:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spLoggerFilename);
+           ^
+..\SPConfig.c:319:11: error: invalid type argument of '->' (have 'SP_CONFIG')
+  free(cnfg->spImagesPrefix);
+           ^
+..\SPConfig.c:320:2: error: incompatible type for argument 1 of 'free'
+  free(cnfg);
+  ^
+..\SPConfig.c:320:2: note: expected 'void *' but argument is of type 'SP_CONFIG'
 
-16:00:36 Build Finished (took 196ms)
+14:08:24 Build Finished (took 296ms)
 

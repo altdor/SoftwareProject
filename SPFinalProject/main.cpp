@@ -7,7 +7,7 @@
  */
 
 
-#include <cstdio.h>
+
 #include "spImageProc.h"
 extern "C"{
 #include "KDTree.h"

@@ -1,15 +1,13 @@
 #
-#Tue Aug 23 16:00:36 IDT 2016
+#Wed Aug 24 14:08:24 IDT 2016
 Debug/SPConfig.o=1
-SPKDArray.h=1
 Debug/SPFinalProject.exe=1
-SPConfig.h=1
+SPKDArray.h=1
 main.cpp=1
 Debug/main.o=1
 SPKDArray.c=1
 SPConfig.c=1
 KDTree.h=1
 Debug/SPKDArray.o=1
-Debug/SPImageProc.o=1
 Debug/KDTree.o=1
 KDTree.c=1
