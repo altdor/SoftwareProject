@@ -23,7 +23,7 @@ typedef struct sp_pcoor_t{
 }SPPCoor;
 
 SPKDArray spKdarrayInit(SPPoint* arr, int size){
-	if (arr==NULL || int<=0)
+	if (arr==NULL || size<=0)
 		return NULL;
 	int i,j;
 	int d = spPointGetDimension(*arr); //need to check if necessary to check that all the dimensions are equall
@@ -31,7 +31,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	if(kda == NULL){//allocation fails
 		return NULL;
 	}
-	SPPCoor* p = (SPPCoor)malloc(size*sizeof(SPPCoor));
+	SPPCoor** p = (SPPCoor*)malloc(size*sizeof(SPPCoor));//TODO: needs to be an array of pcoors, must check if type correct
 	if(p == NULL){//allocation fails
 		free(kda);
 		return NULL;
@@ -42,27 +42,16 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 		free(p);
 		return NULL;
 	}
-	SPPoint* tmpArray = (SPPoint)malloc(size*sizeof(SPPoint));
+	SPPoint* tmpArray = (SPPoint*)malloc(size*sizeof(SPPoint));
 	if(tmpArray == NULL){//allocation fails
 		free(kda);
 		free(p);
 		free(a);
 		return NULL;
 	}
-	for (i=0; i<size; i++){
-		tmpArray[i] = (SPPoint)malloc(sizeof(SPPoint));
-		if(tmpArray[i] == NULL){//allocation fails
-			free(kda);
-			free(p);
-			free(a);
-			free(tmpArray);
-			return NULL;
-		}
-		tmpArray[i] = spPointCopy(arr[i]);
-	}
 	for (i=0; i<d; i++){
-		(*a)[i] = (int*)malloc(size*sizeof(int));
-		if((*a)[i] == NULL){//allocation fails
+		a[i] = (int*)malloc(size*sizeof(int));
+		if(a[i] == NULL){//allocation fails
 			free(kda);
 			free(p);
 			free(a);
@@ -70,12 +59,15 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			return NULL;
 		}
 	}
-	SPPCoor pcoor = (SPPCoor)malloc(sizeof(SPPCoor));
+	SPPCoor* pcoor = (SPPCoor*)malloc(sizeof(SPPCoor));
 	if(pcoor == NULL){//allocation fails
 		free(kda);
 		free(p);
 		free(a);
 		free(tmpArray);
+	}
+	for (i=0; i<size; i++){
+		tmpArray[i] = spPointCopy(arr[i]);
 	}
 	for (i=0; i<d; i++){
 		for(j=0; j<size; j++){
@@ -99,18 +91,44 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	return kda;
 }
 
-SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);{
+SPKDArray spKdarraySplit(SPKDArray kdArr, int coor){
+	if (kdArr==NULL||coor<0)
+		return NULL;
+	int i,j;
+	int s = kdArr->size;
+	int* x = (int*)malloc(s*sizeof(int));
+	SPPoint* p1 = (SPPoint*)malloc((s-(s/2))*sizeof(SPPoint));
+	SPPoint* p2 = (SPPoint*)malloc((s/2)*sizeof(SPPoint));
+	if(x == NULL)//allocation fails
+		return NULL;
+	if(p1 == NULL){//allocation fails
+		free(x);
+		return NULL;
+	}
+	if(p2 == NULL){//allocation fails
+		free(x);
+		free(p1);
+		return NULL;
+	}
+	for (i=0; i<(s-(s/2)); i++){
+		x[(kdArr->indMat)[coor][i]] = 0;
+		p1[i] = (kdArr->pointArr)[(kdArr->indMat)[coor][i]];
+	}
+	for (i=(s-(s/2)); i<s; i++){
+		x[(kdArr->indMat)[coor][i]] = 1;
+		p2[i-(s-(s/2))] = (kdArr->pointArr)[(kdArr->indMat)[coor][i]];
+	}
 
 }
 
-int compByAxis (const void* p1, const void* p2){
+int compByAxis(const void* p1, const void* p2){
     SPPCoor* a = (SPPCoor*)p1;
     SPPCoor* b = (SPPCoor*)p2;
-    return (spPointGetAxisCoor(a->point,a->axis)-spPointGetAxisCoor(b->point,b->axis));
+    return ((spPointGetAxisCoor(a->point,a->axis))-(spPointGetAxisCoor(b->point,b->axis)));
 }
 
-int main(){
+/*int main(){
 	int a = 3;
 	printf("%d",a);
 	return 0;
-}
+}*/
