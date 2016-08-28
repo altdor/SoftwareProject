@@ -1,4 +1,4 @@
-#include "KDTree.h"
+/*#include "KDTree.h"
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -58,3 +58,4 @@ KDTree buildKDTree(SPKDArray array, int depth){
 	}
 	return kdtree;
 }
+*/
