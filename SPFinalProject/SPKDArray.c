@@ -41,7 +41,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 		free(kda);
 		return NULL;
 	}
-	d = spPointGetDimension(*arr);//need to check if necessary to check that all the dimensions are equall
+	d = spPointGetDimension(*arr);//TODO: need to check if necessary to check that all the dimensions are equall
 	a = (int**)malloc(d*sizeof(int*));
 	if(a == NULL){//allocation fails
 		free(kda);
@@ -98,7 +98,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 }
 
 SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
-	int i,s;
+	int i,j,d,s,ind,pointerL,pointerR;
 	int* x;
 	int* map1;
 	int* map2;
@@ -109,7 +109,10 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 	SPKDArray* splitted;
 	if (kdArr==NULL||coor<0)
 		return NULL;
+	d = spPointGetDimension(*kdArr->pointArr);
 	s = kdArr->size;
+	pointerR = 0;
+	pointerL = 0;
 	x = (int*)malloc(s*sizeof(int));
 	map1 = (int*)malloc(s*sizeof(int));
 	map2 = (int*)malloc(s*sizeof(int));
@@ -130,7 +133,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		return NULL;
 	}
 
-	//creating the matrices x, p1, p2, map1 and map2 as instructed
+	//creating the arrays x, p1, p2, map1 and map2 as instructed
 
 	for (i=0; i<s; i++){
 		map1[i]=-1;
@@ -147,6 +150,27 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		map2[kdArr->indMat[coor][i]]=i-(s/2);
 	}
 
+	//creating the matrices A1 & A2 as instructed
+
+	for (i=0; i<d; i++){
+		for (j=0; j<s; j++){
+			ind = kdArr->indMat[i][j];
+			if (x[ind]==0){
+				kdLeft->indMat[i][pointerL] = map1[ind];
+				pointerL++;
+			}
+			if (x[ind]==1){
+				kdRight->indMat[i][pointerR] = map2[ind];
+				pointerR++;
+			}
+		}
+	}
+	kdLeft->pointArr = p1;
+	kdRight->pointArr = p2;
+	kdLeft->size = (s-(s/2));
+	kdRight->size = (s/2);
+	splitted[0] = kdLeft;
+	splitted[1] = kdRight;
 	return splitted;
 }
 
