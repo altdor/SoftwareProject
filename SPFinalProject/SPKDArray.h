@@ -24,7 +24,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size);
  * first [n/2]  points with respect to the coordinate coor are in kdLeft
  * and the rest of the points are in kdRight.
  */
-SPKDArray spKdarraySplit(SPKDArray kdArr, int coor);
+SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor);
 
 /**
  * compares between two sppoints via axis-coordinate "axis"
