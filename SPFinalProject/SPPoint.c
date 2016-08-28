@@ -108,6 +108,10 @@ double spPointGetAxisCoor(SPPoint point, int axis){
 	assert(axis<point->dim);
 	return point->data[axis];
 }
+double* spPointGetData(SPPoint point){
+	assert(point!=NULL);
+	return point->data;
+}
 /**
  * Calculates the L2-squared distance between p and q.
  * The L2-squared distance is defined as:

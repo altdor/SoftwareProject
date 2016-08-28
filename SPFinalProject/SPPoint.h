@@ -92,7 +92,7 @@ int spPointGetIndex(SPPoint point);
  * The value of the given coordinate (p_axis will be returned)
  */
 double spPointGetAxisCoor(SPPoint point, int axis);
-
+double* spPointGetData(SPPoint point);
 /**
  * Calculates the L2-squared distance between p and q.
  * The L2-squared distance is defined as:

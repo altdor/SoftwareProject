@@ -152,6 +152,8 @@ int spConfigGetPCADim(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 		int index);
+SP_CONFIG_MSG spConfigGetImagePathWithoutSuffix(char* imagePath, const SPConfig config,
+		int index);
 
 /**
  * The function stores in pcaPath the full path of the pca file.
@@ -176,5 +178,7 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config);
  * If config == NULL nothig is done.
  */
 void spConfigDestroy(SPConfig config);
-
+SP_LOGGER_LEVEL GetSpLoggerLevel(SPConfig config);
+int GetSpLoggerLevelNum(SPConfig config);
+char* GetSpLoggerFilename(SPConfig config);
 #endif /* SPCONFIG_H_ */

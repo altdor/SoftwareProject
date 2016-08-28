@@ -1,0 +1,29 @@
+/*
+ * main.cpp
+
+ *
+ *  Created on: 21 баев 2016
+ *      Author: DorAlt
+ */
+
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "spImageProc.h"
+extern "C"{
+#include "SPConfig.h"
+#include "SPPoint.h"
+#include "MainAux.h"
+}
+
+#define BUFSIZE 1024
+
+
+int main(int argc, const char* argv){
+	SPConfig config;
+	char* filename
+}
+
+
