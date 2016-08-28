@@ -1,11 +1,6 @@
-17:35:45 **** Incremental Build of configuration Debug for project SPFinalProject ****
+09:50:25 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
-In file included from ..\KDTree.c:8:0:
-..\SPKDArray.c: In function 'spKdarraySplit':
-..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
-  int i,j,s;
-        ^
 ..\KDTree.c: In function 'buildKDTree':
 ..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
     spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
@@ -55,11 +50,6 @@ In file included from ..\KDTree.c:8:0:
 ..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
  KDTree buildKDTree(SPKDArray array, int depth){
         ^
-In file included from ..\KDTree.c:8:0:
-..\SPKDArray.c: In function 'spKdarraySplit':
-..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
- }
- ^
 
-17:35:46 Build Finished (took 193ms)
+09:50:25 Build Finished (took 199ms)
 

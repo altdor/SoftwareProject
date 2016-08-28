@@ -2,16 +2,26 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="spConfigDestroy" key="selection"/>
+		<item value="trim" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="destroy"/>
-			<item value="dim"/>
+			<item value="trim"/>
+			<item value="(n-(int)strlen(start))"/>
+			<item value="strlen(start)"/>
+			<item value="i ="/>
+			<item value="i="/>
+			<item value="i"/>
+			<item value="n-strlen(start)"/>
+			<item value="SP_CONFIG"/>
 		</list>
 		<list key="replacehistory">
+			<item value="len"/>
+			<item value="(int)strlen(start)"/>
+			<item value="(n-strlen(start))"/>
+			<item value="SPConfig"/>
 			<item value="spConfigDestroy"/>
 		</list>
 	</section>
@@ -19,7 +29,7 @@
 		<item value="257" key="DIALOG_WIDTH"/>
 		<item value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI" key="DIALOG_FONT_NAME"/>
 		<item value="381" key="DIALOG_HEIGHT"/>
-		<item value="900" key="DIALOG_X_ORIGIN"/>
-		<item value="146" key="DIALOG_Y_ORIGIN"/>
+		<item value="1039" key="DIALOG_X_ORIGIN"/>
+		<item value="355" key="DIALOG_Y_ORIGIN"/>
 	</section>
 </section>

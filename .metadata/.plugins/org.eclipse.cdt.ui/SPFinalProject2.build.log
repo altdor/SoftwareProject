@@ -1,0 +1,55 @@
+09:50:25 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:52:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:52:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:59:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:59:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:61:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:62:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+
+09:50:25 Build Finished (took 165ms)
+
