@@ -36,7 +36,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	if(kda == NULL){//allocation fails
 		return NULL;
 	}
-	p = (SPPCoor*)malloc(size*sizeof(*p));//TODO: needs to be an array of pcoors, must check if type correct
+	p = (SPPCoor*)malloc(size*sizeof(SPPCoor));
 	if(p == NULL){//allocation fails
 		free(kda);
 		return NULL;
@@ -97,18 +97,27 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	return kda;
 }
 
-SPKDArray spKdarraySplit(SPKDArray kdArr, int coor){
-	int i,j,s;
+SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
+	int i,s;
 	int* x;
+	int* map1;
+	int* map2;
 	SPPoint* p1;
 	SPPoint* p2;
+	SPKDArray kdLeft;
+	SPKDArray kdRight;
+	SPKDArray* splitted;
 	if (kdArr==NULL||coor<0)
 		return NULL;
 	s = kdArr->size;
-	 x = (int*)malloc(s*sizeof(int));
-	 p1 = (SPPoint*)malloc((s-(s/2))*sizeof(*p1));
-	 p2 = (SPPoint*)malloc((s/2)*sizeof(*p2));
-
+	x = (int*)malloc(s*sizeof(int));
+	map1 = (int*)malloc(s*sizeof(int));
+	map2 = (int*)malloc(s*sizeof(int));
+	p1 = (SPPoint*)malloc((s-(s/2))*sizeof(*p1));
+	p2 = (SPPoint*)malloc((s/2)*sizeof(*p2));
+	kdLeft = (SPKDArray)malloc(sizeof(*kdLeft));
+	kdRight = (SPKDArray)malloc(sizeof(*kdRight));
+	splitted = (SPKDArray*)malloc(2*sizeof(SPKDArray)); //TODO: add all the allocation fails and the correct frees
 	if(x == NULL)//allocation fails
 		return NULL;
 	if(p1 == NULL){//allocation fails
@@ -120,15 +129,25 @@ SPKDArray spKdarraySplit(SPKDArray kdArr, int coor){
 		free(p1);
 		return NULL;
 	}
+
+	//creating the matrices x, p1, p2, map1 and map2 as instructed
+
+	for (i=0; i<s; i++){
+		map1[i]=-1;
+		map2[i]=-1;
+	}
 	for (i=0; i<(s-(s/2)); i++){
 		x[(kdArr->indMat)[coor][i]] = 0;
 		p1[i] = (kdArr->pointArr)[(kdArr->indMat)[coor][i]];
+		map1[kdArr->indMat[coor][i]]=i;
 	}
 	for (i=(s-(s/2)); i<s; i++){
 		x[(kdArr->indMat)[coor][i]] = 1;
 		p2[i-(s-(s/2))] = (kdArr->pointArr)[(kdArr->indMat)[coor][i]];
+		map2[kdArr->indMat[coor][i]]=i-(s/2);
 	}
 
+	return splitted;
 }
 
 int compByAxis(const void* p1, const void* p2){
