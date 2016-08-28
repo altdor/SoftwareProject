@@ -38726,3 +38726,2743 @@ In file included from ..\KDTree.c:8:0:
  }
  ^
 Info: Nothing to build for try
+12:05:58 **** Clean-only build of configuration Debug for project SPFinalProject ****
+rm -rf main.d SPConfig.o main.o SPList.o SPListElement.o SPList.d SPPoint.o SPPoint.d SPConfig.d SPLogger.o KDTree.o SPFinalProject.exe SPLogger.d SPKDArray.d SPBPriorityQueue.d KDTree.d SPKDArray.o SPBPriorityQueue.o SPListElement.d SPImageProc.d SPImageProc.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\MinGW\bin;\bin;C:/Program Files/Java/jre1.8.0_73/bin/server;C:/Program Files/Java/jre1.8.0_73/bin;C:/Program Files/Java/jre1.8.0_73/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\MATLAB\R2013a\runtime\win64;C:\Program Files\MATLAB\R2013a\bin;C:\Program Files (x86)\GitExtensions\;C:\Program Files (x86)\Skype\Phone\;C:\MinGW\bin;C:\MinGW\libexec\gcc\mingw32\4.9.3;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\MATLAB\R2013a\runtime\win64;C:\MinGW\libexec\gcc\mingw32\4.9.3;C:\MinGW\bin;C:\opencv\build\x86\mingw\bin;C:\Users\DorAlt\Documents\work\eclipse]
+
+12:05:58 **** Clean-only build of configuration Debug for project SPFinalProject ****
+12:06:05 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+12:06:06 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+12:06:07 **** Rebuild of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:18: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                  ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:28: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                            ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:463:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPList.o "..\\SPList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\main.cpp:11:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,s;
+        ^
+..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,s;
+        ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Nothing to build for try
+12:07:12 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+12:07:13 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+12:07:13 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,s;
+        ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Nothing to build for try
+12:07:29 **** Clean-only build of configuration Debug for project SPFinalProject ****
+rm -rf main.d SPConfig.o main.o SPList.o SPListElement.o SPList.d SPPoint.o SPPoint.d SPConfig.d SPLogger.o KDTree.o SPFinalProject.exe SPLogger.d SPKDArray.d SPBPriorityQueue.d KDTree.d SPKDArray.o SPBPriorityQueue.o SPListElement.d SPImageProc.d SPImageProc.o 
+Cannot run program "rm": Launching failed
+
+Error: Program "rm" not found in PATH
+PATH=[C:\MinGW\bin;\bin;C:/Program Files/Java/jre1.8.0_73/bin/server;C:/Program Files/Java/jre1.8.0_73/bin;C:/Program Files/Java/jre1.8.0_73/lib/amd64;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\MATLAB\R2013a\runtime\win64;C:\Program Files\MATLAB\R2013a\bin;C:\Program Files (x86)\GitExtensions\;C:\Program Files (x86)\Skype\Phone\;C:\MinGW\bin;C:\MinGW\libexec\gcc\mingw32\4.9.3;C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Windows Live\Shared;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Hewlett-Packard\SimplePass\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files\MATLAB\R2013a\runtime\win64;C:\MinGW\libexec\gcc\mingw32\4.9.3;C:\MinGW\bin;C:\opencv\build\x86\mingw\bin;C:\Users\DorAlt\Documents\work\eclipse]
+
+12:07:29 **** Clean-only build of configuration Debug for project SPFinalProject ****
+12:07:33 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+12:07:33 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+12:07:34 **** Rebuild of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,s;
+        ^
+..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,s;
+        ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Nothing to build for try
+12:13:02 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+12:13:03 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+12:13:04 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:18: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                  ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:28: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                            ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:463:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\main.cpp:11:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:101:8: warning: unused variable 'j' [-Wunused-variable]
+  int i,j,s;
+        ^
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+In file included from ..\KDTree.c:8:0:
+..\SPKDArray.c: In function 'spKdarraySplit':
+..\SPKDArray.c:132:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+Info: Nothing to build for try
+09:31:54 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:31:55 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:31:55 **** Rebuild of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+In file included from ..\KDTree.c:9:0:
+..\KDTree.h:23:20: error: unknown type name 'SPKDArray'
+ KDTree buildKDTree(SPKDArray array, int depth);
+                    ^
+..\KDTree.c:14:22: fatal error: SPLogger.h: No such file or directory
+ #include "SPLogger.h"
+                      ^
+compilation terminated.
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+09:31:56 **** Incremental Build of configuration Debug for project project22222 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o sp_image_proc_util.o "..\\sp_image_proc_util.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -o main_aux.o "..\\main_aux.cpp" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o project22222.exe sp_image_proc_util.o main_aux.o main.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+09:31:59 **** Incremental Build of configuration Debug for project targil1 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o MathIsFun.o "..\\MathIsFun.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.c" 
+gcc -o targil1.exe main.o MathIsFun.o 
+Info: Nothing to build for targil2
+09:32:00 **** Incremental Build of configuration Debug for project targil3 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_logger_unit_test.o" "..\\unit_tests\\sp_logger_unit_test.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_point_unit_test.o" "..\\unit_tests\\sp_point_unit_test.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_bpqueue_unit_test.o" "..\\unit_tests\\sp_bpqueue_unit_test.c" 
+..\unit_tests\sp_bpqueue_unit_test.c:15:13: warning: 'testQueue' defined but not used [-Wunused-function]
+ static bool testQueue()
+             ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o "unit_tests\\sp_list_unit_test.o" "..\\unit_tests\\sp_list_unit_test.c" 
+..\unit_tests\sp_list_unit_test.c:21:13: warning: 'testElementCreate' defined but not used [-Wunused-function]
+ static bool testElementCreate() {
+             ^
+..\unit_tests\sp_list_unit_test.c:28:13: warning: 'testElementCompare' defined but not used [-Wunused-function]
+ static bool testElementCompare() {
+             ^
+..\unit_tests\sp_list_unit_test.c:47:13: warning: 'testElementGetIndex' defined but not used [-Wunused-function]
+ static bool testElementGetIndex() {
+             ^
+..\unit_tests\sp_list_unit_test.c:64:13: warning: 'testElementSetIndex' defined but not used [-Wunused-function]
+ static bool testElementSetIndex() {
+             ^
+..\unit_tests\sp_list_unit_test.c:78:13: warning: 'testIsElementGetValue' defined but not used [-Wunused-function]
+ static bool testIsElementGetValue() {
+             ^
+..\unit_tests\sp_list_unit_test.c:94:13: warning: 'testElementSetValue' defined but not used [-Wunused-function]
+ static bool testElementSetValue() {
+             ^
+..\unit_tests\sp_list_unit_test.c:109:13: warning: 'testElementCopy' defined but not used [-Wunused-function]
+ static bool testElementCopy() {
+             ^
+..\unit_tests\sp_list_unit_test.c:126:13: warning: 'testListCreate' defined but not used [-Wunused-function]
+ static bool testListCreate() {
+             ^
+..\unit_tests\sp_list_unit_test.c:133:13: warning: 'testListCopy' defined but not used [-Wunused-function]
+ static bool testListCopy() {
+             ^
+..\unit_tests\sp_list_unit_test.c:164:13: warning: 'testListGetSize' defined but not used [-Wunused-function]
+ static bool testListGetSize() {
+             ^
+..\unit_tests\sp_list_unit_test.c:182:13: warning: 'testListGetFirst' defined but not used [-Wunused-function]
+ static bool testListGetFirst() {
+             ^
+..\unit_tests\sp_list_unit_test.c:204:13: warning: 'testListGetNext' defined but not used [-Wunused-function]
+ static bool testListGetNext() {
+             ^
+..\unit_tests\sp_list_unit_test.c:220:13: warning: 'testListInsertFirst' defined but not used [-Wunused-function]
+ static bool testListInsertFirst() {
+             ^
+..\unit_tests\sp_list_unit_test.c:243:13: warning: 'testListInsertLast' defined but not used [-Wunused-function]
+ static bool testListInsertLast() {
+             ^
+..\unit_tests\sp_list_unit_test.c:265:13: warning: 'testListInsertBeforeCurrent' defined but not used [-Wunused-function]
+ static bool testListInsertBeforeCurrent() {
+             ^
+..\unit_tests\sp_list_unit_test.c:293:13: warning: 'testListInsertAfterCurrent' defined but not used [-Wunused-function]
+ static bool testListInsertAfterCurrent() {
+             ^
+..\unit_tests\sp_list_unit_test.c:321:13: warning: 'testListClear' defined but not used [-Wunused-function]
+ static bool testListClear() {
+             ^
+..\unit_tests\sp_list_unit_test.c:341:13: warning: 'testListDestroy' defined but not used [-Wunused-function]
+ static bool testListDestroy() {
+             ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPList.o "..\\SPList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+gcc -o targil3.exe "unit_tests\\sp_point_unit_test.o" "unit_tests\\sp_logger_unit_test.o" "unit_tests\\sp_list_unit_test.o" "unit_tests\\sp_bpqueue_unit_test.o" SPPoint.o SPLogger.o SPListElement.o SPList.o SPBPriorityQueue.o 
+09:32:03 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPList.o "..\\SPList.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\main.cpp:11:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:18: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                  ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:28: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                            ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:463:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:39:38 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:39:38 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:39:39 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:39:39 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:40:04 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:40:05 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:40:05 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPList.o "..\\SPList.c" 
+..\SPList.c:11:2: error: unknown type name 'SPListElement'
+  SPListElement data;
+  ^
+..\SPList.c:15:43: error: unknown type name 'SPListElement'
+ Node createNode(Node previous, Node next, SPListElement element);
+                                           ^
+..\SPList.c:25:43: error: unknown type name 'SPListElement'
+ Node createNode(Node previous, Node next, SPListElement element) {
+                                           ^
+..\SPList.c: In function 'destroyNode':
+..\SPList.c:45:17: warning: comparison between pointer and integer
+  if (node->data != NULL) {
+                 ^
+..\SPList.c:46:3: warning: implicit declaration of function 'spListElementDestroy' [-Wimplicit-function-declaration]
+   spListElementDestroy(node->data);
+   ^
+..\SPList.c: At top level:
+..\SPList.c:51:1: error: unknown type name 'SPList'
+ SPList spListCreate() {
+ ^
+..\SPList.c: In function 'spListCreate':
+..\SPList.c:52:2: error: unknown type name 'SPList'
+  SPList list = (SPList) malloc(sizeof(*list));
+  ^
+..\SPList.c:52:17: error: 'SPList' undeclared (first use in this function)
+  SPList list = (SPList) malloc(sizeof(*list));
+                 ^
+..\SPList.c:52:17: note: each undeclared identifier is reported only once for each function it appears in
+..\SPList.c:52:25: error: expected ',' or ';' before 'malloc'
+  SPList list = (SPList) malloc(sizeof(*list));
+                         ^
+..\SPList.c:53:11: warning: comparison between pointer and integer
+  if (list == NULL) {
+           ^
+..\SPList.c:54:3: warning: return makes integer from pointer without a cast
+   return NULL;
+   ^
+..\SPList.c:56:7: error: invalid type argument of '->' (have 'int')
+   list->head = (Node) malloc(sizeof(*list->head));
+       ^
+..\SPList.c:56:42: error: invalid type argument of '->' (have 'int')
+   list->head = (Node) malloc(sizeof(*list->head));
+                                          ^
+..\SPList.c:57:11: error: invalid type argument of '->' (have 'int')
+   if (list->head == NULL) {
+           ^
+..\SPList.c:58:9: warning: passing argument 1 of 'free' makes pointer from integer without a cast
+    free(list);
+         ^
+In file included from ..\SPList.c:8:0:
+c:\mingw\include\stdlib.h:357:38: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP void __cdecl __MINGW_NOTHROW free (void*);
+                                      ^
+..\SPList.c:59:4: warning: return makes integer from pointer without a cast
+    return NULL;
+    ^
+..\SPList.c:61:7: error: invalid type argument of '->' (have 'int')
+   list->tail = (Node) malloc(sizeof(*list->tail));
+       ^
+..\SPList.c:61:42: error: invalid type argument of '->' (have 'int')
+   list->tail = (Node) malloc(sizeof(*list->tail));
+                                          ^
+..\SPList.c:62:11: error: invalid type argument of '->' (have 'int')
+   if (list->tail == NULL) {
+           ^
+..\SPList.c:63:13: error: invalid type argument of '->' (have 'int')
+    free(list->head);
+             ^
+..\SPList.c:64:9: warning: passing argument 1 of 'free' makes pointer from integer without a cast
+    free(list);
+         ^
+In file included from ..\SPList.c:8:0:
+c:\mingw\include\stdlib.h:357:38: note: expected 'void *' but argument is of type 'int'
+ _CRTIMP void __cdecl __MINGW_NOTHROW free (void*);
+                                      ^
+..\SPList.c:65:4: warning: return makes integer from pointer without a cast
+    return NULL;
+    ^
+..\SPList.c:67:7: error: invalid type argument of '->' (have 'int')
+   list->head->data = NULL;
+       ^
+..\SPList.c:68:7: error: invalid type argument of '->' (have 'int')
+   list->head->next = list->tail;
+       ^
+..\SPList.c:68:26: error: invalid type argument of '->' (have 'int')
+   list->head->next = list->tail;
+                          ^
+..\SPList.c:69:7: error: invalid type argument of '->' (have 'int')
+   list->head->previous = NULL;
+       ^
+..\SPList.c:70:7: error: invalid type argument of '->' (have 'int')
+   list->tail->data = NULL;
+       ^
+..\SPList.c:71:7: error: invalid type argument of '->' (have 'int')
+   list->tail->next = NULL;
+       ^
+..\SPList.c:72:7: error: invalid type argument of '->' (have 'int')
+   list->tail->previous = list->head;
+       ^
+..\SPList.c:72:30: error: invalid type argument of '->' (have 'int')
+   list->tail->previous = list->head;
+                              ^
+..\SPList.c:73:7: error: invalid type argument of '->' (have 'int')
+   list->current = NULL;
+       ^
+..\SPList.c:74:7: error: invalid type argument of '->' (have 'int')
+   list->size = 0;
+       ^
+..\SPList.c: At top level:
+..\SPList.c:80:1: error: unknown type name 'SPList'
+ SPList spListCopy(SPList list) {
+ ^
+..\SPList.c:80:19: error: unknown type name 'SPList'
+ SPList spListCopy(SPList list) {
+                   ^
+..\SPList.c:102:19: error: unknown type name 'SPList'
+ int spListGetSize(SPList list) {
+                   ^
+..\SPList.c:106:1: error: unknown type name 'SPListElement'
+ SPListElement spListGetFirst(SPList list) {
+ ^
+..\SPList.c:106:30: error: unknown type name 'SPList'
+ SPListElement spListGetFirst(SPList list) {
+                              ^
+..\SPList.c:115:1: error: unknown type name 'SPListElement'
+ SPListElement spListGetNext(SPList list) {
+ ^
+..\SPList.c:115:29: error: unknown type name 'SPList'
+ SPListElement spListGetNext(SPList list) {
+                             ^
+..\SPList.c:129:1: error: unknown type name 'SPListElement'
+ SPListElement spListGetCurrent(SPList list) {
+ ^
+..\SPList.c:129:32: error: unknown type name 'SPList'
+ SPListElement spListGetCurrent(SPList list) {
+                                ^
+..\SPList.c:137:1: error: unknown type name 'SP_LIST_MSG'
+ SP_LIST_MSG spListInsertFirst(SPList list, SPListElement element) {
+ ^
+..\SPList.c:137:31: error: unknown type name 'SPList'
+ SP_LIST_MSG spListInsertFirst(SPList list, SPListElement element) {
+                               ^
+..\SPList.c:137:44: error: unknown type name 'SPListElement'
+ SP_LIST_MSG spListInsertFirst(SPList list, SPListElement element) {
+                                            ^
+..\SPList.c:151:1: error: unknown type name 'SP_LIST_MSG'
+ SP_LIST_MSG spListInsertLast(SPList list, SPListElement element) {
+ ^
+..\SPList.c:151:30: error: unknown type name 'SPList'
+ SP_LIST_MSG spListInsertLast(SPList list, SPListElement element) {
+                              ^
+..\SPList.c:151:43: error: unknown type name 'SPListElement'
+ SP_LIST_MSG spListInsertLast(SPList list, SPListElement element) {
+                                           ^
+..\SPList.c:165:1: error: unknown type name 'SP_LIST_MSG'
+ SP_LIST_MSG spListInsertBeforeCurrent(SPList list, SPListElement element) {
+ ^
+..\SPList.c:165:39: error: unknown type name 'SPList'
+ SP_LIST_MSG spListInsertBeforeCurrent(SPList list, SPListElement element) {
+                                       ^
+..\SPList.c:165:52: error: unknown type name 'SPListElement'
+ SP_LIST_MSG spListInsertBeforeCurrent(SPList list, SPListElement element) {
+                                                    ^
+..\SPList.c:182:1: error: unknown type name 'SP_LIST_MSG'
+ SP_LIST_MSG spListInsertAfterCurrent(SPList list, SPListElement element) {
+ ^
+..\SPList.c:182:38: error: unknown type name 'SPList'
+ SP_LIST_MSG spListInsertAfterCurrent(SPList list, SPListElement element) {
+                                      ^
+..\SPList.c:182:51: error: unknown type name 'SPListElement'
+ SP_LIST_MSG spListInsertAfterCurrent(SPList list, SPListElement element) {
+                                                   ^
+..\SPList.c:199:1: error: unknown type name 'SP_LIST_MSG'
+ SP_LIST_MSG spListRemoveCurrent(SPList list) {
+ ^
+..\SPList.c:199:33: error: unknown type name 'SPList'
+ SP_LIST_MSG spListRemoveCurrent(SPList list) {
+                                 ^
+..\SPList.c:214:1: error: unknown type name 'SP_LIST_MSG'
+ SP_LIST_MSG spListClear(SPList list) {
+ ^
+..\SPList.c:214:25: error: unknown type name 'SPList'
+ SP_LIST_MSG spListClear(SPList list) {
+                         ^
+..\SPList.c:224:20: error: unknown type name 'SPList'
+ void spListDestroy(SPList list) {
+                    ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:40:05 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:41:08 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:41:08 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:41:09 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:18: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                  ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:28: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                            ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:67:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:64:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'printError':
+..\SPConfig.c:371:2: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+  printf("Line: %s\n",line);
+  ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:294:37: note: expected 'const char *' but argument is of type 'unsigned int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW sprintf (char*, const char*, ...);
+                                     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:463:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:294:37: note: expected 'const char *' but argument is of type 'unsigned int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW sprintf (char*, const char*, ...);
+                                     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:81:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:81:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:41:09 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:41:54 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:41:55 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:41:55 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPList.o "..\\SPList.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:81:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:81:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:41:56 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:41:59 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:41:59 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:41:59 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPListElement.o "..\\SPListElement.c" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\SPImageProc.cpp:4:35: fatal error: opencv2/xfeatures2d.hpp: No such file or directory
+ #include <opencv2/xfeatures2d.hpp>
+                                   ^
+compilation terminated.
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:42:00 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:42:01 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:42:02 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:42:02 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:18: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                  ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:28: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                            ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:64:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'printError':
+..\SPConfig.c:371:2: warning: format '%s' expects argument of type 'char *', but argument 2 has type 'int' [-Wformat=]
+  printf("Line: %s\n",line);
+  ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:294:37: note: expected 'const char *' but argument is of type 'unsigned int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW sprintf (char*, const char*, ...);
+                                     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:463:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:294:37: note: expected 'const char *' but argument is of type 'unsigned int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW sprintf (char*, const char*, ...);
+                                     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:81:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:81:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:42:03 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:43:10 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:43:10 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:43:10 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:8:0:
+..\spImageProc.h:3:28: fatal error: opencv2/core.hpp: No such file or directory
+ #include <opencv2/core.hpp>
+                            ^
+compilation terminated.
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:43:11 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:43:12 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:43:12 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:43:13 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:18: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                  ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:28: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (!strcmp(string[0],'#')){
+                            ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:64:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:294:37: note: expected 'const char *' but argument is of type 'unsigned int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW sprintf (char*, const char*, ...);
+                                     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:463:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:294:37: note: expected 'const char *' but argument is of type 'unsigned int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW sprintf (char*, const char*, ...);
+                                     ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:52:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:52:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:59:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:59:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:61:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:62:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:43:14 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:43:41 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:43:41 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:43:42 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:81:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:81:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:43:43 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:43:44 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:43:44 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:43:44 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:43:45 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:44:19 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:44:19 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:44:19 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+..\SPImageProc.cpp:4:35: fatal error: opencv2/xfeatures2d.hpp: No such file or directory
+ #include <opencv2/xfeatures2d.hpp>
+                                   ^
+compilation terminated.
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:44:20 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:48:31 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:48:32 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:48:32 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:48:33 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:48:36 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:48:36 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:48:37 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:48:37 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:48:39 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:48:39 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:48:39 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPKDArray.o "..\\SPKDArray.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+..\SPBPriorityQueue.c: In function 'spBPQueueEnqueue':
+..\SPBPriorityQueue.c:81:6: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+      for(int i = 0; i<spListGetSize(source->list)-1;i++){
+      ^
+..\SPBPriorityQueue.c:81:6: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:48:40 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:49:07 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:49:07 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:49:08 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:8:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o SPPoint.o "..\\SPPoint.c" 
+..\SPPoint.c: In function 'spPointCreate':
+..\SPPoint.c:34:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i=0; i<dim;i++){
+  ^
+..\SPPoint.c:34:2: note: use option -std=c99, -std=gnu99, -std=c11 or -std=gnu11 to compile your code
+..\SPPoint.c: In function 'spPointL2SquaredDistance':
+..\SPPoint.c:128:2: error: 'for' loop initial declarations are only allowed in C99 or C11 mode
+  for(int i = 0; i<dim;i++){
+  ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:49:09 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:49:25 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:49:25 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:49:25 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:52:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:52:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:59:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:59:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:61:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:62:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:49:27 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:49:40 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:49:41 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:49:41 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:52:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:52:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:59:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:59:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:61:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:62:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:49:42 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
+09:50:24 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:50:25 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:50:25 **** Incremental Build of configuration Debug for project SPFinalProject2 ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:50:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:50:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:52:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:52:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:56:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:56:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:59:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:59:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:61:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:62:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:25:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+Info: Nothing to build for project22222
+Info: Nothing to build for targil1
+Info: Nothing to build for targil2
+Info: Nothing to build for targil3
+09:50:25 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+..\KDTree.c: In function 'buildKDTree':
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                       ^
+..\KDTree.c:42:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+    ^
+..\KDTree.c:42:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][0])-(array->pointArr[0][0]));
+                                                               ^
+..\KDTree.c:44:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array, random);
+               ^
+..\KDTree.c:44:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array, random);
+        ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:39: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                       ^
+..\KDTree.c:48:4: error: invalid use of undefined type 'struct sp_point_t'
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+    ^
+..\KDTree.c:48:63: error: dereferencing pointer to incomplete type
+    spread = (int)((array->pointArr[-1][1])-(array->pointArr[1][0]));
+                                                               ^
+..\KDTree.c:51:15: warning: assignment from incompatible pointer type
+    left,right = spKdarraySplit(array,random);
+               ^
+..\KDTree.c:51:8: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+    left,right = spKdarraySplit(array,random);
+        ^
+..\KDTree.c:53:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(left, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+..\KDTree.c:54:30: warning: passing argument 1 of 'buildKDTree' from incompatible pointer type
+   kdtree->left = buildKDTree(right, depth+1);
+                              ^
+..\KDTree.c:17:8: note: expected 'SPKDArray' but argument is of type 'KDTree'
+ KDTree buildKDTree(SPKDArray array, int depth){
+        ^
+Info: Nothing to build for try
