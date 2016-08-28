@@ -1,0 +1,12 @@
+/*
+ * MainAux.h
+ *
+ *  Created on: 28 баев 2016
+ *      Author: DorAlt
+ */
+#include "SPPoint.h"
+bool checkFileName(const char* filename);
+bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures);
+SPPoint* extractFromFiles(char* imagePathnosuf);
+void ErrorLogger(int level, const char* msg, const char* file,
+		const char* function, const int line);

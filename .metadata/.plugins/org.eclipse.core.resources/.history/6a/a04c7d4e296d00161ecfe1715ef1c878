@@ -1,0 +1,129 @@
+/*
+ * main.cpp
+
+ *
+ *  Created on: 21 баев 2016
+ *      Author: DorAlt
+ */
+
+
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+
+#include "spImageProc.h"
+extern "C"{
+#include "SPConfig.h"
+#include "SPPoint.h"
+#include "MainAux.h"
+}
+
+#define BUFSIZE 1024
+#define DEFCON "spcbir.config"
+#define FEATSUF ".feats"
+using namespace sp;
+int main(int argc, const char* argv[]){
+	SPPoint** allImgFeaters;
+	SPLogger splog;
+	SPConfig config;
+	int numOfImages;
+	SP_CONFIG_MSG* msg;
+	SPPoint* features;
+	char* filename = (char*)malloc(BUFSIZE);
+	if(filename == NULL)
+		return -1;
+	strcpy(filename,DEFCON);
+	for(int i=0; i<argc;i++){
+		if(strcmp(argv[i],"-c")==0){
+			if(i+1<argc)
+				strcpy(filename,argv[i+1]);
+		}
+	}
+	if(!checkFileName(filename)){
+		return -1;
+	}
+	config = spConfigCreate(filename,msg);
+	if(*msg != SP_CONFIG_SUCCESS){
+		free(filename);
+		return -1;
+	}
+	if(spConfigIsExtractionMode(config,msg)){
+		if(*msg != SP_CONFIG_SUCCESS){
+			free(filename);
+				return -1;
+		}
+		numOfImages= spConfigGetNumOfImages(config,msg);
+		if(*msg != SP_CONFIG_SUCCESS){
+			free(filename);
+			return -1;
+		}
+		for(int i =0;i<numOfImages;i++){
+			char* imagePath = (char*)malloc(BUFSIZE*3+sizeof(int));
+			int *numOfFeatures=0;
+			char* imagePathnosuf;
+			if(imagePath == NULL)
+				return -1;
+			imagePathnosuf = (char*)malloc(BUFSIZE*3+sizeof(int));
+			if(imagePathnosuf == NULL)
+				return -1;
+			ImageProc* imagep = new ImageProc(config);
+			*msg =spConfigGetImagePath(imagePath, config, i);
+			if(*msg != SP_CONFIG_SUCCESS){
+				free(imagePath);
+				free(imagePathnosuf);
+				free(filename);
+				return -1;
+			}
+			features = imagep->getImageFeatures(imagePath, i,numOfFeatures);
+			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
+			if(*msg != SP_CONFIG_SUCCESS){
+				free(imagePath);
+				free(imagePathnosuf);
+				free(filename);
+				return -1;
+			}
+			strcat(imagePathnosuf,FEATSUF);
+			if(!extractToFile(imagePathnosuf, features, *numOfFeatures)){
+				return -1;
+			}
+
+		}
+	}
+	else{
+		char* imagePathnosuf;
+		numOfImages= spConfigGetNumOfImages(config,msg);
+		if(*msg != SP_CONFIG_SUCCESS){
+			free(filename);
+			return -1;
+		}
+		imagePathnosuf = (char*)malloc(BUFSIZE*3+sizeof(int));
+		if(imagePathnosuf == NULL)
+			return -1;
+
+		numOfImages= spConfigGetNumOfImages(config,msg);
+		if(*msg != SP_CONFIG_SUCCESS){
+			free(filename);
+			return -1;
+		}
+		allImgFeaters = (SPPoint**)malloc(numOfImages*sizeof(allImgFeaters));
+		if(allImgFeaters == NULL)
+				return -1;
+		for(int i=0;i<numOfImages;i++){
+			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
+			if(*msg != SP_CONFIG_SUCCESS){
+				free(imagePathnosuf);
+				free(filename);
+				return -1;
+			}
+			strcat(imagePathnosuf,FEATSUF);
+
+			allImgFeaters[i] = extractFromFiles(imagePathnosuf);
+			if(allImgFeaters[i] == NULL)
+				return -1;
+		}
+
+	}
+
+}
+
+

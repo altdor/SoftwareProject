@@ -1,0 +1,95 @@
+/*
+ * MainAuc.c
+ *
+ *  Created on: 28 баев 2016
+ *      Author: DorAlt
+ */
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "SPConfig.h"
+#include "SPPoint.h"
+#define BUFSIZE 1024
+#define ERROR1 "Invalid command line: use -c <config_filename>"
+#define ERROR2 "The configuration file"
+#define COULDNTOPEN "couldn't be open"
+#define ERROR3 "The default configuration file spcbir.config couldn't be open"
+#define DEFCON "spcbir.config"
+bool checkFileName(const char* filename){
+	FILE* fp;
+	if(strstr(filename, ".")==NULL){
+		printf("%s" ERROR1);
+		return false;
+	}
+	fp = fopen(filename,"r");
+	if(fp==NULL){
+		if(strcmp(filename,DEFCON) == 0){
+			printf("%s",ERROR3);
+			return false;
+		}
+		else{
+			printf("%s %s %s",ERROR2,filename,COULDNTOPEN);
+			return false;
+		}
+	}
+	return true;
+}
+bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures){
+	FILE* featfp;
+	featfp = fopen(imagePathnosuf,"w");
+	if(featfp == NULL){
+		return false;
+	}
+	putc(featfp,numOfFeatures);
+	for(int i = 0; i<numOfFeatures;i++){
+		putc(featfp,'\n');
+		putc(featfp,features->index);
+		putc(featfp,'\n');
+		putc(featfp,features->dim);
+		putc(featfp,'\n');
+		fwrite(features[i]->data, features[i]->dim,sizeof(double),featfp);
+	}
+	return true;
+}
+SPPoint* extractFromFiles(char* imagePathnosuf){
+	FILE* featfp;
+	char* str;
+	int numOfFeatures;
+	SPPoint* features;
+	featfp = fopen(imagePathnosuf,"r");
+	if(featfp == NULL){
+		return NULL;
+	}
+	str = (char*)malloc(BUFSIZE);
+	if(str == NULL){
+		return NULL;
+	}
+	fgets(str,BUFSIZE ,featfp);
+	numOfFeatures = atoi(str);
+	free(str);
+	features = (SPPoint*)malloc(sizeof(*features)*numOfFeatures);
+	for(int i = 0; i<numOfFeatures;i++){
+		int dim, index;
+		double* data;
+		char* str = (char*)malloc(BUFSIZE);
+		if(str == NULL){
+			return NULL;
+		}
+		fgets(str ,BUFSIZE, featfp);
+		index = atoi(str);
+		free(str);
+		str = (char*)malloc(BUFSIZE);
+		if(str == NULL){
+			return NULL;
+		}
+		fgets(str ,BUFSIZE, featfp);
+		index = atoi(str);
+		free(str);
+		data = (double*)malloc(sizeof(double)*dim);
+		fread(data, features[i]->dim,sizeof(double),featfp);
+		features[i] = (SPPoint)malloc(sizeof(*features[i]));
+		features[i] = spPointCreate(data, dim, index);
+	}
+	return features;
+}

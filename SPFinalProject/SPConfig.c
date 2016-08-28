@@ -64,7 +64,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     	linenum++;
     	char* start;
     	trim(string);
-    	if (!strcmp(string[0],'#')){
+    	if (strcmp(string[0],'#')!=0){
     		if(strchr(string,'#') != NULL){
     			printError(filename,linenum, MSG1);
     			*msg = SP_CONFIG_INVALID_ARGUMENT;
@@ -174,13 +174,13 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			char* temp = (char*)malloc(len*sizeof(char));
     			strncpy(temp, start, len);
     			trim(temp);
-    			if(strcmp(temp,"MAX_SPREAD")){
+    			if(strcmp(temp,"MAX_SPREAD")==0){
     				cnfg->splitMethod = MAX_SPREAD;
     			}
-    			else if(strcmp(temp,"RANDOM")){
+    			else if(strcmp(temp,"RANDOM")==0){
     				cnfg->splitMethod = RANDOM;
     			}
-    			else if(strcmp(temp,"INCREMENTAL")){
+    			else if(strcmp(temp,"INCREMENTAL")==0){
     				cnfg->splitMethod = INCREMENTAL;
     			}
     			else{
@@ -209,10 +209,10 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			char* temp = (char*)malloc(len*sizeof(char));
     			strncpy(temp, start, len);
     			trim(temp);
-    			if(strcmp(temp,"false")){
+    			if(strcmp(temp,"false")==0){
     			 	cnfg->spMinimalGUI = false;
     			}
-    			else if(strcmp(temp,"true")){
+    			else if(strcmp(temp,"true")==0){
     				cnfg->spMinimalGUI = true;
     			}
     			else{
@@ -274,10 +274,10 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			char* temp = (char*)malloc(len*sizeof(char));
     			strncpy(temp, start, len);
     			trim(temp);
-    			if(strcmp(temp,"false")){
+    			if(strcmp(temp,"false")==0){
     				cnfg->spExtractionMode = false;
     			}
-    			else if(strcmp(temp,"true")){
+    			else if(strcmp(temp,"true")==0){
   	  				cnfg->spExtractionMode = true;
        			}
     			else{
@@ -443,7 +443,27 @@ SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 		return SP_CONFIG_INDEX_OUT_OF_RANGE;
 	size = strlen(config->spImagesPrefix)+strlen(config->spImagesSuffix)+strlen(config->spImagesDirectory)+sizeof(index);
 	path = (char*)malloc(size*sizeof(char));
-	sprintf(path,sizeof(path),"%s%s%s%d", config->spImagesDirectory, config->spImagesPrefix,config->spImagesSuffix,index);
+	sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+	if(sizeof(path)<=sizeof(imagePath)){
+		strcpy(imagePath,path);
+		free(path);
+		return SP_CONFIG_SUCCESS;
+	}
+	free(path);
+	return SP_CONFIG_INVALID_ARGUMENT;
+}
+SP_CONFIG_MSG spConfigGetImagePathWithoutSuffix(char* imagePath, const SPConfig config,
+		int index){
+	char* path;
+	int size;
+	if(config == NULL || imagePath==NULL){
+		return SP_CONFIG_INVALID_ARGUMENT;
+	}
+	if(config->spNumOfImages < index)
+		return SP_CONFIG_INDEX_OUT_OF_RANGE;
+	size = strlen(config->spImagesPrefix)+strlen(config->spImagesSuffix)+strlen(config->spImagesDirectory)+sizeof(index);
+	path = (char*)malloc(size*sizeof(char));
+	sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
 	if(sizeof(path)<=sizeof(imagePath)){
 		strcpy(imagePath,path);
 		free(path);
@@ -468,4 +488,35 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config){
 		}
 		free(path);
 		return SP_CONFIG_INVALID_ARGUMENT;
+}
+SP_LOGGER_LEVEL GetSpLoggerLevel(SPConfig config){
+	if(config == NULL){
+			return SP_CONFIG_INVALID_ARGUMENT;
+	}
+	switch(config->spLoggerLevel){
+	case 1:
+		return SP_LOGGER_ERROR_LEVEL;
+		break;
+	case 2:
+		return SP_LOGGER_WARNING_ERROR_LEVEL;
+		break;
+	case 3:
+		return SP_LOGGER_INFO_WARNING_ERROR_LEVEL;
+		break;
+	case 4:
+		return SP_LOGGER_DEBUG_INFO_WARNING_ERROR_LEVEL;
+		break;
+	}
+}
+int GetSpLoggerLevelNum(SPConfig config){
+	if(config == NULL){
+		return SP_CONFIG_INVALID_ARGUMENT;
+	}
+	return config->spLoggerLevel;
+}
+char* GetSpLoggerFilename(SPConfig config){
+	if(config == NULL){
+		return SP_CONFIG_INVALID_ARGUMENT;
+	}
+	return config->spLoggerFilename;
 }
