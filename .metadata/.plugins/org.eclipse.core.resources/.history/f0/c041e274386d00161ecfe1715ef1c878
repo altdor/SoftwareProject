@@ -10,7 +10,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <cassert>
+
 #include "spImageProc.h"
 extern "C"{
 #include "SPConfig.h"
