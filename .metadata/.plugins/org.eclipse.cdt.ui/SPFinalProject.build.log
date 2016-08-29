@@ -1,16 +1,1 @@
-09:18:27 **** Incremental Build of configuration Debug for project SPFinalProject ****
-Info: Internal Builder is used for build
-g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
-cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
-In file included from ..\Main.cpp:14:0:
-..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
-  const char* windowName = "Software Project CBIR";
-                           ^
-..\Main.cpp: In function 'int main(int, const char**)':
-..\Main.cpp:55:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
-  config = spConfigCreate(filename,msg);
-                                       ^
-g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
-
-09:18:28 Build Finished (took 1s.11ms)
-
+Info: Nothing to build for SPFinalProject

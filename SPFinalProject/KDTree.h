@@ -1,4 +1,4 @@
-
+#ifndef KDTREE_H_
 #define KDTREE_H_
 #include "SPKDArray.h"
 #include "SPConfig.h"
@@ -20,3 +20,4 @@ int spKDTreeGetVal(KDTreeNode tree);
 int spKDTreeGetDim(KDTreeNode tree);
 KDTreeNode spKDTreeGetLeft(KDTreeNode tree);
 KDTreeNode spKDTreeGetRight(KDTreeNode tree);
+#endif

@@ -181,4 +181,7 @@ void spConfigDestroy(SPConfig config);
 SP_LOGGER_LEVEL GetSpLoggerLevel(SPConfig config);
 int GetSpLoggerLevelNum(SPConfig config);
 char* GetSpLoggerFilename(SPConfig config);
+int GetspNumOfSimilarImages(SPConfig config);
+SP_KDTREE_SPLIT_METHOD GetSplitMethod(SPConfig config);
+int GetSpKNN(SPConfig config);
 #endif /* SPCONFIG_H_ */

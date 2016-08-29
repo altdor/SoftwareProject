@@ -22,6 +22,11 @@ SPKNN spKinit(int spKNN){
 	spk->spKNN = spKNN;
 	return spk;
 }
+SPBPQueue GetKnnBpq (SPKNN spk){
+	if (spk==NULL)
+		return NULL;
+	return spk->bpq;
+}
 
 SPListElement imElement (SPPoint image, SPPoint curr){
 	return spListElementCreate(spPointGetIndex(curr),spPointL2SquaredDistance(image,curr));

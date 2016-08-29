@@ -520,3 +520,18 @@ char* GetSpLoggerFilename(SPConfig config){
 	}
 	return config->spLoggerFilename;
 }
+int GetspNumOfSimilarImages(SPConfig config){
+	if(config ==NULL)
+		return -1;
+	return config->spNumOfSimilarImages;
+}
+SP_KDTREE_SPLIT_METHOD GetSplitMethod(SPConfig config){
+	if(config ==NULL)
+		return 4;
+	return config->splitMethod;
+}
+int GetSpKNN(SPConfig config){
+	if(config ==NULL)
+		return -1;
+	return config->spKNN;
+}

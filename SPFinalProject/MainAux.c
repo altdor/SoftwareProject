@@ -10,14 +10,19 @@
 #include <string.h>
 #include <assert.h>
 #include "SPConfig.h"
+#include "KDTree.h"
+#include "SPKNN.h"
 #include "SPPoint.h"
 #include "SPLogger.h"
+#include "SPBPriorityQueue.h"
 #define BUFSIZE 1024
 #define ERROR1 "Invalid command line: use -c <config_filename>"
 #define ERROR2 "The configuration file"
 #define COULDNTOPEN "couldn't be open"
 #define ERROR3 "The default configuration file spcbir.config couldn't be open"
 #define DEFCON "spcbir.config"
+#define BESTCAND "Best candidates for -"
+#define ARE "are:"
 bool checkFileName(const char* filename){
 	FILE* fp;
 	if(strstr(filename, ".")==NULL){
@@ -114,8 +119,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	return features;
 }
 
-void ErrorLogger(int level, const char* msg, const char* file,
-		const char* function, const int line){
+void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
 	if(level>0){
 		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
 		if(level>1){
@@ -129,3 +133,53 @@ void ErrorLogger(int level, const char* msg, const char* file,
 		}
 	}
 }
+int maxIndex(int* count, int size){
+	int max=0,index,i;
+	for (i=0; i<size; i++){
+		if (count[i]>max){
+			max = count[i];
+			index = i;
+		}
+	}
+	return index;
+}
+void notMinimalGui(int* arr, char* imgpath, SPConfig config,int size){
+	int numOfSimilarImages = GetspNumOfSimilarImages(config);
+	if(numOfSimilarImages == -1||arr==NULL ||imgpath==NULL || size<=0){
+		return;
+	}
+	printf("%s %s %s\n",BESTCAND, imgpath, ARE);
+	fflush(NULL);
+	for(int i=0;i<numOfSimilarImages;i++){
+		int index = maxIndex(arr,size);
+		arr[index]=-1;
+		char* path = (char*)malloc(BUFSIZE);
+		if(path == NULL){
+			free(path);
+			return;
+		}
+		spConfigGetImagePath(path,config,index);
+		printf("%s\n",path);
+		fflush(NULL);
+	}
+}
+int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
+	int i,index;
+	int numOfSimilarImages = GetspNumOfSimilarImages(config);
+	SP_CONFIG_MSG* msg = NULL;
+	int* count;
+	count = (int*)malloc(spConfigGetNumOfImages(config,msg)*sizeof(int));
+	for (i=0; i<size; i++){
+		SPKNN knn = spKinit(GetSpKNN(config));
+		SPBPQueue bpq = GetKnnBpq(knn);
+		kNearestNeighbors(tree, bpq, features[i]);
+		for(int i=0;i<numOfSimilarImages;i++){
+			index = spListElementGetIndex(spBPQueuePeek(bpq));
+			count[index]++;
+			spBPQueueDequeue(bpq);
+		}
+	}
+	return count;
+}
+
+
