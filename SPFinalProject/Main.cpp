@@ -30,9 +30,18 @@ int main(int argc, const char* argv[]){
 	int numOfImages;
 	SP_CONFIG_MSG* msg;
 	SPPoint* features;
+	char* img;
 	char* filename = (char*)malloc(BUFSIZE);
-	if(filename == NULL)
+	if(filename == NULL){
+		free(filename);
 		return -1;
+	}
+	img = (char*)malloc(BUFSIZE);
+	if(img ==NULL){
+		free(filename);
+		free(img);
+		return -1;
+	}
 	strcpy(filename,DEFCON);
 	for(int i=0; i<argc;i++){
 		if(strcmp(argv[i],"-c")==0){
@@ -45,6 +54,7 @@ int main(int argc, const char* argv[]){
 	}
 	config = spConfigCreate(filename,msg);
 	if(*msg != SP_CONFIG_SUCCESS){
+		free(img);
 		free(filename);
 		return -1;
 	}
@@ -54,6 +64,7 @@ int main(int argc, const char* argv[]){
 		if(*msg != SP_CONFIG_SUCCESS){
 			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
+			free(img);
 			free(filename);
 			return -1;
 		}
@@ -61,6 +72,7 @@ int main(int argc, const char* argv[]){
 		if(*msg != SP_CONFIG_SUCCESS){
 			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
+			free(img);
 			free(filename);
 			return -1;
 		}
@@ -71,6 +83,8 @@ int main(int argc, const char* argv[]){
 			if(imagePath == NULL){
 				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
+				free(img);
+				free(imagePath);
 				spConfigDestroy(config);
 				return -1;
 			}
@@ -78,6 +92,9 @@ int main(int argc, const char* argv[]){
 			if(imagePathnosuf == NULL){
 				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
+				free(img);
+				free(imagePath);
+				free(imagePathnosuf);
 				spConfigDestroy(config);
 				return -1;
 			}
@@ -86,6 +103,7 @@ int main(int argc, const char* argv[]){
 			if(*msg != SP_CONFIG_SUCCESS){
 				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
+				free(img);
 				free(imagePath);
 				free(imagePathnosuf);
 				free(filename);
@@ -104,10 +122,16 @@ int main(int argc, const char* argv[]){
 			strcat(imagePathnosuf,FEATSUF);
 			if(!extractToFile(imagePathnosuf, features, *numOfFeatures, level)){
 				spConfigDestroy(config);
+				spLoggerDestroy();
+				free(imagePath);
+				free(imagePathnosuf);
+				free(filename);
 				return -1;
 			}
-
+			free(imagePath);
+			free(imagePathnosuf);
 		}
+
 	}
 	else{
 		char* imagePathnosuf;
@@ -122,6 +146,8 @@ int main(int argc, const char* argv[]){
 		if(imagePathnosuf == NULL){
 			ErrorLogger(level, "out of memory", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
+			free(imagePathnosuf);
+			free(filename);
 			spConfigDestroy(config);
 			return -1;
 		}
@@ -129,6 +155,7 @@ int main(int argc, const char* argv[]){
 		if(*msg != SP_CONFIG_SUCCESS){
 			ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
+			free(imagePathnosuf);
 			free(filename);
 			return -1;
 		}
@@ -137,6 +164,9 @@ int main(int argc, const char* argv[]){
 			ErrorLogger(level, "out of memory", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
 			spConfigDestroy(config);
+			free(imagePathnosuf);
+			free(filename);
+			free(allImgFeaters);
 			return -1;
 		}
 		for(int i=0;i<numOfImages;i++){
@@ -146,6 +176,7 @@ int main(int argc, const char* argv[]){
 				spLoggerDestroy();
 				free(imagePathnosuf);
 				free(filename);
+				free(allImgFeaters);
 				return -1;
 			}
 			strcat(imagePathnosuf,FEATSUF);
@@ -153,12 +184,38 @@ int main(int argc, const char* argv[]){
 			allImgFeaters[i] = extractFromFiles(imagePathnosuf, level);
 			if(allImgFeaters[i] == NULL){
 				spConfigDestroy(config);
+				for(int j=0;j<=i;j++){
+					free(allImgFeaters[j]);
+				}
+
+				free(imagePathnosuf);
+				free(filename);
+				free(allImgFeaters);
 				return -1;
 			}
+			free(imagePathnosuf);
 		}
 
 	}
-
+	printf("Please enter an image path:/n");
+	scanf("%s",img);
+	while(strcmp(img,"<>")!=0){
+		/*
+		 *
+		 *
+		 *
+		 *
+		 */
+		printf("Please enter an image path:/n");
+		scanf("%s",img);
+	}
+	for(int j=0;j<=numOfImages;j++){
+		free(allImgFeaters[j]);
+	}
+	free(filename);
+	free(allImgFeaters);
+	spLoggerDestroy();
+	spConfigDestroy(config);
 }
 
 
