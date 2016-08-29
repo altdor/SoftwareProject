@@ -113,7 +113,6 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	}
 	return features;
 }
-
 void ErrorLogger(int level, const char* msg, const char* file,
 		const char* function, const int line){
 	if(level>0){

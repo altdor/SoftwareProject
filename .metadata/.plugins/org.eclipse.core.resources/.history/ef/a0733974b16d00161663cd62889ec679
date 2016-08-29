@@ -205,7 +205,6 @@ int main(int argc, const char* argv[]){
 		 *
 		 *
 		 *
-		 *
 		 */
 		printf("Please enter an image path:/n");
 		scanf("%s",img);
