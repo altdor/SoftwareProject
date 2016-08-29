@@ -12,6 +12,7 @@
 #include "SPConfig.h"
 #include "SPPoint.h"
 #include "SPLogger.h"
+#include <assert.h>
 #define BUFSIZE 1024
 #define ERROR1 "Invalid command line: use -c <config_filename>"
 #define ERROR2 "The configuration file"
