@@ -55597,3 +55597,340 @@ gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c"
 Info: Nothing to build for exman2013
 Info: Nothing to build for hw1
 Info: Nothing to build for hw2
+18:59:53 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+18:59:53 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+18:59:53 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPListElement.o "..\\SPListElement.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:466:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:483:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'GetSpLoggerFilename':
+..\SPConfig.c:519:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_INVALID_ARGUMENT;
+   ^
+..\SPConfig.c: In function 'GetSpLoggerLevel':
+..\SPConfig.c:510:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:46:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPPoint.o "..\\SPPoint.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPLogger.o "..\\SPLogger.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPList.o "..\\SPList.c" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+MainAux.o: In function `ErrorLogger':
+C:\Users\DorAlt\Documents\שנה ב\סמסטר ד\פרויקט תוכנה\SoftwareProject\SPFinalProject\Debug/../MainAux.c:118: undefined reference to `assert'
+C:\Users\DorAlt\Documents\שנה ב\סמסטר ד\פרויקט תוכנה\SoftwareProject\SPFinalProject\Debug/../MainAux.c:120: undefined reference to `assert'
+C:\Users\DorAlt\Documents\שנה ב\סמסטר ד\פרויקט תוכנה\SoftwareProject\SPFinalProject\Debug/../MainAux.c:122: undefined reference to `assert'
+C:\Users\DorAlt\Documents\שנה ב\סמסטר ד\פרויקט תוכנה\SoftwareProject\SPFinalProject\Debug/../MainAux.c:124: undefined reference to `assert'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:00:10 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:00:10 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+19:00:10 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o MainAux.o "..\\MainAux.c" 
+..\MainAux.c: In function 'extractFromFiles':
+..\MainAux.c:64:3: warning: implicit declaration of function 'ErrorLogger' [-Wimplicit-function-declaration]
+   ErrorLogger(level, "cant open file", "MainAux.cpp",__func__, __LINE__);
+   ^
+..\MainAux.c: At top level:
+..\MainAux.c:116:6: warning: conflicting types for 'ErrorLogger'
+ void ErrorLogger(int level, const char* msg, const char* file,
+      ^
+..\MainAux.c:64:3: note: previous implicit declaration of 'ErrorLogger' was here
+   ErrorLogger(level, "cant open file", "MainAux.cpp",__func__, __LINE__);
+   ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:00:21 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:00:21 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+19:00:21 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+In file included from ..\Main.cpp:18:0:
+..\MainAux.h:12:39: error: expected ')' before ';' token
+   const char* function, const int line;
+                                       ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:00:27 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:00:27 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+19:00:27 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:46:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:00:30 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:00:30 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for SPFinalProject
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:02:16 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:02:16 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for SPFinalProject
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:02:41 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:02:41 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for SPFinalProject
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+19:03:29 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+19:03:29 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for SPFinalProject
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+09:17:32 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:17:32 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:17:33 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:55:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+09:18:26 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+09:18:26 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+09:18:27 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:55:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
