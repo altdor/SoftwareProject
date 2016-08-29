@@ -1,7 +1,8 @@
 
 #define KDTREE_H_
 #include "SPKDArray.h"
-typedef struct sp_KDTree_Node* KDTree;
+#include "SPConfig.h"
+typedef struct sp_KDTree_Node* KDTreeNode;
 
 typedef enum sp_kd_tree_msg_t {
 	SP_KDTREE_OUT_OF_MEMORY,
@@ -12,4 +13,10 @@ typedef enum sp_kd_tree_msg_t {
 } SP_KDTREE_MSG;
 
 
-KDTree buildKDTree(SPKDArray array, int depth);
+KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int incPointer);
+bool isLeaf (KDTreeNode kdtree);
+SPPoint spKDTreeGetData(KDTreeNode tree);
+int spKDTreeGetVal(KDTreeNode tree);
+int spKDTreeGetDim(KDTreeNode tree);
+KDTreeNode spKDTreeGetLeft(KDTreeNode tree);
+KDTreeNode spKDTreeGetRight(KDTreeNode tree);

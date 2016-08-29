@@ -21,7 +21,36 @@ struct sp_pcoor_t{
 	int axis;
 	int index;
 };
-
+void spCoorSetPoint(SPPCoor spcoor,SPPoint p){
+	if(spcoor == NULL)
+		return;
+	spcoor->point = p;
+}
+void spCoorSetAxis(SPPCoor spcoor,int axis){
+	if(spcoor == NULL)
+		return;
+	spcoor->axis = axis;
+}
+void spCoorSetIndex(SPPCoor spcoor,int index){
+	if(spcoor == NULL)
+		return;
+	spcoor->index = index;
+}
+SPPoint spCoorGetPoint(SPPCoor spcoor){
+	if(spcoor == NULL)
+		return NULL;
+	return spcoor->point;
+}
+int spCoorGetAxis(SPPCoor spcoor){
+	if(spcoor == NULL)
+		return -1;
+	return spcoor->axis;
+}
+int spCoorGetIndex(SPPCoor spcoor){
+	if(spcoor == NULL)
+		return -1;
+	return spcoor->index;
+}
 SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	int i,j;
 	int d;
@@ -191,6 +220,18 @@ int compByAxis(const void* p1, const void* p2){
 	SPPCoor a = *(SPPCoor*)p1;
     SPPCoor b = *(SPPCoor*)p2;
     return (((int)spPointGetAxisCoor(a->point,a->axis))-((int)spPointGetAxisCoor(b->point,b->axis)));
+}
+
+int spKdarrayGetSize(SPKDArray arr){
+	if (arr==NULL)
+		return -1;
+	return arr->size;
+}
+
+SPPoint* spKdarrayGetPointAraay(SPKDArray arr){
+	if (arr==NULL)
+		return NULL;
+	return arr->pointArr;
 }
 
 /*int main2(){

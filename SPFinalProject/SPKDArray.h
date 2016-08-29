@@ -30,5 +30,13 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor);
  * compares between two sppoints via axis-coordinate "axis"
  */
 int compByAxis(const void* p1, const void* p2);
+int spKdarrayGetSize(SPKDArray arr);
+SPPoint* spKdarrayGetPointAraay(SPKDArray arr);
+void spCoorSetPoint(SPPCoor spcoor,SPPoint p);
+void spCoorSetAxis(SPPCoor spcoor,int axis);
+void spCoorSetIndex(SPPCoor spcoor,int index);
+SPPoint spCoorGetPoint(SPPCoor spcoor);
+int spCoorGetAxis(SPPCoor spcoor);
+int spCoorGetIndex(SPPCoor spcoor);
 int main2();
 #endif /* SPKDARRAY_H_ */
