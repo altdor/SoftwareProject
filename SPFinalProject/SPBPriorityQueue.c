@@ -28,6 +28,9 @@ SPBPQueue spBPQueueCopy(SPBPQueue source){
 		return NULL;
 	}
 	SPBPQueue queue = (SPBPQueue)malloc(sizeof(*queue));
+	if(queue == NULL){
+		return NULL;
+	}
 	queue->capacity = source->capacity;
 	queue -> list = spListCopy(source->list);
 	return queue;

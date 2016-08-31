@@ -38,5 +38,6 @@ void spCoorSetIndex(SPPCoor spcoor,int index);
 SPPoint spCoorGetPoint(SPPCoor spcoor);
 int spCoorGetAxis(SPPCoor spcoor);
 int spCoorGetIndex(SPPCoor spcoor);
-int main2();
+void spKDArrayDestroy(SPKDArray arr);
+//int main2();
 #endif /* SPKDARRAY_H_ */

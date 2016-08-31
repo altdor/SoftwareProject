@@ -90,7 +90,6 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 	}
 	kdtree= (KDTreeNode)malloc(sizeof(*kdtree));
 	if(kdtree == NULL){
-		free(kdtree);
 		return NULL;
 	}
 	if(spKdarrayGetSize(array) == 1){
@@ -99,6 +98,7 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 	else{
 		SPKDArray* splitted = (SPKDArray*)malloc(2*sizeof(*splitted));
 		if(splitted == NULL){
+			KDTreeDestroy(kdtree);
 			free(kdtree);
 			free(splitted);
 			return NULL;
@@ -178,4 +178,11 @@ KDTreeNode spKDTreeGetRight(KDTreeNode tree){
 	}
 	return tree->right;
 }
-
+void KDTreeDestroy(KDTreeNode tree){
+	if(tree==NULL)
+		return;
+	KDTreeDestroy(tree->left);
+	KDTreeDestroy(tree->right);
+	spPointDestroy(tree->Data);
+	free(tree);
+}

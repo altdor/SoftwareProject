@@ -20,4 +20,5 @@ int spKDTreeGetVal(KDTreeNode tree);
 int spKDTreeGetDim(KDTreeNode tree);
 KDTreeNode spKDTreeGetLeft(KDTreeNode tree);
 KDTreeNode spKDTreeGetRight(KDTreeNode tree);
+void KDTreeDestroy(KDTreeNode tree);
 #endif

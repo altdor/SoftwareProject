@@ -17,4 +17,5 @@ SPKNN spKinit(int spKNN);
 SPListElement imElement (SPPoint image, SPPoint curr);
 SPBPQueue GetKnnBpq (SPKNN spk);
 void kNearestNeighbors(KDTreeNode curr, SPBPQueue bpq, SPPoint point);
+void SPKNNDestroy(SPKNN knn);
 #endif /* SPKNN_H_ */

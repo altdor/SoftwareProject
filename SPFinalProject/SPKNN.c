@@ -18,7 +18,13 @@ struct sp_knn_t{
 
 SPKNN spKinit(int spKNN){
 	SPKNN spk = (SPKNN)malloc(sizeof(*spk));
+	if(spk==NULL)
+		return NULL;
 	spk->bpq = spBPQueueCreate(spKNN);
+	if(spk->bpq=NULL)){
+		free(spk)
+		return NULL;
+	}
 	spk->spKNN = spKNN;
 	return spk;
 }
@@ -53,4 +59,8 @@ void kNearestNeighbors(KDTreeNode curr, SPBPQueue bpq, SPPoint point){
 		else
 			kNearestNeighbors(spKDTreeGetLeft(curr), bpq, point);
 	}
+}
+void SPKNNDestroy(SPKNN knn){
+	spBPQueueDestroy(knn->bpq);
+	free(knn);
 }
