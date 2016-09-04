@@ -10,7 +10,7 @@
 #include "KDTree.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "SPLogger.h"
 struct sp_knn_t{
 	SPBPQueue bpq;
 	int spKNN;
@@ -18,11 +18,12 @@ struct sp_knn_t{
 
 SPKNN spKinit(int spKNN){
 	SPKNN spk = (SPKNN)malloc(sizeof(*spk));
-	if(spk==NULL)
+	if(spk==NULL){
 		return NULL;
+	}
 	spk->bpq = spBPQueueCreate(spKNN);
-	if(spk->bpq=NULL)){
-		free(spk)
+	if(spk->bpq==NULL){
+		free(spk);
 		return NULL;
 	}
 	spk->spKNN = spKNN;

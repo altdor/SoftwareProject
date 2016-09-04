@@ -54,7 +54,7 @@ typedef enum spKDTreeSplitMethod {
  *
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
-SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+SP_CONFIG_MSG checkinput(const char* filename, int* input, int linenum);
 void printError(const char* filename, int line, char* msg);
 void dfult(SPConfig confg);
 void trim(char* String);

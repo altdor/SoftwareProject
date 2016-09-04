@@ -61031,3 +61031,1259 @@ g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLog
 Info: Nothing to build for exman2013
 Info: Nothing to build for hw1
 Info: Nothing to build for hw2
+17:21:07 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:21:09 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:21:09 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPBPriorityQueue.o "..\\SPBPriorityQueue.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+..\SPKNN.c: In function 'spKinit':
+..\SPKNN.c:24:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if(spk->bpq=NULL)){
+  ^
+..\SPKNN.c:24:19: error: expected statement before ')' token
+  if(spk->bpq=NULL)){
+                   ^
+..\SPKNN.c:26:3: error: expected ';' before 'return'
+   return NULL;
+   ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:21:20 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:21:20 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:21:21 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o MainAux.o "..\\MainAux.c" 
+..\MainAux.c: In function 'extractToFile':
+..\MainAux.c:50:3: warning: implicit declaration of function 'ErrorLogger' [-Wimplicit-function-declaration]
+   ErrorLogger(level, "cant make new file", "MainAux.cpp",__func__, __LINE__);
+   ^
+..\MainAux.c: At top level:
+..\MainAux.c:128:6: warning: conflicting types for 'ErrorLogger'
+ void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
+      ^
+..\MainAux.c:50:3: note: previous implicit declaration of 'ErrorLogger' was here
+   ErrorLogger(level, "cant make new file", "MainAux.cpp",__func__, __LINE__);
+   ^
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\spImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:64:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+..\SPKNN.c: In function 'spKinit':
+..\SPKNN.c:24:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if(spk->bpq=NULL)){
+  ^
+..\SPKNN.c:24:19: error: expected statement before ')' token
+  if(spk->bpq=NULL)){
+                   ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:21:23 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:21:24 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:21:24 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+..\SPKNN.c: In function 'spKinit':
+..\SPKNN.c:24:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if(spk->bpq=NULL)){
+  ^
+..\SPKNN.c:24:19: error: expected statement before ')' token
+  if(spk->bpq=NULL)){
+                   ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:21:31 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:21:31 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:21:32 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+..\SPKNN.c: In function 'spKinit':
+..\SPKNN.c:24:2: warning: suggest parentheses around assignment used as truth value [-Wparentheses]
+  if(spk->bpq=NULL){
+  ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:21:44 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:21:44 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:21:45 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:45:37 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:45:37 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:45:38 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:64:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o MainAux.o "..\\MainAux.c" 
+..\MainAux.c: In function 'extractToFile':
+..\MainAux.c:50:3: warning: implicit declaration of function 'ErrorLogger' [-Wimplicit-function-declaration]
+   ErrorLogger(level, "cant make new file", "MainAux.c",__func__, __LINE__);
+   ^
+..\MainAux.c: At top level:
+..\MainAux.c:128:6: warning: conflicting types for 'ErrorLogger'
+ void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
+      ^
+..\MainAux.c:50:3: note: previous implicit declaration of 'ErrorLogger' was here
+   ErrorLogger(level, "cant make new file", "MainAux.c",__func__, __LINE__);
+   ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:466:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:483:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'GetSpLoggerFilename':
+..\SPConfig.c:519:3: warning: return makes pointer from integer without a cast
+   return SP_CONFIG_INVALID_ARGUMENT;
+   ^
+..\SPConfig.c: In function 'GetSpLoggerLevel':
+..\SPConfig.c:510:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:47:42 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:47:43 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:47:43 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:466:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:483:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:47:55 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:47:55 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:47:55 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:79:13: warning: passing argument 1 of 'trim' makes pointer from integer without a cast
+        trim(*cnfg->spImagesDirectory);
+             ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:60:6: note: expected 'char *' but argument is of type 'char'
+ void trim(char* String);
+      ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:466:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:483:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:47:57 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:47:57 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for SPFinalProject
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:48:22 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:48:22 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:48:22 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:67:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:67:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:117:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:299:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:446:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:466:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:483:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:52:05 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:52:05 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:52:06 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:74:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:74:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:124:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:306:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:313:15: error: conflicting types for 'checkinput'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input, int linenum){
+               ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: previous declaration of 'checkinput' was here
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:453:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:473:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:490:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:52:46 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:52:46 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:52:47 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:80:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:130:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c:312:33: warning: passing argument 2 of 'checkinput' from incompatible pointer type
+     *msg = checkinput(filename, input, linenum);
+                                 ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: expected 'int **' but argument is of type 'int *'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: At top level:
+..\SPConfig.c:319:15: error: conflicting types for 'checkinput'
+ SP_CONFIG_MSG checkinput(const char* filename, int* input, int linenum){
+               ^
+In file included from ..\SPConfig.c:14:0:
+..\SPConfig.h:57:15: note: previous declaration of 'checkinput' was here
+ SP_CONFIG_MSG checkinput(const char* filename, int* input[4], int linenum);
+               ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:53:07 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:53:08 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:53:08 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o Main.o "..\\Main.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\Main.cpp:14:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+..\Main.cpp: In function 'int main(int, const char**)':
+..\Main.cpp:64:39: warning: 'msg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  config = spConfigCreate(filename,msg);
+                                       ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o KDTree.o "..\\KDTree.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKNN.o "..\\SPKNN.c" 
+g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPImageProc.o "..\\SPImageProc.cpp" 
+cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
+In file included from ..\SPImageProc.cpp:10:0:
+..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
+  const char* windowName = "Software Project CBIR";
+                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o MainAux.o "..\\MainAux.c" 
+..\MainAux.c: In function 'extractToFile':
+..\MainAux.c:50:3: warning: implicit declaration of function 'ErrorLogger' [-Wimplicit-function-declaration]
+   ErrorLogger(level, "cant make new file", "MainAux.c",__func__, __LINE__);
+   ^
+..\MainAux.c: At top level:
+..\MainAux.c:128:6: warning: conflicting types for 'ErrorLogger'
+ void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
+      ^
+..\MainAux.c:50:3: note: previous implicit declaration of 'ErrorLogger' was here
+   ErrorLogger(level, "cant make new file", "MainAux.c",__func__, __LINE__);
+   ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:80:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:130:29: warning: assignment makes pointer from integer without a cast
+        cnfg->spImagesSuffix = atoi(temp);
+                             ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:55:12 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:55:13 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:55:13 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c:80:27: warning: passing argument 2 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],'#')!=0){
+                           ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'int'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:55:16 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:55:17 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+Info: Nothing to build for SPFinalProject
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:55:30 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:55:30 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:55:31 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:55:59 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:56:00 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:56:00 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:56:06 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:56:06 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:56:07 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix,index,config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:56:54 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:56:54 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:56:54 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, index, config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:57:54 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:57:54 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:57:54 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,index);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:58:44 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:58:44 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:58:44 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:58:57 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:58:57 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:58:57 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:37: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  sprintf(path,sizeof(path),("%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind));
+                                     ^
+..\SPConfig.c:479:64: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  sprintf(path,sizeof(path),("%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind));
+                                                                ^
+..\SPConfig.c:479:88: warning: left-hand operand of comma expression has no effect [-Wunused-value]
+  sprintf(path,sizeof(path),("%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind));
+                                                                                        ^
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),("%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind));
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2
+17:59:00 **** Incremental Build of configuration Debug for project 2008 ****
+Info: Internal Builder is used for build
+gcc -o 2008.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2009
+Info: Nothing to build for 2010
+17:59:01 **** Incremental Build of configuration Debug for project 2011 ****
+Info: Internal Builder is used for build
+gcc -o 2011.exe main.o 
+c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
+collect2.exe: error: ld returned 1 exit status
+Info: Nothing to build for 2012
+Info: Nothing to build for HomeWork
+17:59:01 **** Incremental Build of configuration Debug for project SPFinalProject ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
+Info: Nothing to build for exman2013
+Info: Nothing to build for hw1
+Info: Nothing to build for hw2

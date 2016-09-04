@@ -1,7 +1,39 @@
-20:50:43 **** Incremental Build of configuration Debug for project SPFinalProject ****
+17:59:01 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
-gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPConfig.o "..\\SPConfig.c" 
+..\SPConfig.c: In function 'spConfigCreate':
+..\SPConfig.c:80:17: warning: passing argument 1 of 'strcmp' makes pointer from integer without a cast
+      if (strcmp(string[0],"#")!=0){
+                 ^
+In file included from ..\SPConfig.c:11:0:
+c:\mingw\include\string.h:43:37: note: expected 'const char *' but argument is of type 'char'
+ _CRTIMP int __cdecl __MINGW_NOTHROW strcmp (const char*, const char*)  __MINGW_ATTRIB_PURE;
+                                     ^
+..\SPConfig.c: In function 'spConfigGetImagePath':
+..\SPConfig.c:459:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetImagePathWithoutSuffix':
+..\SPConfig.c:479:15: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+  sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind);
+               ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
+..\SPConfig.c: In function 'spConfigGetPCAPath':
+..\SPConfig.c:496:16: warning: passing argument 2 of 'sprintf' makes pointer from integer without a cast
+   sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+                ^
+In file included from ..\SPConfig.c:8:0:
+c:\mingw\include\stdio.h:261:5: note: expected 'const char *' but argument is of type 'unsigned int'
+ int sprintf (char *__stream, const char *__format, ...)
+     ^
 g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o Main.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
 
-20:50:44 Build Finished (took 768ms)
+17:59:01 Build Finished (took 491ms)
 

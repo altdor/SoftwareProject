@@ -40,12 +40,15 @@ bool checkFileName(const char* filename){
 			return false;
 		}
 	}
+	fclose(fp);
 	return true;
 }
 bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures, int level){
 	FILE* featfp;
 	featfp = fopen(imagePathnosuf,"w");
 	if(featfp == NULL){
+		ErrorLogger(level, "cant make new file", "MainAux.c",__func__, __LINE__);
+		spLoggerDestroy();
 		return false;
 	}
 	putc(numOfFeatures,featfp);
@@ -57,6 +60,7 @@ bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures, in
 		putc('\n',featfp);
 		fwrite(spPointGetData(features[i]), spPointGetDimension(features[i]),sizeof(double),featfp);
 	}
+	fclose(featfp);
 	return true;
 }
 SPPoint* extractFromFiles(char* imagePathnosuf, int level){
@@ -66,13 +70,13 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	SPPoint* features;
 	featfp = fopen(imagePathnosuf,"r");
 	if(featfp == NULL){
-		ErrorLogger(level, "cant open file", "MainAux.cpp",__func__, __LINE__);
+		ErrorLogger(level, "cant open file", "MainAux.c",__func__, __LINE__);
 		spLoggerDestroy();
 		return NULL;
 	}
 	str = (char*)malloc(BUFSIZE);
 	if(str == NULL){
-		ErrorLogger(level, "out of memory", "MainAux.cpp",__func__, __LINE__);
+		ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 		spLoggerDestroy();
 		return NULL;
 	}
@@ -81,7 +85,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	free(str);
 	features = (SPPoint*)malloc(sizeof(*features)*numOfFeatures);
 	if(features == NULL){
-		ErrorLogger(level, "out of memory", "MainAux.cpp",__func__, __LINE__);
+		ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 		spLoggerDestroy();
 		return NULL;
 	}
@@ -90,7 +94,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 		double* data;
 		char* str = (char*)malloc(BUFSIZE);
 		if(str == NULL){
-			ErrorLogger(level, "out of memory", "MainAux.cpp",__func__, __LINE__);
+			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
 			return NULL;
 		}
@@ -99,7 +103,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 		free(str);
 		str = (char*)malloc(BUFSIZE);
 		if(str == NULL){
-			ErrorLogger(level, "out of memory", "MainAux.cpp",__func__, __LINE__);
+			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
 			return NULL;
 		}
@@ -110,12 +114,14 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 		fread(data, dim,sizeof(double),featfp);
 		features[i] = (SPPoint)malloc(sizeof(SPPoint));
 		if(features == NULL){
-			ErrorLogger(level, "out of memory", "MainAux.cpp",__func__, __LINE__);
+			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
 			return NULL;
 		}
 		features[i] = spPointCreate(data, dim, index);
+		free(data);
 	}
+	fclose(featfp);
 	return features;
 }
 
@@ -146,6 +152,9 @@ int maxIndex(int* count, int size){
 void notMinimalGui(int* arr, char* imgpath, SPConfig config,int size){
 	int numOfSimilarImages = GetspNumOfSimilarImages(config);
 	if(numOfSimilarImages == -1||arr==NULL ||imgpath==NULL || size<=0){
+		ErrorLogger(GetSpLoggerLevel(config), "Missing argument", "MainAux.c",__func__, __LINE__);
+		spLoggerDestroy();
+		spConfigDestroy(config);
 		return;
 	}
 	printf("%s %s %s\n",BESTCAND, imgpath, ARE);
@@ -155,12 +164,16 @@ void notMinimalGui(int* arr, char* imgpath, SPConfig config,int size){
 		arr[index]=-1;
 		char* path = (char*)malloc(BUFSIZE);
 		if(path == NULL){
+			ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
+			spLoggerDestroy();
 			free(path);
+			spConfigDestroy(config);
 			return;
 		}
 		spConfigGetImagePath(path,config,index);
 		printf("%s\n",path);
 		fflush(NULL);
+		free(path);
 	}
 }
 int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
@@ -169,6 +182,12 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 	SP_CONFIG_MSG* msg = NULL;
 	int* count;
 	count = (int*)malloc(spConfigGetNumOfImages(config,msg)*sizeof(int));
+	if(count == NULL){
+		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
+		spLoggerDestroy();
+		spConfigDestroy(config);
+		return NULL;
+	}
 	for (i=0; i<size; i++){
 		SPKNN knn = spKinit(GetSpKNN(config));
 		SPBPQueue bpq = GetKnnBpq(knn);
@@ -178,6 +197,7 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 			count[index]++;
 			spBPQueueDequeue(bpq);
 		}
+		SPKNNDestroy(knn);
 	}
 	return count;
 }

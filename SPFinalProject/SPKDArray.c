@@ -8,7 +8,7 @@
 #include "SPPoint.h"
 #include <stdio.h>
 #include <stdlib.h>
-
+#include "SPLogger.h"
 struct sp_kdarray_t{
 	SPPoint* pointArr;
 	int size;

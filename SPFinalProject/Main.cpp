@@ -11,7 +11,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <cassert>
-#include "spImageProc.h"
+#include "SPImageProc.h"
 extern "C"{
 #include "SPConfig.h"
 #include "SPPoint.h"
@@ -212,13 +212,64 @@ int main(int argc, const char* argv[]){
 		for(j=0; j<(*numOfFeatures); j++){
 			featuresArr[i*j+j] = allImgFeaters[i][j];
 		}
+		for(j=0; j<(*numOfFeatures); j++){
+			spPointDestroy(allImgFeaters[i][j]);
+		}
 		free(allImgFeaters[i]);
 	}
 	free(allImgFeaters);
 	kdarr = (SPKDArray)malloc(sizeof(SPKDArray));
+	if(kdarr==NULL){
+		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "Main.cpp",__func__, __LINE__);
+		spLoggerDestroy();
+		spConfigDestroy(config);
+
+		for (i=0; i<numOfImages; i++){
+			for(j=0; j<(*numOfFeatures); j++){
+				spPointDestroy(featuresArr[i*j+j]);
+			}
+		}
+		free(featuresArr);
+		return -1;
+	}
 	kdtree = (KDTreeNode)malloc(sizeof(KDTreeNode));
+	if(kdarr==NULL){
+		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "Main.cpp",__func__, __LINE__);
+		spLoggerDestroy();
+		spConfigDestroy(config);
+		free(filename);
+		free(kdarr);
+		for (i=0; i<numOfImages; i++){
+			for(j=0; j<(*numOfFeatures); j++){
+				spPointDestroy(featuresArr[i*j+j]);
+			}
+		}
+		free(featuresArr);
+		return -1;
+	}
 	kdarr = spKdarrayInit(featuresArr, (*numOfFeatures)*numOfImages);
+	if(kdarr==NULL){
+		free(filename);
+		for (i=0; i<numOfImages; i++){
+			for(j=0; j<(*numOfFeatures); j++){
+				spPointDestroy(featuresArr[i*j+j]);
+			}
+		}
+		free(featuresArr);
+		return -1;
+	}
 	kdtree = buildKDTree(kdarr, GetSplitMethod(config),0);
+	if(kdtree==NULL){
+		free(filename);
+		spKDArrayDestroy(kdarr);
+		for (i=0; i<numOfImages; i++){
+			for(j=0; j<(*numOfFeatures); j++){
+				spPointDestroy(featuresArr[i*j+j]);
+			}
+		}
+		free(featuresArr);
+		return -1;
+	}
 	printf("Please enter an image path:/n");
 	fflush(NULL);
 	scanf("%s",img);
@@ -228,6 +279,18 @@ int main(int argc, const char* argv[]){
 			ImageProc* imagep = new ImageProc(config);
 			features = imagep->getImageFeatures(img, -1,numOfFeatures);
 			int* counter = kNearest(kdtree, features,config, *numOfFeatures);
+			if(counter==NULL){
+				free(filename);
+				spKDArrayDestroy(kdarr);
+				for (i=0; i<numOfImages; i++){
+					for(j=0; j<(*numOfFeatures); j++){
+						spPointDestroy(featuresArr[i*j+j]);
+					}
+				}
+				KDTreeDestroy(kdtree);
+				free(featuresArr);
+				return -1;
+			}
 			if(spConfigMinimalGui(config,msg)){
 				int numOfSimilarImages = GetspNumOfSimilarImages(config);
 				for(int i=0;i<numOfSimilarImages;i++){
@@ -239,6 +302,15 @@ int main(int argc, const char* argv[]){
 						spConfigDestroy(config);
 						spLoggerDestroy();
 						free(path);
+						free(filename);
+						spKDArrayDestroy(kdarr);
+						for (i=0; i<numOfImages; i++){
+							for(j=0; j<(*numOfFeatures); j++){
+								spPointDestroy(featuresArr[i*j+j]);
+							}
+						}
+						KDTreeDestroy(kdtree);
+						free(featuresArr);
 						return -1;
 					}
 					spConfigGetImagePath(path,config,index);
@@ -262,6 +334,15 @@ int main(int argc, const char* argv[]){
 	free(filename);
 	spLoggerDestroy();
 	spConfigDestroy(config);
+	free(filename);
+	spKDArrayDestroy(kdarr);
+	for (i=0; i<numOfImages; i++){
+		for(j=0; j<(*numOfFeatures); j++){
+			spPointDestroy(featuresArr[i*j+j]);
+		}
+	}
+	KDTreeDestroy(kdtree);
+	free(featuresArr);
 }
 
 
