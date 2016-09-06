@@ -77,7 +77,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     	linenum++;
     	char* start;
     	trim(string);
-    	if (strcmp(string[0],"#")!=0){
+    	if (string[0]!='#'){
     		if(strchr(string,'#') != NULL){
     			printError(filename,linenum, MSG1);
     			*msg = SP_CONFIG_INVALID_ARGUMENT;
@@ -456,7 +456,7 @@ SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 		return SP_CONFIG_INDEX_OUT_OF_RANGE;
 	size = strlen(config->spImagesPrefix)+strlen(config->spImagesSuffix)+strlen(config->spImagesDirectory)+sizeof(ind);
 	path = (char*)malloc(size*sizeof(char));
-	sprintf(path,sizeof(path),"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
+	sprintf(path,"%s%s%d%s", config->spImagesDirectory, config->spImagesPrefix, ind, config->spImagesSuffix);
 	if(sizeof(path)<=sizeof(imagePath)){
 		strcpy(imagePath,path);
 		free(path);
@@ -476,7 +476,7 @@ SP_CONFIG_MSG spConfigGetImagePathWithoutSuffix(char* imagePath, const SPConfig 
 		return SP_CONFIG_INDEX_OUT_OF_RANGE;
 	size = strlen(config->spImagesPrefix)+strlen(config->spImagesSuffix)+strlen(config->spImagesDirectory)+sizeof(ind);
 	path = (char*)malloc(size*sizeof(char));
-	sprintf(path,sizeof(path),"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind);
+	sprintf(path,"%s%s%d", config->spImagesDirectory, config->spImagesPrefix,ind);
 	if(sizeof(path)<=sizeof(imagePath)){
 		strcpy(imagePath,path);
 		free(path);
@@ -493,7 +493,7 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config){
 		}
 		size = strlen(config->spImagesDirectory)+strlen(config->spPCAFileName);
 		path = (char*)malloc(size*sizeof(char));
-		sprintf(path,sizeof(path),"%s%s", config->spImagesDirectory, config->spPCAFileName);
+		sprintf(path,"%s%s", config->spImagesDirectory, config->spPCAFileName);
 		if(sizeof(path)<=sizeof(pcaPath)){
 			strcpy(pcaPath,path);
 			free(path);
