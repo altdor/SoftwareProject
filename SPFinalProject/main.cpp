@@ -27,6 +27,7 @@ extern "C"{
 #define DEFCON "spcbir.config"
 #define FEATSUF ".feats"
 using namespace sp;
+void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg);
 int main(int argc, const char* argv[]){
 	int i,j;
 	int* numOfFeatures=0;
@@ -37,7 +38,7 @@ int main(int argc, const char* argv[]){
 	KDTreeNode kdtree;
 	int level;
 	int numOfImages;
-	SP_CONFIG_MSG* msg;
+	SP_CONFIG_MSG* msg=NULL;
 	SPPoint* features;
 	char* img;
 	char* filename = (char*)malloc(BUFSIZE);
@@ -207,23 +208,18 @@ int main(int argc, const char* argv[]){
 		}
 
 	}
-	featuresArr = (SPPoint*)malloc((*numOfFeatures)*numOfImages*sizeof(SPPoint));
-	for (i=0; i<numOfImages; i++){
-		for(j=0; j<(*numOfFeatures); j++){
-			featuresArr[i*j+j] = allImgFeaters[i][j];
-		}
-		for(j=0; j<(*numOfFeatures); j++){
-			spPointDestroy(allImgFeaters[i][j]);
-		}
-		free(allImgFeaters[i]);
+	featuresArr = make2DTo1D(allImgFeaters, numOfImages, *numOfFeatures,config);
+	if(featuresArr ==NULL){
+		free(filename);
+		spConfigDestroy(config);
+		return -1;
 	}
-	free(allImgFeaters);
 	kdarr = (SPKDArray)malloc(sizeof(SPKDArray));
 	if(kdarr==NULL){
 		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "Main.cpp",__func__, __LINE__);
 		spLoggerDestroy();
 		spConfigDestroy(config);
-
+		free(filename);
 		for (i=0; i<numOfImages; i++){
 			for(j=0; j<(*numOfFeatures); j++){
 				spPointDestroy(featuresArr[i*j+j]);
@@ -277,50 +273,12 @@ int main(int argc, const char* argv[]){
 	while(strcmp(img,"<>")!=0){
 		if(checkFileName(img)){
 			ImageProc* imagep = new ImageProc(config);
-			features = imagep->getImageFeatures(img, -1,numOfFeatures);
-			int* counter = kNearest(kdtree, features,config, *numOfFeatures);
-			if(counter==NULL){
+			dealwithImg(kdarr,featuresArr, imagep, features, kdtree, img, numOfFeatures, config, numOfImages,msg);
+			if(config==NULL){
 				free(filename);
-				spKDArrayDestroy(kdarr);
-				for (i=0; i<numOfImages; i++){
-					for(j=0; j<(*numOfFeatures); j++){
-						spPointDestroy(featuresArr[i*j+j]);
-					}
-				}
-				KDTreeDestroy(kdtree);
-				free(featuresArr);
 				return -1;
 			}
-			if(spConfigMinimalGui(config,msg)){
-				int numOfSimilarImages = GetspNumOfSimilarImages(config);
-				for(int i=0;i<numOfSimilarImages;i++){
-					int index = maxIndex(counter,numOfImages);
-					counter[index]=-1;
-					char* path = (char*)malloc(BUFSIZE);
-					if(path == NULL){
-						ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
-						spConfigDestroy(config);
-						spLoggerDestroy();
-						free(path);
-						free(filename);
-						spKDArrayDestroy(kdarr);
-						for (i=0; i<numOfImages; i++){
-							for(j=0; j<(*numOfFeatures); j++){
-								spPointDestroy(featuresArr[i*j+j]);
-							}
-						}
-						KDTreeDestroy(kdtree);
-						free(featuresArr);
-						return -1;
-					}
-					spConfigGetImagePath(path,config,index);
-					imagep->showImage(path);
-					getchar();
-				}
-			}
-			else{
-				notMinimalGui(counter,img,config,numOfImages);
-			}
+
 		}
 		else{
 			printf("InvalidPath:/n");
@@ -343,6 +301,52 @@ int main(int argc, const char* argv[]){
 	}
 	KDTreeDestroy(kdtree);
 	free(featuresArr);
+}
+
+void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg){
+	features = imagep->getImageFeatures(img, -1,numOfFeatures);
+	int* counter = kNearest(kdtree, features,config, *numOfFeatures);
+	if(counter==NULL){
+		spKDArrayDestroy(kdarr);
+		for (int i=0; i<numOfImages; i++){
+			for(int j=0; j<(*numOfFeatures); j++){
+				spPointDestroy(featuresArr[i*j+j]);
+			}
+		}
+		KDTreeDestroy(kdtree);
+		free(featuresArr);
+		return;
+	}
+	if(spConfigMinimalGui(config,msg)){
+		int numOfSimilarImages = GetspNumOfSimilarImages(config);
+	for(int i=0;i<numOfSimilarImages;i++){
+		int index = maxIndex(counter,numOfImages);
+		counter[index]=-1;
+		char* path = (char*)malloc(BUFSIZE);
+		if(path == NULL){
+			ErrorLogger(GetSpLoggerLevelNum(config), "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+			spConfigDestroy(config);
+			spLoggerDestroy();
+			free(path);
+
+			spKDArrayDestroy(kdarr);
+			for (int i=0; i<numOfImages; i++){
+				for(int j=0; j<(*numOfFeatures); j++){
+					spPointDestroy(featuresArr[i*j+j]);
+				}
+			}
+			KDTreeDestroy(kdtree);
+			free(featuresArr);
+			return;
+		}
+		spConfigGetImagePath(path,config,index);
+		imagep->showImage(path);
+		getchar();
+	}
+	}
+	else{
+		notMinimalGui(counter,img,config,numOfImages);
+	}
 }
 
 

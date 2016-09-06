@@ -201,5 +201,30 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 	}
 	return count;
 }
+SPPoint* make2DTo1D(SPPoint** array, int numOfImages, int numOfFeatures, SPConfig config){
+	SPPoint* featuresArr = (SPPoint*)malloc(numOfFeatures*numOfImages*sizeof(SPPoint));
+	if(featuresArr==NULL){
+		for (int i=0; i<numOfImages; i++){
+			for(int j=0; j<numOfFeatures; j++){
+				spPointDestroy(array[i][j]);
+			}
+			free(array[i]);
+		}
+		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
+		spLoggerDestroy();
+		return NULL;
+	}
+	for (int i=0; i<numOfImages; i++){
+		for(int j=0; j<numOfFeatures; j++){
+			featuresArr[i*j+j] = array[i][j];
+		}
+		for(int j=0; j<numOfFeatures; j++){
+			spPointDestroy(array[i][j]);
+		}
+		free(array[i]);
+	}
+	free(array);
+	return featuresArr;
+}
 
 
