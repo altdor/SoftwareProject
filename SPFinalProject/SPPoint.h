@@ -33,7 +33,7 @@ typedef struct sp_point_t* SPPoint;
  * - The index of P = index
  *
  * @return
- * NULL in case allocation failure ocurred OR data is NULL OR dim <=0 OR index <0
+ * NULL in case allocation failure occurred OR data is NULL OR dim <=0 OR index <0
  * Otherwise, the new point is returned
  */
 SPPoint spPointCreate(double* data, int dim, int index);
@@ -51,7 +51,7 @@ SPPoint spPointCreate(double* data, int dim, int index);
  * @assert (source != NUlL)
  * @return
  * NULL in case memory allocation occurs
- * Others a copy of source is returned.
+ * Otherwise a copy of source is returned.
  */
 SPPoint spPointCopy(SPPoint source);
 

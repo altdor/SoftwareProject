@@ -17,6 +17,8 @@ struct sp_knn_t{
 };
 
 SPKNN spKinit(int spKNN){
+	if (spKNN<=0)
+		return NULL;
 	SPKNN spk = (SPKNN)malloc(sizeof(*spk));
 	if(spk==NULL){
 		return NULL;
@@ -34,11 +36,9 @@ SPBPQueue GetKnnBpq (SPKNN spk){
 		return NULL;
 	return spk->bpq;
 }
-
 SPListElement imElement (SPPoint image, SPPoint curr){
 	return spListElementCreate(spPointGetIndex(curr),spPointL2SquaredDistance(image,curr));
 }
-
 void kNearestNeighbors(KDTreeNode curr, SPBPQueue bpq, SPPoint point){
 	int dis;
 	bool left;
