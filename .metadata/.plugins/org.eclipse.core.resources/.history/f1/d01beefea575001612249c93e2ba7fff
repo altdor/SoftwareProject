@@ -302,6 +302,7 @@ int main(int argc, const char* argv[]){
 	KDTreeDestroy(kdtree);
 	free(featuresArr);
 }
+
 void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg){
 	features = imagep->getImageFeatures(img, -1,numOfFeatures);
 	int* counter = kNearest(kdtree, features,config, *numOfFeatures);
