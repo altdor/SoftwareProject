@@ -37,7 +37,7 @@ struct sp_config_t{
 #define NOSUF "Parameter spImagesSuffix is not set"
 #define NONUM "Parameter spNumOfImages is not set"
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
-	assert(msg!=NULL);
+	//assert(msg!=NULL);
 	SPConfig cnfg = (SPConfig)malloc(sizeof(*cnfg));
 	int* input;
 	int len;

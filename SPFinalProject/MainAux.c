@@ -43,6 +43,20 @@ bool checkFileName(const char* filename){
 	fclose(fp);
 	return true;
 }
+void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
+	if(level>0){
+		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
+		if(level>1){
+			assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
+			if(level>2){
+				assert(spLoggerPrintInfo(msg)==SP_LOGGER_SUCCESS);
+				if(level==4){
+					assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
+				}
+			}
+		}
+	}
+}
 bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures, int level){
 	FILE* featfp;
 	featfp = fopen(imagePathnosuf,"w");
@@ -123,21 +137,6 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	}
 	fclose(featfp);
 	return features;
-}
-
-void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
-	if(level>0){
-		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
-		if(level>1){
-			assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
-			if(level>2){
-				assert(spLoggerPrintInfo(msg)==SP_LOGGER_SUCCESS);
-				if(level==4){
-					assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
-				}
-			}
-		}
-	}
 }
 int maxIndex(int* count, int size){
 	int max=0,index,i;
@@ -225,5 +224,4 @@ SPPoint* make2DTo1D(SPPoint** array, int numOfImages, int numOfFeatures, SPConfi
 	free(array);
 	return featuresArr;
 }
-
 
