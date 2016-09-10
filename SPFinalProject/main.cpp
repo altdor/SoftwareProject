@@ -42,6 +42,8 @@ int main(int argc, const char* argv[]){
 	SPPoint* features;
 	char* img;
 	char* filename = (char*)malloc(BUFSIZE);
+	printf("1\n");
+	fflush(NULL);
 	if(filename == NULL){
 		free(filename);
 		return -1;
@@ -52,17 +54,26 @@ int main(int argc, const char* argv[]){
 		free(img);
 		return -1;
 	}
+	printf("2\n");
+	fflush(NULL);
 	strcpy(filename,DEFCON);
+	printf("3\n");
+	fflush(NULL);
 	for(int i=0; i<argc;i++){
 		if(strcmp(argv[i],"-c")==0){
 			if(i+1<argc)
 				strcpy(filename,argv[i+1]);
 		}
 	}
+	printf("4\n");
+	fflush(NULL);
 	if(!checkFileName(filename)){
 		return -1;
 	}
+	printf("5\n");
+	fflush(NULL);
 	config = spConfigCreate(filename,msg);
+
 	if(*msg != SP_CONFIG_SUCCESS){
 		free(img);
 		free(filename);

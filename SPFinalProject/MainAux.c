@@ -43,6 +43,20 @@ bool checkFileName(const char* filename){
 	fclose(fp);
 	return true;
 }
+void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
+	if(level>0){
+		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
+		if(level>1){
+			assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
+			if(level>2){
+				assert(spLoggerPrintInfo(msg)==SP_LOGGER_SUCCESS);
+				if(level==4){
+					assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
+				}
+			}
+		}
+	}
+}
 bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures, int level){
 	FILE* featfp;
 	featfp = fopen(imagePathnosuf,"w");
@@ -124,21 +138,6 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	fclose(featfp);
 	return features;
 }
-
-void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
-	if(level>0){
-		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
-		if(level>1){
-			assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
-			if(level>2){
-				assert(spLoggerPrintInfo(msg)==SP_LOGGER_SUCCESS);
-				if(level==4){
-					assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
-				}
-			}
-		}
-	}
-}
 int maxIndex(int* count, int size){
 	int max=0,index,i;
 	for (i=0; i<size; i++){
@@ -181,6 +180,8 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 	int numOfSimilarImages = GetspNumOfSimilarImages(config);
 	SP_CONFIG_MSG* msg = NULL;
 	int* count;
+	if (tree == NULL || features == NULL || config == NULL ||size<=0)
+		return NULL;
 	count = (int*)malloc(spConfigGetNumOfImages(config,msg)*sizeof(int));
 	if(count == NULL){
 		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
@@ -218,13 +219,9 @@ SPPoint* make2DTo1D(SPPoint** array, int numOfImages, int numOfFeatures, SPConfi
 		for(int j=0; j<numOfFeatures; j++){
 			featuresArr[i*j+j] = array[i][j];
 		}
-		for(int j=0; j<numOfFeatures; j++){
-			spPointDestroy(array[i][j]);
-		}
 		free(array[i]);
 	}
 	free(array);
 	return featuresArr;
 }
-
 
