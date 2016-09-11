@@ -80,7 +80,8 @@ int main(int argc, const char* argv[]){
 		return -1;
 	}
 	config = spConfigCreate(filename,msg);
-
+	printf("6\n");
+	fflush(NULL);
 	if(*msg != SP_CONFIG_SUCCESS){
 		free(img);
 		free(msg);
@@ -88,6 +89,8 @@ int main(int argc, const char* argv[]){
 		return -1;
 	}
 	level = GetSpLoggerLevelNum(config);
+	printf("7\n");
+	fflush(NULL);
 	assert(spLoggerCreate(GetSpLoggerFilename(config),GetSpLoggerLevel(config)) == SP_LOGGER_SUCCESS);
 	if(spConfigIsExtractionMode(config,msg)){
 		if(*msg != SP_CONFIG_SUCCESS){
