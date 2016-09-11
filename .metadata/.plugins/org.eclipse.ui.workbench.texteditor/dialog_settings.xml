@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="popop" key="selection"/>
+		<item value="config" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
-			<item value="popop"/>
-			<item value=""/>
-			<item value="dfult"/>
-			<item value="allimg"/>
-			<item value="level"/>
-			<item value="main"/>
-			<item value="input"/>
-			<item value="check"/>
+			<item value="config"/>
+			<item value="printf"/>
+			<item value="spKDTreeSplitMethod"/>
+			<item value="sp"/>
+			<item value="28"/>
+			<item value="trim"/>
+			<item value="print"/>
+			<item value="spPCAFilename"/>
 		</list>
 		<list key="replacehistory">
 			<item value="c"/>

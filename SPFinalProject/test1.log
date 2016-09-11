@@ -1,5 +1,0 @@
----ERROR---
-- file: ..\SPImageProc.cpp
-- function: getImageFeatures
-- line: 174
-- message: Invalid arguments

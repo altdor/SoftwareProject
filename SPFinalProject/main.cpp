@@ -30,7 +30,7 @@ using namespace sp;
 void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg);
 int main(int argc, const char* argv[]){
 	int i,j;
-	int* numOfFeatures=0;
+	int* numOfFeatures;
 	SPPoint* featuresArr;
 	SPPoint** allImgFeaters;
 	SPConfig config;
@@ -112,6 +112,15 @@ int main(int argc, const char* argv[]){
 			free(filename);
 			return -1;
 		}
+		allImgFeaters = (SPPoint**)malloc((128)*numOfImages*sizeof(SPPoint*));
+		if(allImgFeaters==NULL){
+			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
+			spLoggerDestroy();
+			free(img);
+			free(msg);
+			free(filename);
+			return -1;
+		}
 		for(int i =0;i<numOfImages;i++){
 			printf("%d\n",(9+i));
 						fflush(NULL);
@@ -155,7 +164,6 @@ int main(int argc, const char* argv[]){
 			features = imagep->getImageFeatures(imagePath, i,numOfFeatures);
 			printf("got features\n");
 			fflush(NULL);
-			allImgFeaters = (SPPoint**)malloc((*numOfFeatures)*numOfImages*sizeof(SPPoint*));
 			allImgFeaters[i] = features;
 			printf("yes or no \n");
 			fflush(NULL);
