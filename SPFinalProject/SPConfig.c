@@ -37,7 +37,7 @@ struct sp_config_t{
 #define NOSUF "Parameter spImagesSuffix is not set"
 #define NONUM "Parameter spNumOfImages is not set"
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
-	//assert(msg!=NULL);
+	assert(msg!=NULL);
 	SPConfig cnfg = (SPConfig)malloc(sizeof(*cnfg));
 	int* input;
 	int len;
@@ -73,7 +73,12 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     	free(fp);
     	free(string);
     }
-    while((n = fread(string, 1, BUFSIZE, fp))>0){
+    //while((n = fread(string, 1, BUFSIZE, fp))>0){
+    while(fgets(string,BUFSIZE,fp)!= NULL){
+    	printf("the current line is:%s",string);
+    	printf("thelength is:%d\n",strlen(string));
+    	n=strlen(string);
+    	fflush(NULL);
     	linenum++;
     	char* start;
     	trim(string);
@@ -83,15 +88,24 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			*msg = SP_CONFIG_INVALID_ARGUMENT;
     			return NULL;
     		}
+    		strlwr(string);
     		start = strchr(string,'=');
     		start++;
     		len = n-strlen(start);
-    		if(strstr(string,"spImagesDirectory")){
+    		if(strstr(string,"spimagesdirectory")){
     			cnfg->spImagesDirectory = (char*)malloc(len*sizeof(char));
+    			if(cnfg->spImagesDirectory==NULL){
+    			   	spConfigDestroy(cnfg);
+    			   	printError(filename,linenum,NOPRE);
+    			   	*msg = SP_CONFIG_ALLOC_FAIL;
+    			   	return NULL;
+    			}
     			strncpy(cnfg->spImagesDirectory, start, len);
+
     			trim(cnfg->spImagesDirectory);
     			input[0]=1;
-
+    			printf("directory is:%s\n",cnfg->spImagesDirectory);
+    			fflush(NULL);
     			if(len==0 || strchr(cnfg->spImagesDirectory,' ')!=NULL){
     				spConfigDestroy(cnfg);
     				printError(filename,linenum,NODIR);
@@ -99,11 +113,19 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     				return NULL;
     			}
     		}
-    		else if(strstr(string,"spImagesPrefix")){
+    		else if(strstr(string,"spimagesprefix")){
     			cnfg->spImagesPrefix = (char*)malloc(len*sizeof(char));
+    			if(cnfg->spImagesPrefix==NULL){
+    				spConfigDestroy(cnfg);
+    				printError(filename,linenum,NOPRE);
+    				*msg = SP_CONFIG_ALLOC_FAIL;
+    				return NULL;
+    			}
     			strncpy(cnfg->spImagesPrefix, start, len);
     			trim(cnfg->spImagesPrefix);
     			input[1]=1;
+    			printf("prefix is:%s\n",cnfg->spImagesPrefix);
+    			    			fflush(NULL);
     			if(len==0||strchr(cnfg->spImagesPrefix,' ')!=NULL){
     				spConfigDestroy(cnfg);
     				printError(filename,linenum,NOPRE);
@@ -111,10 +133,18 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			    return NULL;
     			}
     		}
-    		else if(strstr(string,"spImagesSuffix")){
+    		else if(strstr(string,"spimagessuffix")){
     			cnfg->spImagesSuffix = (char*)malloc(len*sizeof(char));
+    			if(cnfg->spImagesSuffix==NULL){
+    			  spConfigDestroy(cnfg);
+    			  printError(filename,linenum,NOPRE);
+    			  *msg = SP_CONFIG_ALLOC_FAIL;
+    			  return NULL;
+    			}
     			strncpy(cnfg->spImagesSuffix, start, len);
     			trim(cnfg->spImagesSuffix);
+    			printf("spImagesSuffix is:%s\n",cnfg->spImagesSuffix);
+    			    			    			fflush(NULL);
     			if(len==0||strchr(cnfg->spImagesSuffix,' ')!=NULL){
     				spConfigDestroy(cnfg);
     				printError(filename,linenum,NOSUF);
@@ -122,9 +152,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     				return NULL;
     			}
     		}
-    		else if(strstr(string,"spNumOfImages")){
+    		else if(strstr(string,"spnumofimages")){
     			char* temp = (char*)malloc(len*sizeof(char));
-
+    			if(temp==NULL){
+    			   	spConfigDestroy(cnfg);
+    			   	printError(filename,linenum,NOPRE);
+    			   	*msg = SP_CONFIG_ALLOC_FAIL;
+    			   	return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			cnfg->spNumOfImages = atoi(temp);
@@ -137,24 +172,47 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			 }
     			free(temp);
     			input[3]=1;
+    			printf("numofimages is:%d\n",cnfg->spNumOfImages);
+    			    			    			fflush(NULL);
     		}
-    		else if(strstr(string,"spPCADimension")){
+    		else if(strstr(string,"sppcadimension")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			   spConfigDestroy(cnfg);
+    			   printError(filename,linenum,NOPRE);
+    			   *msg = SP_CONFIG_ALLOC_FAIL;
+    			   return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			cnfg->spPCADimension = atoi(temp);
+    			printf("cnfg->spPCADimension: %d\n",cnfg->spPCADimension);
+    			fflush(NULL);
     			if(len ==0 || cnfg->spPCADimension<10 || cnfg->spPCADimension>28){
+
     			    free(temp);
     			    spConfigDestroy(cnfg);
+
     			    printError(filename,linenum,MSG2);
+
     				*msg = SP_CONFIG_INVALID_INTEGER;
     				return NULL;
     			}
+    			printf("spPCADimension is:%s\n",cnfg->spPCADimension);
+    			    			fflush(NULL);
     			free(temp);
     		}
-    		else if(strstr(string,"spPCAFileName")){
+    		else if(strstr(string,"sppcafilename")){
     			cnfg->spPCAFileName = (char*)malloc(len*sizeof(char));
+    			if(cnfg->spPCAFileName==NULL){
+    			   spConfigDestroy(cnfg);
+    			   printError(filename,linenum,NOPRE);
+    			   *msg = SP_CONFIG_ALLOC_FAIL;
+    			   return NULL;
+    			}
     			strncpy(cnfg->spPCAFileName, start, len);
+    			printf("spPCAFileName is:%s\n",cnfg->spPCAFileName);
+    			fflush(NULL);
     			trim(cnfg->spPCAFileName);
     			if(len == 0){
     			    spConfigDestroy(cnfg);
@@ -169,8 +227,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			    return NULL;
     			}
     		}
-    		else if(strstr(string,"spNumOfFeatures")){
+    		else if(strstr(string,"spnumoffeatures")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			   spConfigDestroy(cnfg);
+    			   printError(filename,linenum,NOPRE);
+    			   *msg = SP_CONFIG_ALLOC_FAIL;
+    			   return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			cnfg->spNumOfFeatures = atoi(temp);
@@ -183,8 +247,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			}
     			free(temp);
     		}
-    		else if(strstr(string,"spKDTreeSplitMethod")){
+    		else if(strstr(string,"spkdtreesplitmethod")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			  spConfigDestroy(cnfg);
+    			  printError(filename,linenum,NOPRE);
+    			  *msg = SP_CONFIG_ALLOC_FAIL;
+    			  return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			if(strcmp(temp,"MAX_SPREAD")==0){
@@ -205,8 +275,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			}
     			free(temp);
     		}
-    		else if(strstr(string,"spKNN")){
+    		else if(strstr(string,"spknn")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			   spConfigDestroy(cnfg);
+    			   printError(filename,linenum,NOPRE);
+    			   *msg = SP_CONFIG_ALLOC_FAIL;
+    			   return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			cnfg->spKNN = atoi(temp);
@@ -218,8 +294,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			 	return NULL;
     			}
     		}
-    		else if(strstr(string,"spMinimalGUI")){
+    		else if(strstr(string,"spminimalgui")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			    spConfigDestroy(cnfg);
+    			    printError(filename,linenum,NOPRE);
+    			    *msg = SP_CONFIG_ALLOC_FAIL;
+    			    return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			if(strcmp(temp,"false")==0){
@@ -238,8 +320,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
        			free(temp);
 
     		}
-    		else if(strstr(string,"spLoggerLevel")){
+    		else if(strstr(string,"sploggerlevel")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			    spConfigDestroy(cnfg);
+    			    printError(filename,linenum,NOPRE);
+    			    *msg = SP_CONFIG_ALLOC_FAIL;
+    			    return NULL;
+    			}
        			strncpy(temp, start, len);
        			trim(temp);
     			cnfg->spLoggerLevel = atoi(temp);
@@ -252,8 +340,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			}
     			free(temp);
     		}
-    		else if(strstr(string,"spLoggerFilename")){
+    		else if(strstr(string,"sploggerfilename")){
     			cnfg->spLoggerFilename = (char*)malloc(len*sizeof(char));
+    			if(cnfg->spLoggerFilename==NULL){
+    			   spConfigDestroy(cnfg);
+    			   printError(filename,linenum,NOPRE);
+    			   *msg = SP_CONFIG_ALLOC_FAIL;
+    			   return NULL;
+    			}
        			strncpy(cnfg->spLoggerFilename, start, len);
        			trim(cnfg->spLoggerFilename);
        			if(len == 0){
@@ -269,8 +363,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
        			    return NULL;
        			}
     		}
-    		else if(strstr(string,"spNumOfSimilarImages")){
+    		else if(strstr(string,"spnumofsimilarimages")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			   spConfigDestroy(cnfg);
+    			   printError(filename,linenum,NOPRE);
+    			   *msg = SP_CONFIG_ALLOC_FAIL;
+    			   return NULL;
+    			}
        			strncpy(temp, start, len);
        			trim(temp);
        			cnfg->spNumOfSimilarImages = atoi(temp);
@@ -283,8 +383,14 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
        			}
        			free(temp);
     		}
-    		else if(strstr(string,"spExtractionMode")){
+    		else if(strstr(string,"spextractionmode")){
     			char* temp = (char*)malloc(len*sizeof(char));
+    			if(temp==NULL){
+    			    spConfigDestroy(cnfg);
+    			    printError(filename,linenum,NOPRE);
+    			    *msg = SP_CONFIG_ALLOC_FAIL;
+    			    return NULL;
+    			}
     			strncpy(temp, start, len);
     			trim(temp);
     			if(strcmp(temp,"false")==0){
@@ -369,6 +475,7 @@ void dfult(SPConfig confg){
 		confg->spLoggerLevel = 3;
 		confg->spLoggerFilename = (char*)malloc((BUFSIZE)*sizeof(char));
 		confg->spLoggerFilename = "stdout";
+
 }
 void spConfigDestroy(SPConfig cnfg){
 	free(cnfg->spImagesDirectory);
@@ -381,8 +488,11 @@ void spConfigDestroy(SPConfig cnfg){
 }
 void printError(const char* filename, int line, char* msg){
 	printf("File: %s\n",filename);
-	printf("Line: %s\n",line);
+	fflush(NULL);
+	printf("Line: %d\n",line);
+	fflush(NULL);
 	printf("Message: %s\n",msg);
+	fflush(NULL);
 }
 
 bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg){

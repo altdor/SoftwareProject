@@ -38,7 +38,7 @@ int main(int argc, const char* argv[]){
 	KDTreeNode kdtree;
 	int level;
 	int numOfImages;
-	SP_CONFIG_MSG* msg=NULL;
+	SP_CONFIG_MSG* msg;
 	SPPoint* features;
 	char* img;
 	char* filename = (char*)malloc(BUFSIZE);
@@ -51,7 +51,6 @@ int main(int argc, const char* argv[]){
 	img = (char*)malloc(BUFSIZE);
 	if(img ==NULL){
 		free(filename);
-		free(img);
 		return -1;
 	}
 	printf("2\n");
@@ -68,14 +67,23 @@ int main(int argc, const char* argv[]){
 	printf("4\n");
 	fflush(NULL);
 	if(!checkFileName(filename)){
+		free(filename);
+		free(img);
 		return -1;
 	}
 	printf("5\n");
 	fflush(NULL);
+	msg=(SP_CONFIG_MSG*)malloc(sizeof(SP_CONFIG_MSG));
+	if(msg==NULL){
+		free(filename);
+		free(img);
+		return -1;
+	}
 	config = spConfigCreate(filename,msg);
 
 	if(*msg != SP_CONFIG_SUCCESS){
 		free(img);
+		free(msg);
 		free(filename);
 		return -1;
 	}
@@ -86,6 +94,7 @@ int main(int argc, const char* argv[]){
 			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
 			free(img);
+			free(msg);
 			free(filename);
 			return -1;
 		}
@@ -94,6 +103,7 @@ int main(int argc, const char* argv[]){
 			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
 			free(img);
+			free(msg);
 			free(filename);
 			return -1;
 		}
@@ -104,6 +114,7 @@ int main(int argc, const char* argv[]){
 				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
+				free(msg);
 				free(imagePath);
 				spConfigDestroy(config);
 				return -1;
@@ -113,6 +124,7 @@ int main(int argc, const char* argv[]){
 				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
+				free(msg);
 				free(imagePath);
 				free(imagePathnosuf);
 				spConfigDestroy(config);
@@ -124,6 +136,7 @@ int main(int argc, const char* argv[]){
 				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
+				free(msg);
 				free(imagePath);
 				free(imagePathnosuf);
 				free(filename);
@@ -137,6 +150,7 @@ int main(int argc, const char* argv[]){
 				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
 				free(imagePath);
+				free(msg);
 				free(imagePathnosuf);
 				free(filename);
 				return -1;
@@ -151,6 +165,7 @@ int main(int argc, const char* argv[]){
 				return -1;
 			}
 			free(imagePath);
+			free(msg);
 			free(imagePathnosuf);
 		}
 
@@ -162,6 +177,7 @@ int main(int argc, const char* argv[]){
 			ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
 			free(filename);
+			free(msg);
 			return -1;
 		}
 		imagePathnosuf = (char*)malloc(BUFSIZE*3+sizeof(int));
@@ -170,6 +186,7 @@ int main(int argc, const char* argv[]){
 			spLoggerDestroy();
 			free(imagePathnosuf);
 			free(filename);
+			free(msg);
 			spConfigDestroy(config);
 			return -1;
 		}
@@ -179,6 +196,7 @@ int main(int argc, const char* argv[]){
 			spLoggerDestroy();
 			free(imagePathnosuf);
 			free(filename);
+			free(msg);
 			return -1;
 		}
 		allImgFeaters = (SPPoint**)malloc(numOfImages*sizeof(allImgFeaters));
@@ -188,6 +206,7 @@ int main(int argc, const char* argv[]){
 			spConfigDestroy(config);
 			free(imagePathnosuf);
 			free(filename);
+			free(msg);
 			free(allImgFeaters);
 			return -1;
 		}
@@ -198,6 +217,7 @@ int main(int argc, const char* argv[]){
 				spLoggerDestroy();
 				free(imagePathnosuf);
 				free(filename);
+				free(msg);
 				free(allImgFeaters);
 				return -1;
 			}
@@ -212,6 +232,7 @@ int main(int argc, const char* argv[]){
 				spLoggerDestroy();
 				free(imagePathnosuf);
 				free(filename);
+				free(msg);
 				free(allImgFeaters);
 				return -1;
 			}
@@ -252,6 +273,7 @@ int main(int argc, const char* argv[]){
 			}
 		}
 		free(featuresArr);
+		free(msg);
 		return -1;
 	}
 	kdarr = spKdarrayInit(featuresArr, (*numOfFeatures)*numOfImages);
@@ -263,6 +285,7 @@ int main(int argc, const char* argv[]){
 			}
 		}
 		free(featuresArr);
+		free(msg);
 		return -1;
 	}
 	kdtree = buildKDTree(kdarr, GetSplitMethod(config),0);
@@ -274,6 +297,7 @@ int main(int argc, const char* argv[]){
 				spPointDestroy(featuresArr[i*j+j]);
 			}
 		}
+		free(msg);
 		free(featuresArr);
 		return -1;
 	}
@@ -312,6 +336,7 @@ int main(int argc, const char* argv[]){
 	}
 	KDTreeDestroy(kdtree);
 	free(featuresArr);
+	free(msg);
 }
 void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg){
 	features = imagep->getImageFeatures(img, -1,numOfFeatures);
