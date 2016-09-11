@@ -157,8 +157,6 @@ int main(int argc, const char* argv[]){
 			fflush(NULL);
 			allImgFeaters = (SPPoint**)malloc((*numOfFeatures)*numOfImages*sizeof(SPPoint*));
 			allImgFeaters[i] = features;
-			printf("yes or no \n");
-			fflush(NULL);
 			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
 			printf("imagePathnosuf %s\n",imagePathnosuf);
 			fflush(NULL);

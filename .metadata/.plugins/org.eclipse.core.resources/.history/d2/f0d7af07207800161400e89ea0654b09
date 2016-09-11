@@ -154,14 +154,10 @@ int main(int argc, const char* argv[]){
 			}
 			features = imagep->getImageFeatures(imagePath, i,numOfFeatures);
 			printf("got features\n");
-			fflush(NULL);
+			fflush)NULL);
 			allImgFeaters = (SPPoint**)malloc((*numOfFeatures)*numOfImages*sizeof(SPPoint*));
 			allImgFeaters[i] = features;
-			printf("yes or no \n");
-			fflush(NULL);
 			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
-			printf("imagePathnosuf %s\n",imagePathnosuf);
-			fflush(NULL);
 			if(*msg != SP_CONFIG_SUCCESS){
 				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
