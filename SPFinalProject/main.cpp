@@ -33,7 +33,7 @@ int main(int argc, const char* argv[]){
 	int feat = 0;
 	int* numOfFeatures = &feat;
 	SPPoint* featuresArr;
-	SPPoint** allImgFeaters=NULL;
+	SPPoint** allImgFeaters;
 	SPConfig config;
 	SPKDArray kdarr;
 	KDTreeNode kdtree;
@@ -114,7 +114,7 @@ int main(int argc, const char* argv[]){
 			free(filename);
 			return -1;
 		}
-		allImgFeaters = (SPPoint**)malloc(sizeof(SPPoint*));
+		allImgFeaters = (SPPoint**)malloc(sizeof(*allImgFeaters));
 		if(allImgFeaters==NULL){
 			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
 			spLoggerDestroy();
@@ -165,10 +165,11 @@ int main(int argc, const char* argv[]){
 				free(filename);
 				return -1;
 			}
-			features = imagep->getImageFeatures(imagePath, i,numOfFeatures);
+			features = imagep->getImageFeatures(imagePath,i,numOfFeatures);
 			printf("got features\n");
 			fflush(NULL);
-			realloc(allImgFeaters,sizeof(allImgFeaters)+(feat)*sizeof(SPPoint*));
+			allImgFeaters[i] = (SPPoint*)malloc(sizeof(features));
+			/**realloc(allImgFeaters,sizeof(allImgFeaters)+(feat)*sizeof(SPPoint*));
 			if(allImgFeaters==NULL){
 				ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
 				spLoggerDestroy();
@@ -176,7 +177,7 @@ int main(int argc, const char* argv[]){
 				free(msg);
 				free(filename);
 				return -1;
-			}
+			}**/
 
 			allImgFeaters[i] = features;
 			printf("yes or no \n");

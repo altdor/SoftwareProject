@@ -217,7 +217,11 @@ SPPoint* make2DTo1D(SPPoint** array, int numOfImages, int numOfFeatures, SPConfi
 		return NULL;
 	}
 	for (i=0; i<numOfImages; i++){
+		printf("i=%d out of %d\n",i,numOfImages);
+		fflush(NULL);
 		for(j=0; j<numOfFeatures; j++){
+			printf("j=%d out of %d\n",j,numOfFeatures);
+			fflush(NULL);
 			featuresArr[i*numOfFeatures+j] = array[i][j];
 		}
 		free(array[i]);

@@ -9,7 +9,6 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-#include <conio.h>
 #include <assert.h>
 #include "SPLogger.h"
 #include "SPConfig.h"
@@ -39,14 +38,14 @@ struct sp_config_t{
 #define NOSUF "Parameter spImagesSuffix is not set"
 #define NONUM "Parameter spNumOfImages is not set"
 
-/**char* strlwr (char *str){
+char* strlwr (char *str){
   unsigned char *p = (unsigned char *)str;
   while (*p) {
      *p = tolower(*p);
       p++;
   }
   return str;
-}**/
+}
 
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 	assert(msg!=NULL);
