@@ -194,7 +194,7 @@ int main(int argc, const char* argv[]){
 				return -1;
 			}
 			strcat(imagePathnosuf,FEATSUF);
-			if(!extractToFile(imagePathnosuf, features, feat, level)){
+			if(!extractToFile(imagePathnosuf, features, *numOfFeatures, level)){
 				spConfigDestroy(config);
 				spLoggerDestroy();
 				free(imagePath);
@@ -278,7 +278,7 @@ int main(int argc, const char* argv[]){
 		}
 
 	}
-	featuresArr = make2DTo1D(allImgFeaters, numOfImages, feat,config);
+	featuresArr = make2DTo1D(allImgFeaters, numOfImages, *numOfFeatures,config);
 	if(featuresArr ==NULL){
 		free(filename);
 		spConfigDestroy(config);
@@ -291,7 +291,7 @@ int main(int argc, const char* argv[]){
 		spConfigDestroy(config);
 		free(filename);
 		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(feat); j++){
+			for(j=0; j<(*numOfFeatures); j++){
 				spPointDestroy(featuresArr[i*j+j]);
 			}
 		}
@@ -306,7 +306,7 @@ int main(int argc, const char* argv[]){
 		free(filename);
 		free(kdarr);
 		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(feat); j++){
+			for(j=0; j<(*numOfFeatures); j++){
 				spPointDestroy(featuresArr[i*j+j]);
 			}
 		}
@@ -314,11 +314,11 @@ int main(int argc, const char* argv[]){
 		free(msg);
 		return -1;
 	}
-	kdarr = spKdarrayInit(featuresArr, (feat)*numOfImages);
+	kdarr = spKdarrayInit(featuresArr, (*numOfFeatures)*numOfImages);
 	if(kdarr==NULL){
 		free(filename);
 		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(feat); j++){
+			for(j=0; j<(*numOfFeatures); j++){
 				spPointDestroy(featuresArr[i*j+j]);
 			}
 		}
@@ -331,7 +331,7 @@ int main(int argc, const char* argv[]){
 		free(filename);
 		spKDArrayDestroy(kdarr);
 		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(feat); j++){
+			for(j=0; j<(*numOfFeatures); j++){
 				spPointDestroy(featuresArr[i*j+j]);
 			}
 		}
@@ -367,7 +367,7 @@ int main(int argc, const char* argv[]){
 	free(filename);
 	spKDArrayDestroy(kdarr);
 	for (i=0; i<numOfImages; i++){
-		for(j=0; j<(feat); j++){
+		for(j=0; j<(*numOfFeatures); j++){
 			spPointDestroy(featuresArr[i*j+j]);
 		}
 	}
