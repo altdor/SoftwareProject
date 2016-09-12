@@ -126,7 +126,7 @@ int main(int argc, const char* argv[]){
 
 		for(int i =0;i<numOfImages;i++){
 			printf("%d\n",(9+i));
-						fflush(NULL);
+			fflush(NULL);
 			char* imagePath = (char*)malloc(BUFSIZE*3+sizeof(int));
 			char* imagePathnosuf;
 			if(imagePath == NULL){
@@ -206,7 +206,6 @@ int main(int argc, const char* argv[]){
 			free(msg);
 			free(imagePathnosuf);
 		}
-
 	}
 	else{
 		char* imagePathnosuf;
@@ -276,9 +275,12 @@ int main(int argc, const char* argv[]){
 			}
 			free(imagePathnosuf);
 		}
-
 	}
-	featuresArr = make2DTo1D(allImgFeaters, numOfImages, feat,config);
+	printf("before \n");
+	fflush(NULL);
+	featuresArr = make2DTo1D(allImgFeaters,numOfImages,feat,config);
+	printf("after \n");
+	fflush(NULL);
 	if(featuresArr ==NULL){
 		free(filename);
 		spConfigDestroy(config);
