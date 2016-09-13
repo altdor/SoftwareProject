@@ -77,7 +77,29 @@ bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures, in
 	fclose(featfp);
 	return true;
 }
-SPPoint* extractFromFiles(char* imagePathnosuf, int level){
+int getNumOfFeaturesForImage(char* imagePathnosuf, int level){
+	FILE* featfp;
+	char* str;
+	int numOfFeatures;
+	featfp = fopen(imagePathnosuf,"r");
+	if(featfp == NULL){
+		ErrorLogger(level, "cant open file", "MainAux.c",__func__, __LINE__);
+		spLoggerDestroy();
+		return -1;
+	}
+	str = (char*)malloc(BUFSIZE);
+	if(str == NULL){
+		ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
+		spLoggerDestroy();
+		return -1;
+	}
+	fgets(str,BUFSIZE ,featfp);
+	numOfFeatures = atoi(str);
+	free(str);
+	fclose(featfp);
+	return numOfFeatures;
+}
+SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 	FILE* featfp;
 	char* str;
 	int numOfFeatures;
@@ -96,6 +118,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level){
 	}
 	fgets(str,BUFSIZE ,featfp);
 	numOfFeatures = atoi(str);
+	*Features = numOfFeatures;
 	free(str);
 	features = (SPPoint*)malloc(sizeof(*features)*numOfFeatures);
 	if(features == NULL){

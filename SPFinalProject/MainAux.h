@@ -31,7 +31,14 @@ bool checkFileName(const char* filename);
  * Otherwise returns true
  */
 bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures,int level);
-
+/**
+ * extracts the num of features that are already located inside a file
+ *
+ * @return
+ * -1 in case the file doesn't open
+ * Otherwise returns the number of features for the image
+ */
+int  getNumOfFeaturesForImage(char* imagePathnosuf, int level);
 /**
  * extracts the feature that are already located inside a file
  *
@@ -39,7 +46,7 @@ bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures,int
  * NULL in case the file doesn't open
  * Otherwise returns an array containing the features
  */
-SPPoint* extractFromFiles(char* imagePathnosuf,int level);
+SPPoint* extractFromFiles(char* imagePathnosuf,int level, int* Features);
 
 /**
  * executes the functions that need to be done in the not minimal gui mode

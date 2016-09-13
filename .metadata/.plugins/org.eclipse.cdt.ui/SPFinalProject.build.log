@@ -1,12 +1,7 @@
-18:48:10 **** Incremental Build of configuration Debug for project SPFinalProject ****
+11:08:30 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
-g++ "-IC:\\opencv\\build\\include" -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o main.o "..\\main.cpp" 
-cc1plus.exe: warning: command line option '-std=c99' is valid for C/ObjC but not for C++
-In file included from ..\main.cpp:14:0:
-..\SPImageProc.h:19:27: warning: non-static data member initializers only available with -std=c++11 or -std=gnu++11
-  const char* windowName = "Software Project CBIR";
-                           ^
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
 g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe main.o SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
 
-18:48:11 Build Finished (took 1s.125ms)
+11:08:30 Build Finished (took 399ms)
 

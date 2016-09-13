@@ -69,7 +69,6 @@ KDTree buildKDTree(SPKDArray array, int depth){
 #include "SPLogger.h"
 #include "SPPoint.h"
 #include "SPKDArray.h"
-#include "SPLogger.h"
 struct sp_KDTree_Node {
 	int Dim;
 	int Val;

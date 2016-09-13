@@ -10,7 +10,6 @@
 #include "KDTree.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "SPLogger.h"
 struct sp_knn_t{
 	SPBPQueue bpq;
 	int spKNN;

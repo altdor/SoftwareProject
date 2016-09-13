@@ -26,7 +26,7 @@ SPImageProc.o: SPImageProc.cpp SPImageProc.h SPConfig.h SPPoint.h SPLogger.h
 #use gcc -MM SPPoint.c to see the dependencies
 SPPoint.o: SPPoint.c SPPoint.h 
 	$(CC) $(C_COMP_FLAG) -c $*.c
-KDTree.o: KDTree.c KDTree.h SPKDArray.h SPPoint.h SPConfig.h SPLogger.h
+KDTree.o: KDTree.c KDTree.h SPKDArray.h SPPoint.h SPConfig.h 
 	$(CC) $(C_COMP_FLAG) -c $*.c
 MainAux.o: MainAux.c SPConfig.h SPLogger.h KDTree.h SPKDArray.h SPPoint.h SPKNN.h SPListElement.h SPBPriorityQueue.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
@@ -34,9 +34,9 @@ SPBPriorityQueue.o: SPBPriorityQueue.c SPList.h SPListElement.h SPBPriorityQueue
 	$(CC) $(C_COMP_FLAG) -c $*.c
 SPConfig.o: SPConfig.c SPLogger.h SPConfig.h	
 	$(CC) $(C_COMP_FLAG) -c $*.c
-SPKDArray.o: SPKDArray.c SPKDArray.h SPPoint.h SPLogger.h	
+SPKDArray.o: SPKDArray.c SPKDArray.h SPPoint.h 
 	$(CC) $(C_COMP_FLAG) -c $*.c
-SPKNN.o: SPKNN.c SPBPriorityQueue.h SPListElement.h SPKNN.h SPPoint.h KDTree.h SPKDArray.h SPConfig.h SPLogger.h
+SPKNN.o: SPKNN.c SPBPriorityQueue.h SPListElement.h SPKNN.h SPPoint.h KDTree.h SPKDArray.h SPConfig.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
 SPList.o: SPList.c SPList.h SPListElement.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
