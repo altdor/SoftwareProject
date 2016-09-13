@@ -138,8 +138,6 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			a[i][j] = p[j]->index;
 		}
 	}
-	printf("size of\n");
-		fflush(NULL);
 	kda->size = size;
 	for (i=0; i<size; i++){
 		kda->pointArr[i] = spPointCopy(arr[i]);
