@@ -131,12 +131,15 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			p[j]->point = spPointCopy(arr[j]);
 			p[j]->index=j;
 		}
+
 		qsort(p,size,sizeof(SPPCoor),compByAxis);
 
 		for(j=0; j<size; j++){
 			a[i][j] = p[j]->index;
 		}
 	}
+	printf("size of\n");
+		fflush(NULL);
 	kda->size = size;
 	for (i=0; i<size; i++){
 		kda->pointArr[i] = spPointCopy(arr[i]);

@@ -1,7 +1,7 @@
-11:08:30 **** Incremental Build of configuration Debug for project SPFinalProject ****
+14:40:54 **** Incremental Build of configuration Debug for project SPFinalProject ****
 Info: Internal Builder is used for build
 gcc -O0 -g3 -Wall -c -fmessage-length=0 -std=c99 -o SPKDArray.o "..\\SPKDArray.c" 
 g++ "-LC:\\opencv\\build\\x86\\mingw\\lib" -o SPFinalProject.exe main.o SPPoint.o SPLogger.o SPListElement.o SPList.o SPKNN.o SPKDArray.o SPImageProc.o SPConfig.o SPBPriorityQueue.o MainAux.o KDTree.o -llibopencv_core310 -llibopencv_imgcodecs310 -llibopencv_imgproc310 -llibopencv_xfeatures2d310 -llibopencv_features2d310 -llibopencv_highgui310 
 
-11:08:30 Build Finished (took 399ms)
+14:40:55 Build Finished (took 466ms)
 

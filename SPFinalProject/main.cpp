@@ -29,7 +29,7 @@ extern "C"{
 using namespace sp;
 void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg);
 int main(int argc, const char* argv[]){
-	int i,j,index;
+	int i,j,index=0;
 	int feat = 0;
 	int totalNumOfFeatures=0;
 	int* numOfFeatures = &feat;
@@ -196,7 +196,8 @@ int main(int argc, const char* argv[]){
 			}
 			features = imagep->getImageFeatures(imagePath,i,numOfFeatures);
 			for(j=0;j<feat;j++){
-				allImgFeaters[i*numOfImages+j] =  features[j];
+				allImgFeaters[index] =  features[j];
+				index++;
 			}
 			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
 			if(*msg != SP_CONFIG_SUCCESS){
@@ -224,6 +225,7 @@ int main(int argc, const char* argv[]){
 		}
 	}
 	else{
+		index = 0;
 		char* imagePathnosuf;
 		numOfImages= spConfigGetNumOfImages(config,msg);
 		if(*msg != SP_CONFIG_SUCCESS){
@@ -312,8 +314,9 @@ int main(int argc, const char* argv[]){
 				free(allImgFeaters);
 				return -1;
 			}
-			for(index = 0;index<feat;index++){
-				allImgFeaters[index+i*numOfImages] = features[index];
+			for(j = 0;j<feat;j++){
+				allImgFeaters[index] = features[j];
+				index++;
 			}
 			free(features);
 			free(imagePathnosuf);
