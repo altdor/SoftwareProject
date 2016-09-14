@@ -193,7 +193,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 }
 
 SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
-	int i,j,d,s,ind,pointerL,pointerR;
+	int i,j,d,s,ind,pointerL,pointerR,h,g;
 	int* x;
 	int* map1;
 	int* map2;
@@ -204,6 +204,8 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 	SPKDArray* splitted;
 	if (kdArr==NULL||coor<0)
 		return NULL;
+	h=0;
+	g=0;
 	d = spPointGetDimension(*kdArr->pointArr);
 	s = kdArr->size;
 	x = (int*)malloc(s*sizeof(int));
@@ -376,13 +378,21 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 	}
 	for (i=0; i<(s-(s/2)); i++){
 		x[(kdArr->indMat)[coor][i]] = 0;
-		p1[i]= kdArr->pointArr[kdArr->indMat[coor][i]];
-		map1[kdArr->indMat[coor][i]]=i;
 	}
 	for (i=(s-(s/2)); i<s; i++){
 		x[(kdArr->indMat)[coor][i]] = 1;
-		p2[i-(s-(s/2))] = kdArr->pointArr[kdArr->indMat[coor][i]];
-		map2[kdArr->indMat[coor][i]]=i-(s-(s/2));
+	}
+	for (i=0; i<s; i++){
+		if (x[i]==0){
+			p1[h] = spPointCopy(kdArr->pointArr[i]);
+			map1[i]=h;
+			h++;
+		}
+		else{
+			p2[g] = spPointCopy(kdArr->pointArr[i]);
+			map2[i]=g;
+			g++;
+		}
 	}
 	for (i=0; i<d; i++){
 		pointerL = 0;
