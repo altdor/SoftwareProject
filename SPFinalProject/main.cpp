@@ -45,6 +45,8 @@ int main(int argc, const char* argv[]){
 	numOfFeatures = &feat;
 	printf("1\n");
 	fflush(NULL);
+	i = main2();
+	i=0;
 	if(filename == NULL){
 		free(filename);
 		return -1;
