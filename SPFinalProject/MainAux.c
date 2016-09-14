@@ -16,10 +16,10 @@
 #include "SPLogger.h"
 #include "SPBPriorityQueue.h"
 #define BUFSIZE 1024
-#define ERROR1 "Invalid command line: use -c <config_filename>"
+#define ERROR1 "Invalid command line: use -c <config_filename>\n"
 #define ERROR2 "The configuration file"
-#define COULDNTOPEN "couldn't be open"
-#define ERROR3 "The default configuration file spcbir.config couldn't be open"
+#define COULDNTOPEN "couldn't be open\n"
+#define ERROR3 "The default configuration file spcbir.config couldn't be open\n"
 #define DEFCON "spcbir.config"
 #define BESTCAND "Best candidates for -"
 #define ARE "are:"
@@ -175,7 +175,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 	return features;
 }
 int maxIndex(int* count, int size){
-	int max=0,index,i;
+	int max=count[0],index=0,i;
 	for (i=0; i<size; i++){
 		if (count[i]>max){
 			max = count[i];
@@ -185,6 +185,7 @@ int maxIndex(int* count, int size){
 	return index;
 }
 void notMinimalGui(int* arr, char* imgpath, SPConfig config,int size){
+	int index;
 	int numOfSimilarImages = GetspNumOfSimilarImages(config);
 	if(numOfSimilarImages == -1||arr==NULL ||imgpath==NULL || size<=0){
 		ErrorLogger(GetSpLoggerLevel(config), "Missing argument", "MainAux.c",__func__, __LINE__);
@@ -195,7 +196,7 @@ void notMinimalGui(int* arr, char* imgpath, SPConfig config,int size){
 	printf("%s %s %s\n",BESTCAND, imgpath, ARE);
 	fflush(NULL);
 	for(int i=0;i<numOfSimilarImages;i++){
-		int index = maxIndex(arr,size);
+		index = maxIndex(arr,size);
 		arr[index]=-1;
 		char* path = (char*)malloc(BUFSIZE);
 		if(path == NULL){
@@ -214,8 +215,14 @@ void notMinimalGui(int* arr, char* imgpath, SPConfig config,int size){
 int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 	int i,index;
 	int numOfSimilarImages = GetspNumOfSimilarImages(config);
-	SP_CONFIG_MSG* msg = NULL;
+	SP_CONFIG_MSG* msg=(SP_CONFIG_MSG*)malloc(sizeof(SP_CONFIG_MSG));
 	int* count;
+	if(msg == NULL){
+			ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
+			spLoggerDestroy();
+			spConfigDestroy(config);
+			return NULL;
+		}
 	if (tree == NULL || features == NULL || config == NULL ||size<=0)
 		return NULL;
 	count = (int*)malloc(spConfigGetNumOfImages(config,msg)*sizeof(int));
@@ -223,6 +230,7 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
 		spLoggerDestroy();
 		spConfigDestroy(config);
+		free(msg);
 		return NULL;
 	}
 	for (i=0; i<size; i++){
@@ -236,33 +244,7 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 		}
 		SPKNNDestroy(knn);
 	}
+	free(msg);
 	return count;
-}
-SPPoint* make2DTo1D(SPPoint** array, int numOfImages, int numOfFeatures, SPConfig config){
-	int i,j;
-	SPPoint* featuresArr = (SPPoint*)malloc(numOfFeatures*numOfImages*sizeof(*featuresArr));
-	if(featuresArr==NULL){
-		for (i=0; i<numOfImages; i++){
-			for(j=0; j<numOfFeatures; j++){
-				spPointDestroy(array[i][j]);
-			}
-			free(array[i]);
-		}
-		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "MainAux.c",__func__, __LINE__);
-		spLoggerDestroy();
-		return NULL;
-	}
-	for (i=0; i<numOfImages; i++){
-		printf("i=%d out of %d\n",i,numOfImages);
-		fflush(NULL);
-		for(j=0; j<numOfFeatures; j++){
-			printf("j=%d out of %d\n",j,numOfFeatures);
-			fflush(NULL);
-			featuresArr[i*numOfFeatures+j] = array[i][j];
-		}
-		free(array[i]);
-	}
-	free(array);
-	return featuresArr;
 }
 

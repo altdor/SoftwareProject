@@ -98,5 +98,5 @@ double spCoorGetVal(SPPCoor spcoor);
  * if point is NULL nothing happens.
  */
 void spKDArrayDestroy(SPKDArray arr);
-int main2();
+
 #endif /* SPKDARRAY_H_ */

@@ -70,12 +70,3 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size);
  * the index of the nearest image
  */
 int maxIndex(int* count, int size);
-
-/**
- * receives a 2 dimensional array and inserts it into a 1 dimensional array
- *
- * @return
- * NULL in case of an allocation problem
- * Otherwise returns an array that contains all the points that where in the 2D array
- */
-SPPoint* make2DTo1D(SPPoint** array, int numOfImages, int numOfFeatures,SPConfig config);
