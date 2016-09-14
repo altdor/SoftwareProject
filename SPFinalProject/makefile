@@ -1,7 +1,7 @@
 CC = gcc
 CPP = g++
 #put your object files here
-OBJS = main.o SPImageProc.o SPPoint.o 
+OBJS = main.o SPImageProc.o SPPoint.o KDTree.o MainAux.o SPBPriorityQueue.o SPConfig.o SPKDArray.o SPKNN.o SPList.o SPListElement.o SPLogger.o
 #The executabel filename
 EXEC = SPCBIR
 INCLUDEPATH=/usr/local/lib/opencv-3.1.0/include/
@@ -26,17 +26,20 @@ SPImageProc.o: SPImageProc.cpp SPImageProc.h SPConfig.h SPPoint.h SPLogger.h
 #use gcc -MM SPPoint.c to see the dependencies
 SPPoint.o: SPPoint.c SPPoint.h 
 	$(CC) $(C_COMP_FLAG) -c $*.c
-KDTree.o: KDTree.c KDTree.h SPKDArray.h SPPoint.h SPConfig.h 
+KDTree.o: KDTree.c KDTree.h SPKDArray.h SPPoint.h SPConfig.h SPLogger.h 
 	$(CC) $(C_COMP_FLAG) -c $*.c
-MainAux.o: MainAux.c SPConfig.h SPLogger.h KDTree.h SPKDArray.h SPPoint.h SPKNN.h SPListElement.h SPBPriorityQueue.h
+MainAux.o: MainAux.c SPConfig.h SPLogger.h KDTree.h SPKDArray.h SPPoint.h \
+ SPKNN.h SPListElement.h SPBPriorityQueue.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
-SPBPriorityQueue.o: SPBPriorityQueue.c SPList.h SPListElement.h SPBPriorityQueue.h
+SPBPriorityQueue.o: SPBPriorityQueue.c SPList.h SPListElement.h \
+ SPBPriorityQueue.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
 SPConfig.o: SPConfig.c SPLogger.h SPConfig.h	
 	$(CC) $(C_COMP_FLAG) -c $*.c
 SPKDArray.o: SPKDArray.c SPKDArray.h SPPoint.h 
 	$(CC) $(C_COMP_FLAG) -c $*.c
-SPKNN.o: SPKNN.c SPBPriorityQueue.h SPListElement.h SPKNN.h SPPoint.h KDTree.h SPKDArray.h SPConfig.h
+SPKNN.o: SPKNN.c SPBPriorityQueue.h SPListElement.h SPKNN.h SPPoint.h \
+ KDTree.h SPKDArray.h SPConfig.h SPLogger.h
 	$(CC) $(C_COMP_FLAG) -c $*.c
 SPList.o: SPList.c SPList.h SPListElement.h
 	$(CC) $(C_COMP_FLAG) -c $*.c

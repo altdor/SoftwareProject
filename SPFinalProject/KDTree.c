@@ -102,6 +102,8 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 			free(splitted);
 			return NULL;
 		}
+		printf("a");
+		fflush(NULL);
 		switch(splitMethod){
 		case(MAX_SPREAD):
 				p = (SPPCoor*)malloc(sizeof(SPPCoor)*spKdarrayGetSize(array));
@@ -109,12 +111,14 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 				for (int i=0; i<dim; i++){
 					int tempSpread;
 					for(int j=0; j<spKdarrayGetSize(array); j++){
-						spCoorSetAxis(p[j],i);
-						spCoorSetPoint(p[j],spPointCopy(arr[j]));
+						//spCoorSetAxis(p[j],i);
+						//spCoorSetPoint(p[j],spPointCopy(arr[j]));
 						spCoorSetIndex(p[j],j);
+						spCoorSetVal(p[j],spPointGetAxisCoor(arr[j],i));
 					}
 					qsort(p,spKdarrayGetSize(array),sizeof(SPPCoor),compByAxis);
-					tempSpread = spPointGetData(spCoorGetPoint(p[spKdarrayGetSize(array)-1]))[i]-spPointGetData(spCoorGetPoint(p[0]))[i];
+					//tempSpread = spPointGetData(spCoorGetPoint(p[spKdarrayGetSize(array)-1]))[i]-spPointGetData(spCoorGetPoint(p[0]))[i];
+					tempSpread = spCoorGetVal(p[spKdarrayGetSize(array)-1])-spCoorGetVal(p[0]);
 					if(tempSpread>spread){
 						spread = tempSpread;
 						coor = i;
@@ -128,13 +132,23 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 				coor = incPointer%spPointGetDimension(arr[0]);
 				break;
 		}
+		printf("b");
+		fflush(NULL);
 		splitted=spKdarraySplit(array,coor);
+		printf("c\n");
+		fflush(NULL);
 		if(dim%2==0){
+			printf("coor = %d\n",coor);
+			fflush(NULL);
 			kdtree->Val=spPointGetData(spKdarrayGetPointAraay(splitted[1])[0])[coor];
 		}
 		else{
+			printf("e");
+			fflush(NULL);
 			kdtree->Val=spPointGetData(spKdarrayGetPointAraay(splitted[0])[(dim-1)/2])[coor];//TODO Check how to compute median
 		}
+		printf("f");
+		fflush(NULL);
 		kdtree->left = buildKDTree(splitted[0],splitMethod,incPointer+1);
 		kdtree->left = buildKDTree(splitted[1], splitMethod,incPointer+1);
 		kdtree->Data = NULL;

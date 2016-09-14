@@ -26,7 +26,7 @@
 bool checkFileName(const char* filename){
 	FILE* fp;
 	if(strstr(filename, ".")==NULL){
-		printf("%s" ERROR1);
+		printf("%s",ERROR1);
 		return false;
 	}
 	fp = fopen(filename,"r");
@@ -43,9 +43,22 @@ bool checkFileName(const char* filename){
 	fclose(fp);
 	return true;
 }
-void ErrorLogger(int level,const char* msg, const char* file,const char* function, const int line){
-	if(level>0){
+void ErrorLogger(int level, char* msg, const char* file,const char* function, const int line){
+	/*switch(level){
+	case(4):
+		assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
+	case(3):
+		assert(spLoggerPrintInfo(msg)==SP_LOGGER_SUCCESS);
+	case(2):
+		assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
+	default:
 		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
+		break;
+	}*/
+
+	//if(level>0){
+		//assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
+	spLoggerPrintError(msg,file,function,line);
 		if(level>1){
 			assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
 			if(level>2){
@@ -54,9 +67,9 @@ void ErrorLogger(int level,const char* msg, const char* file,const char* functio
 					assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
 				}
 			}
-		}
-	}
+		}else return;
 }
+
 bool extractToFile(char* imagePathnosuf,SPPoint* features, int numOfFeatures, int level){
 	FILE* featfp;
 	featfp = fopen(imagePathnosuf,"w");
