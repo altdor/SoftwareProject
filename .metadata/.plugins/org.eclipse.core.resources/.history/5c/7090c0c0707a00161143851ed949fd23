@@ -192,14 +192,10 @@ KDTreeNode spKDTreeGetRight(KDTreeNode tree){
 	return tree->right;
 }
 void KDTreeDestroy(KDTreeNode tree){
-	printf("ssaf ");
-	fflush(NULL);
 	if(tree==NULL)
 		return;
-	if(tree->left!=NULL)
-		KDTreeDestroy(tree->left);
-	if(tree->right!=NULL)
-		KDTreeDestroy(tree->right);
+	KDTreeDestroy(tree->left);
+	KDTreeDestroy(tree->right);
 	if(tree->Data!=NULL)
 		spPointDestroy(tree->Data);
 	free(tree);
