@@ -236,14 +236,26 @@ int* kNearest(KDTreeNode tree, SPPoint* features, SPConfig config, int size){
 	for (i=0; i<size; i++){
 		SPKNN knn = spKinit(GetSpKNN(config));
 		SPBPQueue bpq = GetKnnBpq(knn);
+		printf("bsafsfa ");
+						fflush(NULL);
 		kNearestNeighbors(tree, bpq, features[i]);
-		for(int i=0;i<numOfSimilarImages;i++){
-			index = spListElementGetIndex(spBPQueuePeek(bpq));
+		printf("%d ",i);
+				fflush(NULL);
+		for(int j=0;j<numOfSimilarImages;j++){
+			SPListElement elm = spBPQueuePeek(bpq);
+			index = spListElementGetIndex(elm);
+			spListElementDestroy(elm);
 			count[index]++;
 			spBPQueueDequeue(bpq);
 		}
+		printf("my");
+						fflush(NULL);
 		SPKNNDestroy(knn);
+		printf("oh ");
+						fflush(NULL);
 	}
+	printf("\n");
+			fflush(NULL);
 	free(msg);
 	return count;
 }

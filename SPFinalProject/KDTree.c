@@ -91,6 +91,8 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 	if(kdtree == NULL){
 		return NULL;
 	}
+	kdtree->left=NULL;
+	kdtree->right=NULL;
 	if(spKdarrayGetSize(array) == 1){
 		//kdtree->Data = spPointCopy(spKdarrayGetPointAraay(array)[0]);
 		kdtree->Data = spKdarrayGetPointAraay(array)[0];
@@ -159,7 +161,9 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 }
 
 bool isLeaf (KDTreeNode kdtree){
-	return (kdtree->left==NULL && kdtree->right==NULL);
+	if (kdtree->left==NULL && kdtree->right==NULL)
+		return true;
+	return false;
 }
 SPPoint spKDTreeGetData(KDTreeNode tree){
 	if(tree == NULL){
@@ -196,10 +200,8 @@ void KDTreeDestroy(KDTreeNode tree){
 	fflush(NULL);
 	if(tree==NULL)
 		return;
-	if(tree->left!=NULL)
-		KDTreeDestroy(tree->left);
-	if(tree->right!=NULL)
-		KDTreeDestroy(tree->right);
+	KDTreeDestroy(tree->left);
+	KDTreeDestroy(tree->right);
 	if(tree->Data!=NULL)
 		spPointDestroy(tree->Data);
 	free(tree);

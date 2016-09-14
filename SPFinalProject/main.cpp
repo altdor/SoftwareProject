@@ -27,7 +27,7 @@ extern "C"{
 #define DEFCON "spcbir.config"
 #define FEATSUF ".feats"
 using namespace sp;
-void dealwithImg(SPKDArray kdarr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages);
+void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages);
 int main(int argc, const char* argv[]){
 	int i,j,totalNumOfFeatures,index,numOfImages,level,feat,numfeats;
 	int* numOfFeatures;
@@ -415,7 +415,7 @@ int main(int argc, const char* argv[]){
 
 	while(strcmp(img,"<>")!=0){
 		if(checkFileName(img)){
-			dealwithImg(kdarr, imagep, features, kdtree, img, numOfFeatures, config, numOfImages);
+			dealwithImg(kdarr, imagep, kdtree, img, numOfFeatures, config, numOfImages);
 			if(config==NULL){
 				free(filename);
 				delete imagep;
@@ -432,28 +432,18 @@ int main(int argc, const char* argv[]){
 		scanf("%s",img);
 		fflush(NULL);
 	}
-	printf("somewhere ");
-			fflush(NULL);
 	free(filename);
 	spLoggerDestroy();
-	printf("only ");
-				fflush(NULL);
 	spConfigDestroy(config);
-	printf("we ");
-				fflush(NULL);
 	free(filename);
 	spKDArrayDestroy(kdarr);
-	printf("know \n");
-				fflush(NULL);
 	KDTreeDestroy(kdtree);
-	printf("know \n");
-					fflush(NULL);
 	delete imagep;
 	return 0;
 }
-void dealwithImg(SPKDArray kdarr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages){
+void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages){
 	SP_CONFIG_MSG* msg=(SP_CONFIG_MSG*)malloc(sizeof(SP_CONFIG_MSG));
-	features = imagep->getImageFeatures(img, -1,numOfFeatures);
+	SPPoint* features = imagep->getImageFeatures(img, 0,numOfFeatures);
 	int i,numOfSimilarImages,index;
 	int* counter = kNearest(kdtree, features,config, *numOfFeatures);
 	for(int i = 0; i<spConfigGetNumOfImages(config,msg);i++){
