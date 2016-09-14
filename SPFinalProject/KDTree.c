@@ -83,31 +83,40 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 	int spread;
 	int dim;
 	SPPCoor* p;
-	SPPoint* arr = spKdarrayGetPointAraay(array);;
+	SPPoint* arr;
 	if(spKdarrayGetSize(array) <= 0 || incPointer<0){
 		return NULL;
 	}
+	arr = spKdarrayGetPointAraay(array);
 	kdtree= (KDTreeNode)malloc(sizeof(*kdtree));
 	if(kdtree == NULL){
 		return NULL;
 	}
-	kdtree->left=NULL;
-	kdtree->right=NULL;
 	if(spKdarrayGetSize(array) == 1){
 		//kdtree->Data = spPointCopy(spKdarrayGetPointAraay(array)[0]);
+		printf("eee\n");
+		fflush(NULL);
 		kdtree->Data = spKdarrayGetPointAraay(array)[0];
+		kdtree->left=NULL;
+		kdtree->right=NULL;
+		printf("rrr\n");
+		fflush(NULL);
 		return kdtree;
 	}
 	else{
-
-		SPKDArray* splitted = (SPKDArray*)malloc(2*sizeof(*splitted));
+		SPKDArray* splitted;
+		/*SPKDArray* splitted = (SPKDArray*)malloc(2*sizeof(*splitted));
 		if(splitted == NULL){
 			KDTreeDestroy(kdtree);
 			free(kdtree);
 			free(splitted);
 			return NULL;
-		}
+		}*/
+		printf("dor\n");
+		fflush(NULL);
 		dim =spPointGetDimension(arr[0]);
+		printf("yah\n");
+		fflush(NULL);
 		switch(splitMethod){
 		case(MAX_SPREAD):
 				p = (SPPCoor*)malloc(sizeof(SPPCoor)*spKdarrayGetSize(array));
@@ -135,14 +144,17 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 				free(p);
 				break;
 		case(RANDOM):
-				fflush(NULL);
 				coor = rand()%spPointGetDimension(arr[0]);
 				break;
 		case(INCREMENTAL):
 				coor = incPointer%spPointGetDimension(arr[0]);
 				break;
 		}
+		printf("coor = %d",coor);
+		fflush(NULL);
 		splitted=spKdarraySplit(array,coor);
+		printf("after\n");
+		fflush(NULL);
 		if(dim%2==0){
 			kdtree->Val=spPointGetData(spKdarrayGetPointAraay(splitted[1])[0])[coor];
 		}
