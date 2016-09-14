@@ -27,7 +27,7 @@ extern "C"{
 #define DEFCON "spcbir.config"
 #define FEATSUF ".feats"
 using namespace sp;
-void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg);
+void dealwithImg(SPKDArray kdarr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg);
 int main(int argc, const char* argv[]){
 	int i,j,totalNumOfFeatures,index,numOfImages,level,feat,numfeats;
 	int* numOfFeatures;
@@ -390,14 +390,11 @@ int main(int argc, const char* argv[]){
 		printf("no kdarray\n");
 		fflush(NULL);
 		free(filename);
-		for (i=0; i<totalNumOfFeatures; i++){
-			spPointDestroy(allImgFeaters[i]);
-		}
-		free(allImgFeaters);
 		free(msg);
 		delete imagep;
 		return -1;
 	}
+
 	printf("12\n");
 	fflush(NULL);
 	kdtree = buildKDTree(kdarr, GetSplitMethod(config),0);
@@ -406,11 +403,7 @@ int main(int argc, const char* argv[]){
 	if(kdtree==NULL){
 		free(filename);
 		spKDArrayDestroy(kdarr);
-		for (i=0; i<totalNumOfFeatures; i++){
-			spPointDestroy(allImgFeaters[i]);
-		}
 		free(msg);
-		free(allImgFeaters);
 		delete imagep;
 		return -1;
 	}
@@ -420,7 +413,7 @@ int main(int argc, const char* argv[]){
 	fflush(NULL);
 	while(strcmp(img,"<>")!=0){
 		if(checkFileName(img)){
-			dealwithImg(kdarr,allImgFeaters, imagep, features, kdtree, img, numOfFeatures, config, numOfImages,msg);
+			dealwithImg(kdarr, imagep, features, kdtree, img, numOfFeatures, config, numOfImages,msg);
 			if(config==NULL){
 				free(filename);
 				delete imagep;
@@ -442,28 +435,20 @@ int main(int argc, const char* argv[]){
 	spConfigDestroy(config);
 	free(filename);
 	spKDArrayDestroy(kdarr);
-	for (i=0; i<totalNumOfFeatures; i++){
-		spPointDestroy(allImgFeaters[i]);
-	}
+
 	KDTreeDestroy(kdtree);
-	free(allImgFeaters);
+
 	free(msg);
 	delete imagep;
 	return 0;
 }
-void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg){
+void dealwithImg(SPKDArray kdarr, ImageProc* imagep, SPPoint* features, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages,SP_CONFIG_MSG* msg){
 	features = imagep->getImageFeatures(img, -1,numOfFeatures);
-	int i,j,numOfSimilarImages,index;
+	int i,numOfSimilarImages,index;
 	int* counter = kNearest(kdtree, features,config, *numOfFeatures);
 	if(counter==NULL){
 		spKDArrayDestroy(kdarr);
-		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(*numOfFeatures); j++){
-				spPointDestroy(featuresArr[i*(*numOfFeatures)+j]);
-			}
-		}
 		KDTreeDestroy(kdtree);
-		free(featuresArr);
 		return;
 	}
 	if(spConfigMinimalGui(config,msg)){
@@ -479,13 +464,7 @@ void dealwithImg(SPKDArray kdarr,SPPoint* featuresArr, ImageProc* imagep, SPPoin
 			free(path);
 
 			spKDArrayDestroy(kdarr);
-			for (i=0; i<numOfImages; i++){
-				for(j=0; j<(*numOfFeatures); j++){
-					spPointDestroy(featuresArr[i*(*numOfFeatures)+j]);
-				}
-			}
 			KDTreeDestroy(kdtree);
-			free(featuresArr);
 			return;
 		}
 		spConfigGetImagePath(path,config,index);
