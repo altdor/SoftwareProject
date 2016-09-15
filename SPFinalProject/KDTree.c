@@ -192,7 +192,8 @@ void KDTreeDestroy(KDTreeNode tree){
 		return;
 	KDTreeDestroy(tree->left);
 	KDTreeDestroy(tree->right);
-	if(tree->Data!=NULL)
+	if(tree->Data!=NULL){
 		spPointDestroy(tree->Data);
+	}
 	free(tree);
 }

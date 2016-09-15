@@ -1,8 +1,8 @@
-18:49:08 **** Incremental Build of configuration Debug for project 2011 ****
+22:49:20 **** Incremental Build of configuration Debug for project 2011 ****
 Info: Internal Builder is used for build
 gcc -o 2011.exe main.o 
 c:/mingw/bin/../lib/gcc/mingw32/4.9.3/../../../libmingw32.a(main.o):(.text.startup+0xa7): undefined reference to `WinMain@16'
 collect2.exe: error: ld returned 1 exit status
 
-18:49:09 Build Finished (took 200ms)
+22:49:20 Build Finished (took 192ms)
 

@@ -90,6 +90,7 @@ int getNumOfFeaturesForImage(char* imagePathnosuf, int level){
 	if(str == NULL){
 		ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 		spLoggerDestroy();
+		fclose(featfp);
 		return -1;
 	}
 	fgets(str,BUFSIZE ,featfp);
@@ -113,6 +114,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 	if(str == NULL){
 		ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 		spLoggerDestroy();
+		fclose(featfp);
 		return NULL;
 	}
 	fgets(str,BUFSIZE ,featfp);
@@ -132,6 +134,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 		if(str == NULL){
 			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
+			fclose(featfp);
 			return NULL;
 		}
 		fgets(str ,BUFSIZE, featfp);
@@ -141,6 +144,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 		if(str == NULL){
 			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
+			fclose(featfp);
 			return NULL;
 		}
 		fgets(str ,BUFSIZE, featfp);
@@ -152,6 +156,7 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 		if(features == NULL){
 			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
+			fclose(featfp);
 			return NULL;
 		}
 		free(data);

@@ -39,13 +39,12 @@ SPListElement imElement (SPPoint image, SPPoint curr){
 	return spListElementCreate(spPointGetIndex(curr),spPointL2SquaredDistance(image,curr));
 }
 void kNearestNeighbors(KDTreeNode curr, SPBPQueue bpq, SPPoint point){
-	int dis;
-	bool left;
-	SPListElement elm;
+	int dis=0;
+	bool left=false;
 	if (curr==NULL || bpq==NULL || point==NULL)
 		return;
 	if(isLeaf(curr)){
-		elm = imElement(point,spKDTreeGetData(curr));
+		SPListElement elm = imElement(point,spKDTreeGetData(curr));
 		spBPQueueEnqueue(bpq,elm);
 		spListElementDestroy(elm);
 		return;
