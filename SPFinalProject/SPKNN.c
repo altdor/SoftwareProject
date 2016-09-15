@@ -48,6 +48,7 @@ void kNearestNeighbors(KDTreeNode curr, SPBPQueue bpq, SPPoint point){
 		elm = imElement(point,spKDTreeGetData(curr));
 		spBPQueueEnqueue(bpq,elm);
 		spListElementDestroy(elm);
+		return;
 	}
 	if (spPointGetData(point)[spKDTreeGetDim(curr)]<=spKDTreeGetVal(curr)){
 		kNearestNeighbors(spKDTreeGetLeft(curr), bpq, point);

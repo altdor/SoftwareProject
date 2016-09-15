@@ -124,7 +124,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			return NULL;
 		}
 	}
-	kda->indMat = (int**)malloc(d*size*sizeof(int));
+	kda->indMat = (int**)malloc(d*sizeof(int*));
 	for (i=0; i<d; i++){
 		kda->indMat[i] = (int*)malloc(size*sizeof(int));
 		if(kda->indMat[i]==NULL){
@@ -210,14 +210,8 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		return NULL;
 	h=0;
 	g=0;
-	printf("a");
-	fflush(NULL);
 	d = spPointGetDimension(*kdArr->pointArr);
-	printf("b");
-	fflush(NULL);
 	s = kdArr->size;
-	printf("c");
-	fflush(NULL);
 	x = (int*)malloc(s*sizeof(int));
 	if (x==NULL){
 		return NULL;
@@ -267,7 +261,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		free(kdLeft);
 		return NULL;
 	}
-	splitted = (SPKDArray*)malloc(2*sizeof(SPKDArray)*s);
+	splitted = (SPKDArray*)malloc(2*sizeof(SPKDArray));
 	if (splitted==NULL){
 		free(x);
 		free(map1);
@@ -279,7 +273,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		return NULL;
 	}
 	for (i=0; i<2; i++){
-		splitted[i] = (SPKDArray)malloc(sizeof(SPKDArray)*s);
+		splitted[i] = (SPKDArray)malloc(sizeof(SPKDArray));
 		if (splitted[i]==NULL){
 			free(splitted[0]);
 			free(splitted);
@@ -324,7 +318,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		return NULL;
 	}
 
-	kdLeft->indMat = (int**)malloc(d*(s-(s/2))*sizeof(int));
+	kdLeft->indMat = (int**)malloc(d*sizeof(int*));
 	if (kdLeft->indMat==NULL){
 		for(int k=0;k<2;k++)
 			free(splitted[k]);
@@ -340,7 +334,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		free(kdRight);
 		return NULL;
 	}
-	kdRight->indMat = (int**)malloc(d*(s/2)*sizeof(int));
+	kdRight->indMat = (int**)malloc(d*sizeof(int*));
 	if (kdRight->indMat==NULL){
 		for(int k=0;k<2;k++)
 			free(splitted[k]);
@@ -388,24 +382,18 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 			kdRight->indMat[i][j] = 0;
 		}
 	}*/
-	printf("d");
-	fflush(NULL);
 	for (i=0; i<s; i++){
 		map1[i]=-1;
 		map2[i]=-1;
 	}
-	printf("e");
-	fflush(NULL);
 	for (i=0; i<(s-(s/2)); i++){
 		x[(kdArr->indMat)[coor][i]] = 0;
 	}
-	printf("f");
-	fflush(NULL);
+
 	for (i=(s-(s/2)); i<s; i++){
 		x[(kdArr->indMat)[coor][i]] = 1;
 	}
-	printf("g");
-	fflush(NULL);
+
 	for (i=0; i<s; i++){
 		if (x[i]==0){
 			//p1[h] = spPointCopy(kdArr->pointArr[i]);
@@ -421,47 +409,34 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		}
 	}
 	for (i=0; i<d; i++){
-			kdLeft->indMat[i] = (int*)malloc((s-(s/2))*sizeof(int));
-			kdRight->indMat[i] = (int*)malloc((s/2)*sizeof(int));
-			if (kdRight->indMat[i]==NULL || kdLeft->indMat[i]==NULL){
-				for(int k=0;k<2;k++)
-					free(splitted[k]);
-				for(int k=0;k<i;k++){
-					free(kdRight->indMat[k]);
-					free(kdLeft->indMat[k]);
-				}
-				free(splitted);
-				free(x);
-				free(map1);
-				free(map2);
-				free(p1);
-				free(p2);
-				free(kdLeft->indMat);
-				free(kdRight->pointArr);
-				free(kdRight->indMat);
-				free(kdLeft->pointArr);
-				free(kdLeft);
-				free(kdRight);
-				return NULL;
-			}
-			for (j=0; j<(s-(s/2)); j++){
-				kdLeft->indMat[i][j] = 0;
-			}
-			for (j=0; j<(s/2); j++){
-				kdRight->indMat[i][j] = 0;
-			}
-			printf("leftMat = %d\n",kdLeft->indMat[i][0]);
-			printf("rightMat = %d\n",kdRight->indMat[i][0]);
-			printf("i = %d\n",i);
-		}
-	for (i=0; i<d; i++){
-		kdRight->indMat[i][0] = 0;
-		printf("i = %d",i);
-		fflush(NULL);
+		kdLeft->indMat[i] = (int*)malloc((s-(s/2))*sizeof(int));
 	}
-	printf("h\n");
-	fflush(NULL);
+
 	for (i=0; i<d; i++){
+		kdRight->indMat[i] = (int*)malloc((s/2)*sizeof(int));
+		if (kdRight->indMat[i]==NULL || kdLeft->indMat[i]==NULL){
+			for(int k=0;k<2;k++)
+				free(splitted[k]);
+			for(int k=0;k<d;k++){
+				free(kdLeft->indMat[k]);
+			}
+			for(int k=0;k<i;k++){
+				free(kdRight->indMat[k]);
+			}
+			free(splitted);
+			free(x);
+			free(map1);
+			free(map2);
+			free(p1);
+			free(p2);
+			free(kdLeft->indMat);
+			free(kdRight->pointArr);
+			free(kdRight->indMat);
+			free(kdLeft->pointArr);
+			free(kdLeft);
+			free(kdRight);
+			return NULL;
+		}
 		pointerL = 0;
 		pointerR = 0;
 		for (j=0; j<s; j++){
@@ -476,25 +451,16 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 			}
 		}
 	}
-	printf("i");
-	fflush(NULL);
+
 	kdLeft->pointArr = p1;
 	kdRight->pointArr = p2;
 	kdLeft->size = (s-(s/2));
 	kdRight->size = (s/2);
 	splitted[0] = kdLeft;
 	splitted[1] = kdRight;
-	printf("j");
-	fflush(NULL);
 	free(x);
-	printf("k");
-	fflush(NULL);
 	free(map1);
-	printf("l");
-	fflush(NULL);
 	free(map2);
-	printf("m\n");
-	fflush(NULL);
 	return splitted;
 }
 
@@ -522,16 +488,20 @@ SPPoint* spKdarrayGetPointAraay(SPKDArray arr){
 	return arr->pointArr;
 }
 void spKDArrayDestroy(SPKDArray arr){
+	int i;
+	//int d;
 	if(arr==NULL)
 		return;
-	for(int i =0; i<spPointGetDimension(*(arr->pointArr));i++){
+	//d = spPointGetDimension((arr->pointArr)[0]);
+	for(i =0; i<arr->size;i++){
+		spPointDestroy(arr->pointArr[i]);
+	}/*
+	for(i=0; i<d; i++){
 		free(arr->indMat[i]);
-	}
-	for(int i =0; i<arr->size;i++){
-			spPointDestroy(arr->pointArr[i]);
-	}
-	free(arr->pointArr);
-	free(arr->indMat);
+	}*/
+	free(arr->pointArr);/*
+	if(arr->indMat!=NULL)
+		free(arr->indMat);*/
 	free(arr);
 }
 

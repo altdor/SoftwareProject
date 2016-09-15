@@ -93,30 +93,14 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 		return NULL;
 	}
 	if(spKdarrayGetSize(array) == 1){
-		//kdtree->Data = spPointCopy(spKdarrayGetPointAraay(array)[0]);
-		printf("eee\n");
-		fflush(NULL);
 		kdtree->Data = spKdarrayGetPointAraay(array)[0];
 		kdtree->left=NULL;
 		kdtree->right=NULL;
-		printf("rrr\n");
-		fflush(NULL);
 		return kdtree;
 	}
 	else{
 		SPKDArray* splitted;
-		/*SPKDArray* splitted = (SPKDArray*)malloc(2*sizeof(*splitted));
-		if(splitted == NULL){
-			KDTreeDestroy(kdtree);
-			free(kdtree);
-			free(splitted);
-			return NULL;
-		}*/
-		printf("dor\n");
-		fflush(NULL);
 		dim =spPointGetDimension(arr[0]);
-		printf("yah\n");
-		fflush(NULL);
 		switch(splitMethod){
 		case(MAX_SPREAD):
 				p = (SPPCoor*)malloc(sizeof(SPPCoor)*spKdarrayGetSize(array));
@@ -124,22 +108,26 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 					KDTreeDestroy(kdtree);
 					free(kdtree);
 				}
-
+				for(int i = 0;i<spKdarrayGetSize(array);i++){
+					p[i] = (SPPCoor)malloc(sizeof(SPPCoor));
+				}
 				for (int i=0; i<dim; i++){
 					int tempSpread;
 					for(int j=0; j<spKdarrayGetSize(array); j++){
-						//spCoorSetAxis(p[j],i);
-						//spCoorSetPoint(p[j],spPointCopy(arr[j]));
 						spCoorSetIndex(p[j],j);
 						spCoorSetVal(p[j],spPointGetAxisCoor(arr[j],i));
 					}
 					qsort(p,spKdarrayGetSize(array),sizeof(SPPCoor),compByAxis);
-					//tempSpread = spPointGetData(spCoorGetPoint(p[spKdarrayGetSize(array)-1]))[i]-spPointGetData(spCoorGetPoint(p[0]))[i];
+
 					tempSpread = spCoorGetVal(p[spKdarrayGetSize(array)-1])-spCoorGetVal(p[0]);
+
 					if(tempSpread>spread){
 						spread = tempSpread;
 						coor = i;
 					}
+				}
+				for(int i = 0;i<spKdarrayGetSize(array);i++){
+					free(p[i]);
 				}
 				free(p);
 				break;
@@ -150,11 +138,7 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 				coor = incPointer%spPointGetDimension(arr[0]);
 				break;
 		}
-		printf("coor = %d",coor);
-		fflush(NULL);
 		splitted=spKdarraySplit(array,coor);
-		printf("after\n");
-		fflush(NULL);
 		if(dim%2==0){
 			kdtree->Val=spPointGetData(spKdarrayGetPointAraay(splitted[1])[0])[coor];
 		}
@@ -208,13 +192,11 @@ KDTreeNode spKDTreeGetRight(KDTreeNode tree){
 	return tree->right;
 }
 void KDTreeDestroy(KDTreeNode tree){
-	printf("ssaf ");
-	fflush(NULL);
 	if(tree==NULL)
 		return;
 	KDTreeDestroy(tree->left);
-	KDTreeDestroy(tree->right);
+	KDTreeDestroy(tree->right);/*
 	if(tree->Data!=NULL)
-		spPointDestroy(tree->Data);
+		spPointDestroy(tree->Data);*/
 	free(tree);
 }

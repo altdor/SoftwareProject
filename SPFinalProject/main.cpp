@@ -433,12 +433,26 @@ int main(int argc, const char* argv[]){
 		fflush(NULL);
 	}
 	free(filename);
+	printf("a");
+	fflush(NULL);
 	spLoggerDestroy();
+	printf("b");
+	fflush(NULL);
 	spConfigDestroy(config);
-	free(filename);
+	printf("c");
+	fflush(NULL);
 	spKDArrayDestroy(kdarr);
+	printf("d");
+	fflush(NULL);
 	KDTreeDestroy(kdtree);
+	printf("e");
+	fflush(NULL);
 	delete imagep;
+	printf("f");
+	fflush(NULL);
+	free(allImgFeaters);
+	printf("g");
+	fflush(NULL);
 	return 0;
 }
 void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages){
@@ -446,12 +460,6 @@ void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* im
 	SPPoint* features = imagep->getImageFeatures(img, 0,numOfFeatures);
 	int i,numOfSimilarImages,index;
 	int* counter = kNearest(kdtree, features,config, *numOfFeatures);
-	for(int i = 0; i<spConfigGetNumOfImages(config,msg);i++){
-		printf("%d ",counter[i]);
-		fflush(NULL);
-	}
-	printf("\n");
-	fflush(NULL);
 	if(counter==NULL || msg == NULL){
 		ErrorLogger(GetSpLoggerLevelNum(config), "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
 		spKDArrayDestroy(kdarr);
@@ -461,26 +469,31 @@ void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* im
 		free(counter);
 		return;
 	}
+	for(int i = 0; i<spConfigGetNumOfImages(config,msg);i++){
+		printf("%d ",counter[i]);
+		fflush(NULL);
+	}
+	printf("\n");
+	fflush(NULL);
 	if(spConfigMinimalGui(config,msg)){
 		numOfSimilarImages = GetspNumOfSimilarImages(config);
-	for(i=0; i<numOfSimilarImages; i++){
-		index = maxIndex(counter,numOfImages);
-		counter[index]=-1;
-		char* path = (char*)malloc(BUFSIZE);
-		if(path == NULL){
-			ErrorLogger(GetSpLoggerLevelNum(config), "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
-			spConfigDestroy(config);
-			spLoggerDestroy();
-			free(path);
+		for(i=0; i<numOfSimilarImages; i++){
+			index = maxIndex(counter,numOfImages);
+			counter[index]=-1;
+			char* path = (char*)malloc(BUFSIZE);
+			if(path == NULL){
+				ErrorLogger(GetSpLoggerLevelNum(config), "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+				spConfigDestroy(config);
+				spLoggerDestroy();
+				free(path);
 
-			spKDArrayDestroy(kdarr);
-			KDTreeDestroy(kdtree);
-			return;
+				spKDArrayDestroy(kdarr);
+				KDTreeDestroy(kdtree);
+				return;
+			}
+			spConfigGetImagePath(path,config,index);
+			imagep->showImage(path);
 		}
-		spConfigGetImagePath(path,config,index);
-		imagep->showImage(path);
-		getchar();
-	}
 	}
 	else{
 		notMinimalGui(counter,img,config,numOfImages);
