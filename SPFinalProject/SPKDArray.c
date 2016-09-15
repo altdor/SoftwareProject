@@ -44,41 +44,7 @@ double spCoorGetVal(SPPCoor spcoor){
 		return -1;
 	return spcoor->val;
 }
-/*struct sp_pcoor_t{
-	SPPoint point;
-	int axis;
-	int index;
-};
-void spCoorSetPoint(SPPCoor spcoor,SPPoint p){
-	if(spcoor == NULL)
-		return;
-	spcoor->point = p;
-}
-void spCoorSetAxis(SPPCoor spcoor,int axis){
-	if(spcoor == NULL)
-		return;
-	spcoor->axis = axis;
-}
-void spCoorSetIndex(SPPCoor spcoor,int index){
-	if(spcoor == NULL)
-		return;
-	spcoor->index = index;
-}
-SPPoint spCoorGetPoint(SPPCoor spcoor){
-	if(spcoor == NULL)
-		return NULL;
-	return spcoor->point;
-}
-int spCoorGetAxis(SPPCoor spcoor){
-	if(spcoor == NULL)
-		return -1;
-	return spcoor->axis;
-}
-int spCoorGetIndex(SPPCoor spcoor){
-	if(spcoor == NULL)
-		return -1;
-	return spcoor->index;
-}*/
+
 SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	int i,j,d,k;
 	SPPCoor* p;
@@ -116,6 +82,9 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	if(kda->pointArr==NULL){
 		free(kda);
 		free(p);
+		for (i=0; i<d; i++){
+			free(a[i]);
+		}
 		free(a);
 		return NULL;
 	}
@@ -133,6 +102,9 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			free(kda->pointArr);
 			free(kda);
 			free(p);
+			for (i=0; i<d; i++){
+				free(a[i]);
+			}
 			free(a);
 			return NULL;
 		}
@@ -146,6 +118,9 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 			}
 			spKDArrayDestroy(kda);
 			free(p);
+			for (i=0; i<d; i++){
+				free(a[i]);
+			}
 			free(a);
 			return NULL;
 		}
@@ -175,6 +150,10 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 		free(a[i]);
 	}
 	free(a);
+	for(j=0; j<size; j++){
+		free(p[j]);
+	}
+	free(p);
 	return kda;
 }
 
@@ -256,72 +235,22 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		free(kdRight);
 		return NULL;
 	}
-	/*for (i=0; i<2; i++){
-		splitted[i] = (SPKDArray)malloc(sizeof(SPKDArray));
-		if (splitted[i]==NULL){
-			free(splitted[0]);
-			free(splitted);
-			free(x);
-			free(map1);
-			free(map2);
-			free(p1);
-			free(p2);
-			free(kdLeft);
-			free(kdRight);
-			return NULL;
-		}
-	}
-	kdLeft->pointArr = (SPPoint*)malloc((s-(s/2))*sizeof(SPPoint));
-	if (kdLeft->pointArr==NULL){
-		for(int k=0;k<2;k++)
-			free(splitted[k]);
-		free(splitted);
-		free(x);
-		free(map1);
-		free(map2);
-		free(p1);
-		free(p2);
-		free(kdLeft);
-		free(kdRight);
-		return NULL;
-	}
-	kdRight->pointArr = (SPPoint*)malloc((s/2)*sizeof(SPPoint));
-	if (kdRight->pointArr==NULL){
-		for(int k=0;k<2;k++){
-			free(splitted[k]);
-		}
-		free(splitted);
-		free(x);
-		free(map1);
-		free(map2);
-		free(p1);
-		free(p2);
-		free(kdLeft->pointArr);
-		free(kdLeft);
-		free(kdRight);
-		return NULL;
-	}*/
+
 
 	kdLeft->indMat = (int**)malloc(d*sizeof(int*));
 	if (kdLeft->indMat==NULL){
-		/*for(int k=0;k<2;k++)
-			free(splitted[k]);*/
 		free(splitted);
 		free(x);
 		free(map1);
 		free(map2);
 		free(p1);
 		free(p2);
-		//free(kdRight->pointArr);
-		//free(kdLeft->pointArr);
 		free(kdLeft);
 		free(kdRight);
 		return NULL;
 	}
 	kdRight->indMat = (int**)malloc(d*sizeof(int*));
 	if (kdRight->indMat==NULL){
-		/*for(int k=0;k<2;k++)
-			free(splitted[k]);*/
 		free(splitted);
 		free(x);
 		free(map1);
@@ -329,8 +258,6 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		free(p1);
 		free(p2);
 		free(kdLeft->indMat);
-		//free(kdRight->pointArr);
-		//free(kdLeft->pointArr);
 		free(kdLeft);
 		free(kdRight);
 		return NULL;
@@ -361,13 +288,27 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 	}
 	for (i=0; i<d; i++){
 		kdLeft->indMat[i] = (int*)malloc((s-(s/2))*sizeof(int));
+		if (kdLeft->indMat[i]==NULL){
+			for(int k=0;k<i;k++){
+				free(kdLeft->indMat[k]);
+			}
+			free(splitted);
+			free(x);
+			free(map1);
+			free(map2);
+			free(p1);
+			free(p2);
+			free(kdLeft->indMat);
+			free(kdRight->indMat);
+			free(kdLeft);
+			free(kdRight);
+			return NULL;
+		}
 	}
 
 	for (i=0; i<d; i++){
 		kdRight->indMat[i] = (int*)malloc((s/2)*sizeof(int));
-		if (kdRight->indMat[i]==NULL || kdLeft->indMat[i]==NULL){
-			/*for(int k=0;k<2;k++)
-				free(splitted[k]);*/
+		if (kdRight->indMat[i]==NULL){
 			for(int k=0;k<d;k++){
 				free(kdLeft->indMat[k]);
 			}
@@ -381,9 +322,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 			free(p1);
 			free(p2);
 			free(kdLeft->indMat);
-			//free(kdRight->pointArr);
 			free(kdRight->indMat);
-			//free(kdLeft->pointArr);
 			free(kdLeft);
 			free(kdRight);
 			return NULL;
@@ -444,12 +383,12 @@ void spKDArrayDestroy(SPKDArray arr){
 	for(i =0; i<arr->size;i++){
 		spPointDestroy(arr->pointArr[i]);
 	}
-	/*for(i=0; i<arr->dim; i++){
+	for(i=0; i<arr->dim; i++){
 		free(arr->indMat[i]);
-	}*/
+	}
 	free(arr->pointArr);
-	/*if(arr->indMat!=NULL)
-		free(arr->indMat);*/
+	if(arr->indMat!=NULL)
+		free(arr->indMat);
 	free(arr);
 }
 

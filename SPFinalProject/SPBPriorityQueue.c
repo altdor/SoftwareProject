@@ -76,6 +76,7 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
 					return SP_BPQUEUE_SUCCESS;
 				}
 				else if(spListElementGetValue(insertionPlace) == spListElementGetValue(element) &&  spListElementGetIndex(insertionPlace) <= spListElementGetIndex(element)){//if element is equal to greater and index is bigger
+					spListElementDestroy(insertionPlace);
 					return SP_BPQUEUE_SUCCESS;
 				}
 				else{//the greatest elements need to be deleted of the queue
@@ -87,7 +88,9 @@ SP_BPQUEUE_MSG spBPQueueEnqueue(SPBPQueue source, SPListElement element){
 					msg = spListRemoveCurrent(source->list);
 					deletePlace = spListElementCopy(deletePlace);
 					spListElementDestroy(deletePlace);
+					spListElementDestroy(insertionPlace);
 				}
+
 			}
 			if(spBPQueueMinValue(source)>spListElementGetValue(element)){//if needed to be entered first
 				msg = spListInsertFirst(source->list,element);

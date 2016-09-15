@@ -44,20 +44,6 @@ bool checkFileName(const char* filename){
 	return true;
 }
 void ErrorLogger(int level, char* msg, const char* file,const char* function, const int line){
-	/*switch(level){
-	case(4):
-		assert(spLoggerPrintDebug(msg,file,function,line)==SP_LOGGER_SUCCESS);
-	case(3):
-		assert(spLoggerPrintInfo(msg)==SP_LOGGER_SUCCESS);
-	case(2):
-		assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
-	default:
-		assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
-		break;
-	}*/
-
-	//if(level>0){
-		//assert(spLoggerPrintError(msg,file,function,line)==SP_LOGGER_SUCCESS);
 	spLoggerPrintError(msg,file,function,line);
 		if(level>1){
 			assert(spLoggerPrintWarning(msg,file,function,line)==SP_LOGGER_SUCCESS);
@@ -162,13 +148,12 @@ SPPoint* extractFromFiles(char* imagePathnosuf, int level, int* Features){
 		free(str);
 		data = (double*)malloc(sizeof(double)*dim);
 		fread(data, dim,sizeof(double),featfp);
-		features[i] = (SPPoint)malloc(sizeof(SPPoint));
+		features[i] = spPointCreate(data, dim, index);
 		if(features == NULL){
 			ErrorLogger(level, "out of memory", "MainAux.c",__func__, __LINE__);
 			spLoggerDestroy();
 			return NULL;
 		}
-		features[i] = spPointCreate(data, dim, index);
 		free(data);
 	}
 	fclose(featfp);

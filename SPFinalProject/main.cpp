@@ -352,9 +352,6 @@ int main(int argc, const char* argv[]){
 		delete imagep;
 		return -1;
 	}
-	/*for (i=0; i<totalNumOfFeatures; i++){
-		spPointDestroy(allImgFeaters[i]);
-	}*/
 	printf("12\n");
 	fflush(NULL);
 	kdtree = buildKDTree(kdarr, GetSplitMethod(config),0);
@@ -397,6 +394,9 @@ int main(int argc, const char* argv[]){
 	spLoggerDestroy();
 	spConfigDestroy(config);
 	spKDArrayDestroy(kdarr);
+	for(int i=0;i<totalNumOfFeatures;i++){
+		spPointDestroy(allImgFeaters[i]);
+	}
 	free(allImgFeaters);
 	KDTreeDestroy(kdtree);
 	delete imagep;
@@ -416,12 +416,6 @@ void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* im
 		free(counter);
 		return;
 	}
-	for(int i = 0; i<spConfigGetNumOfImages(config,msg);i++){
-		printf("%d ",counter[i]);
-		fflush(NULL);
-	}
-	printf("\n");
-	fflush(NULL);
 	if(spConfigMinimalGui(config,msg)){
 		numOfSimilarImages = GetspNumOfSimilarImages(config);
 		for(i=0; i<numOfSimilarImages; i++){
@@ -440,11 +434,17 @@ void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* im
 			}
 			spConfigGetImagePath(path,config,index);
 			imagep->showImage(path);
+			free(path);
 		}
 	}
 	else{
 		notMinimalGui(counter,img,config,numOfImages);
 	}
+	for(int i=0;i<*numOfFeatures;i++){
+		spPointDestroy(features[i]);
+	}
+	free(features);
+	free(counter);
 	free(msg);
 }
 

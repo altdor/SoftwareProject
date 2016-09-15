@@ -84,7 +84,6 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     	free(fp);
     	free(string);
     }
-    //while((n = fread(string, 1, BUFSIZE, fp))>0){
     while(fgets(string,BUFSIZE,fp)!= NULL){
     	n=strlen(string);
     	linenum++;
@@ -101,7 +100,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     		start++;
     		len = n-strlen(start);
     		if(strstr(string,"spimagesdirectory")){
-    			cnfg->spImagesDirectory = (char*)malloc(len*sizeof(char)+1);
+    			cnfg->spImagesDirectory = (char*)malloc(len*sizeof(char));
     			if(cnfg->spImagesDirectory==NULL){
     			   	spConfigDestroy(cnfg);
     			   	*msg = SP_CONFIG_ALLOC_FAIL;
@@ -135,7 +134,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			}
     		}
     		else if(strstr(string,"spimagessuffix")){
-    			cnfg->spImagesSuffix = (char*)malloc(len*sizeof(char)+1);
+    			cnfg->spImagesSuffix = (char*)malloc(len*sizeof(char));
     			if(cnfg->spImagesSuffix==NULL){
     			  spConfigDestroy(cnfg);
     			  *msg = SP_CONFIG_ALLOC_FAIL;
@@ -152,7 +151,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			input[2]=1;
     		}
     		else if(strstr(string,"spnumofimages")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			   	spConfigDestroy(cnfg);
     			   	*msg = SP_CONFIG_ALLOC_FAIL;
@@ -172,7 +171,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			input[3]=1;
     		}
     		else if(strstr(string,"sppcadimension")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			   spConfigDestroy(cnfg);
     			   *msg = SP_CONFIG_ALLOC_FAIL;
@@ -192,7 +191,8 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			free(temp);
     		}
     		else if(strstr(string,"sppcafilename")){
-    			cnfg->spPCAFileName = (char*)malloc(len*sizeof(char)+1);
+    			free(cnfg->spPCAFileName);
+    			cnfg->spPCAFileName = (char*)malloc(len*sizeof(char));
     			if(cnfg->spPCAFileName==NULL){
     			   spConfigDestroy(cnfg);
     			   *msg = SP_CONFIG_ALLOC_FAIL;
@@ -214,7 +214,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			}
     		}
     		else if(strstr(string,"spnumoffeatures")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			   spConfigDestroy(cnfg);
     			   *msg = SP_CONFIG_ALLOC_FAIL;
@@ -233,7 +233,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			free(temp);
     		}
     		else if(strstr(string,"spkdtreesplitmethod")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			  spConfigDestroy(cnfg);
     			  *msg = SP_CONFIG_ALLOC_FAIL;
@@ -260,7 +260,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			free(temp);
     		}
     		else if(strstr(string,"spknn")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			   spConfigDestroy(cnfg);
     			   *msg = SP_CONFIG_ALLOC_FAIL;
@@ -278,7 +278,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			}
     		}
     		else if(strstr(string,"spminimalgui")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			    spConfigDestroy(cnfg);
     			    *msg = SP_CONFIG_ALLOC_FAIL;
@@ -303,7 +303,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
 
     		}
     		else if(strstr(string,"sploggerlevel")){
-    			char* temp = (char*)malloc(len*sizeof(char)+1);
+    			char* temp = (char*)malloc(len*sizeof(char));
     			if(temp==NULL){
     			    spConfigDestroy(cnfg);
     			    *msg = SP_CONFIG_ALLOC_FAIL;
@@ -322,7 +322,8 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     			free(temp);
     		}
     		else if(strstr(string,"sploggerfilename")){
-    			cnfg->spLoggerFilename = (char*)malloc(len*sizeof(char)+1);
+    			free(cnfg->spLoggerFilename);
+    			cnfg->spLoggerFilename = (char*)malloc(len*sizeof(char));
     			if(cnfg->spLoggerFilename==NULL){
     			   spConfigDestroy(cnfg);
     			   *msg = SP_CONFIG_ALLOC_FAIL;
@@ -394,6 +395,8 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     }
 
     *msg = checkinput(filename, input, linenum);
+    free(string);
+    free(input);
     if(*msg == SP_CONFIG_SUCCESS){
     	return cnfg;
     }
@@ -423,17 +426,12 @@ void trim(char* string){
     int dest;
     int src=0;
     int len = strlen(string);
-
-    // Advance src to the first non-whitespace character.
     while(isspace(string[src])) src++;
-
-    // Copy the string to the "front" of the buffer
     for(dest=0; src<len; dest++, src++)
     {
         string[dest] = string[src];
     }
     string[dest] = '\0';
-    // Working backwards, set all trailing spaces to NULL.
     for(dest=len-1; isspace(string[dest]); --dest)
     {
     	string[dest] = '\0';
@@ -442,7 +440,7 @@ void trim(char* string){
 
 void dfult(SPConfig confg){
 		confg->spPCADimension = 20;
-		confg->spPCAFileName = (char*)malloc((BUFSIZE)*sizeof(char)+1);
+		confg->spPCAFileName = (char*)malloc((BUFSIZE)*sizeof(char));
 		confg->spPCAFileName = "pca.yml";
 		confg->spNumOfFeatures = 100;
 		confg->spExtractionMode = true;
@@ -451,7 +449,7 @@ void dfult(SPConfig confg){
 		confg->spKNN = 1;
 		confg->spMinimalGUI = false;
 		confg->spLoggerLevel = 3;
-		confg->spLoggerFilename = (char*)malloc((BUFSIZE)*sizeof(char)+1);
+		confg->spLoggerFilename = (char*)malloc((BUFSIZE)*sizeof(char));
 		confg->spLoggerFilename = "stdout";
 
 }
@@ -574,17 +572,17 @@ SP_CONFIG_MSG spConfigGetImagePathWithoutSuffix(char* imagePath, const SPConfig 
 	return SP_CONFIG_INVALID_ARGUMENT;
 }
 SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config){
-		char* path;
-		int size;
-		if(config == NULL || pcaPath==NULL){
-			return SP_CONFIG_INVALID_ARGUMENT;
-		}
-		size = strlen(config->spImagesDirectory)+strlen(config->spPCAFileName);
-		path = (char*)malloc(size*sizeof(char)+1);
-		sprintf(path,"%s%s", config->spImagesDirectory, config->spPCAFileName);
-		strcpy(pcaPath,path);
-		free(path);
-		return SP_CONFIG_SUCCESS;
+	char* path;
+	int size;
+	if(config == NULL || pcaPath==NULL){
+		return SP_CONFIG_INVALID_ARGUMENT;
+	}
+	size = strlen(config->spImagesDirectory)+strlen(config->spPCAFileName);
+	path = (char*)malloc(size*sizeof(char)+1);
+	sprintf(path,"%s%s", config->spImagesDirectory, config->spPCAFileName);
+	strcpy(pcaPath,path);
+	free(path);
+	return SP_CONFIG_SUCCESS;
 }
 
 SP_LOGGER_LEVEL GetSpLoggerLevel(SPConfig config){
