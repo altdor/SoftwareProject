@@ -93,6 +93,8 @@ int spCoorGetIndex(SPPCoor spcoor);
 
 double spCoorGetVal(SPPCoor spcoor);
 
+void splittedDestroy(SPKDArray* splitted);
+
 /**
  * Free all memory allocation associated with KD-ARRAY,
  * if point is NULL nothing happens.

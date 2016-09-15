@@ -342,59 +342,19 @@ int main(int argc, const char* argv[]){
 		}
 	}
 	printf("9 \n");
-	fflush(NULL);/*
-	featuresArr = make2DTo1D(allImgFeaters,numOfImages,feat,config);
-	printf("after \n");
-	fflush(NULL);
-	if(featuresArr ==NULL){
-		free(filename);
-		spConfigDestroy(config);
-		return -1;
-	}
-	kdarr = (SPKDArray)malloc(sizeof(SPKDArray));
-	if(kdarr==NULL){
-		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "Main.cpp",__func__, __LINE__);
-		spLoggerDestroy();
-		spConfigDestroy(config);
-		free(filename);
-		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(feat); j++){
-				spPointDestroy(allImgFeaters[i*j+j]);
-			}
-		}
-		free(allImgFeaters);
-		return -1;
-	}
-	kdtree = (KDTreeNode)malloc(sizeof(KDTreeNode));
-	if(kdtree==NULL){
-		ErrorLogger(GetSpLoggerLevel(config), "Allocating Failed", "Main.cpp",__func__, __LINE__);
-		spLoggerDestroy();
-		spConfigDestroy(config);
-		free(filename);
-		free(kdarr);
-		for (i=0; i<numOfImages; i++){
-			for(j=0; j<(feat); j++){
-				spPointDestroy(allImgFeaters[i*j+j]);
-			}
-		}
-		free(allImgFeaters);
-		free(msg);
-		return -1;
-	}*/
-	printf("10\n");
 	fflush(NULL);
 	kdarr = spKdarrayInit(allImgFeaters,totalNumOfFeatures);
 	printf("11\n");
-		fflush(NULL);
+	fflush(NULL);
 	if(kdarr==NULL){
-		printf("no kdarray\n");
-		fflush(NULL);
 		free(filename);
 		free(msg);
 		delete imagep;
 		return -1;
 	}
-
+	/*for (i=0; i<totalNumOfFeatures; i++){
+		spPointDestroy(allImgFeaters[i]);
+	}*/
 	printf("12\n");
 	fflush(NULL);
 	kdtree = buildKDTree(kdarr, GetSplitMethod(config),0);
@@ -433,26 +393,13 @@ int main(int argc, const char* argv[]){
 		fflush(NULL);
 	}
 	free(filename);
-	printf("a");
-	fflush(NULL);
+	free(img);
 	spLoggerDestroy();
-	printf("b");
-	fflush(NULL);
 	spConfigDestroy(config);
-	printf("c");
-	fflush(NULL);
 	spKDArrayDestroy(kdarr);
-	printf("d");
-	fflush(NULL);
-	KDTreeDestroy(kdtree);
-	printf("e");
-	fflush(NULL);
-	delete imagep;
-	printf("f");
-	fflush(NULL);
 	free(allImgFeaters);
-	printf("g");
-	fflush(NULL);
+	KDTreeDestroy(kdtree);
+	delete imagep;
 	return 0;
 }
 void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* img, int* numOfFeatures,SPConfig config, int numOfImages){

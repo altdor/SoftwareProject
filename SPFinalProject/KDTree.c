@@ -103,34 +103,32 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 		dim =spPointGetDimension(arr[0]);
 		switch(splitMethod){
 		case(MAX_SPREAD):
-				p = (SPPCoor*)malloc(sizeof(SPPCoor)*spKdarrayGetSize(array));
-				if(p==NULL){
-					KDTreeDestroy(kdtree);
-					free(kdtree);
+			p = (SPPCoor*)malloc(sizeof(SPPCoor)*spKdarrayGetSize(array));
+			if(p==NULL){
+				KDTreeDestroy(kdtree);
+				free(kdtree);
+			}
+			for(int i = 0;i<spKdarrayGetSize(array);i++){
+				p[i] = (SPPCoor)malloc(sizeof(SPPCoor));
+			}
+			for (int i=0; i<dim; i++){
+				int tempSpread;
+				for(int j=0; j<spKdarrayGetSize(array); j++){
+					spCoorSetIndex(p[j],j);
+					spCoorSetVal(p[j],spPointGetAxisCoor(arr[j],i));
 				}
-				for(int i = 0;i<spKdarrayGetSize(array);i++){
-					p[i] = (SPPCoor)malloc(sizeof(SPPCoor));
+				qsort(p,spKdarrayGetSize(array),sizeof(SPPCoor),compByAxis);
+				tempSpread = spCoorGetVal(p[spKdarrayGetSize(array)-1])-spCoorGetVal(p[0]);
+				if(tempSpread>spread){
+					spread = tempSpread;
+					coor = i;
 				}
-				for (int i=0; i<dim; i++){
-					int tempSpread;
-					for(int j=0; j<spKdarrayGetSize(array); j++){
-						spCoorSetIndex(p[j],j);
-						spCoorSetVal(p[j],spPointGetAxisCoor(arr[j],i));
-					}
-					qsort(p,spKdarrayGetSize(array),sizeof(SPPCoor),compByAxis);
-
-					tempSpread = spCoorGetVal(p[spKdarrayGetSize(array)-1])-spCoorGetVal(p[0]);
-
-					if(tempSpread>spread){
-						spread = tempSpread;
-						coor = i;
-					}
-				}
-				for(int i = 0;i<spKdarrayGetSize(array);i++){
-					free(p[i]);
-				}
-				free(p);
-				break;
+			}
+			for(int i = 0;i<spKdarrayGetSize(array);i++){
+				free(p[i]);
+			}
+			free(p);
+			break;
 		case(RANDOM):
 				coor = rand()%spPointGetDimension(arr[0]);
 				break;
@@ -149,9 +147,7 @@ KDTreeNode buildKDTree(SPKDArray array, SP_KDTREE_SPLIT_METHOD splitMethod, int 
 		kdtree->right = buildKDTree(splitted[1], splitMethod,incPointer+1);
 		kdtree->Data = NULL;
 		kdtree->Dim = coor;
-		free(splitted[0]);
-		free(splitted[1]);
-		free(splitted);
+		splittedDestroy(splitted);
 	}
 	return kdtree;
 }
