@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <assert.h>
+#define ABORT -1
 
 struct sp_bp_queue_t{
 	SPList list;
@@ -48,12 +49,12 @@ void spBPQueueClear(SPBPQueue source){
 }
 int spBPQueueSize(SPBPQueue source){
 	if(source == NULL)
-		return -1;
+		return ABORT;
 	return spListGetSize(source->list);
 }
 int spBPQueueGetMaxSize(SPBPQueue source){
 	if(source == NULL)
-			return -1;
+			return ABORT;
 		return source->capacity;
 }
 

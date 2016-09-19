@@ -61,30 +61,11 @@ int spKdarrayGetSize(SPKDArray arr);
 SPPoint* spKdarrayGetPointAraay(SPKDArray arr);
 
 /**
- * a setter for the SPPCOOR point field.
- */
-//void spCoorSetPoint(SPPCoor spcoor,SPPoint p);
-
-/**
- * a setter for the SPPCOOR axis field.
- */
-//void spCoorSetAxis(SPPCoor spcoor,int axis);
-
-/**
  * a setter for the SPPCOOR index field.
  */
 void spCoorSetIndex(SPPCoor spcoor,int index);
 
 void spCoorSetVal(SPPCoor spcoor,double val);
-/**
- * a getter for the SPPCOOR point field.
- */
-//SPPoint spCoorGetPoint(SPPCoor spcoor);
-
-/**
- * a getter for the SPPCOOR axis field.
- */
-//int spCoorGetAxis(SPPCoor spcoor);
 
 /**
  * a setter for the SPPCOOR index field.

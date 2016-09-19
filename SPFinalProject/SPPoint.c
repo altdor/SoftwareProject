@@ -8,7 +8,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "SPPoint.h"
 
 struct sp_point_t{

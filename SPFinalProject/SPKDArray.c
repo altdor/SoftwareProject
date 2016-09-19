@@ -8,6 +8,14 @@
 #include "SPPoint.h"
 #include <stdio.h>
 #include <stdlib.h>
+#define ABORT -1
+#define START -1
+#define NEGATIVE -1
+#define INIT 0
+#define FIRST 0
+#define EQUAL 0
+#define POSITIVE 1
+#define SECOND 1
 
 struct sp_kdarray_t{
 	SPPoint* pointArr;
@@ -35,13 +43,13 @@ void spCoorSetVal(SPPCoor spcoor,double val){
 
 int spCoorGetIndex(SPPCoor spcoor){
 	if(spcoor == NULL)
-		return -1;
+		return ABORT;
 	return spcoor->index;
 }
 
 double spCoorGetVal(SPPCoor spcoor){
 	if(spcoor == NULL)
-		return -1;
+		return ABORT;
 	return spcoor->val;
 }
 
@@ -63,7 +71,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 	}
 	d = spPointGetDimension(*arr);
 	kda->dim = d;
-	a = (int**)malloc(d*size*sizeof(int*));
+	a = (int**)malloc(d*sizeof(int*));
 	if(a == NULL){
 		free(kda);
 		free(p);
@@ -158,7 +166,7 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size){
 }
 
 SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
-	int i,j,d,s,ind,pointerL,pointerR,h,g;
+	int i,j,d,s,ind,pointerL,pointerR,h,g,leftHalf,rightHalf;
 	int* x;
 	int* map1;
 	int* map2;
@@ -169,8 +177,8 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 	SPKDArray* splitted;
 	if (kdArr==NULL||coor<0)
 		return NULL;
-	h=0;
-	g=0;
+	h=INIT;
+	g=INIT;
 	d = spPointGetDimension(*kdArr->pointArr);
 	s = kdArr->size;
 	x = (int*)malloc(s*sizeof(int));
@@ -188,14 +196,16 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		free(map1);
 		return NULL;
 	}
-	p1 = (SPPoint*)malloc((s-(s/2))*sizeof(*p1));
+	leftHalf = (s-(s/2));
+	rightHalf = (s/2);
+	p1 = (SPPoint*)malloc(leftHalf*sizeof(*p1));
 	if (p1==NULL){
 		free(x);
 		free(map1);
 		free(map2);
 		return NULL;
 	}
-	p2 = (SPPoint*)malloc((s/2)*sizeof(*p2));
+	p2 = (SPPoint*)malloc(rightHalf*sizeof(*p2));
 	if (p2==NULL){
 		free(x);
 		free(map1);
@@ -263,14 +273,14 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		return NULL;
 	}
 	for (i=0; i<s; i++){
-		map1[i]=-1;
-		map2[i]=-1;
+		map1[i]=START;
+		map2[i]=START;
 	}
-	for (i=0; i<(s-(s/2)); i++){
+	for (i=0; i<leftHalf; i++){
 		x[(kdArr->indMat)[coor][i]] = 0;
 	}
 
-	for (i=(s-(s/2)); i<s; i++){
+	for (i=leftHalf; i<s; i++){
 		x[(kdArr->indMat)[coor][i]] = 1;
 	}
 
@@ -287,7 +297,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 		}
 	}
 	for (i=0; i<d; i++){
-		kdLeft->indMat[i] = (int*)malloc((s-(s/2))*sizeof(int));
+		kdLeft->indMat[i] = (int*)malloc(leftHalf*sizeof(int));
 		if (kdLeft->indMat[i]==NULL){
 			for(int k=0;k<i;k++){
 				free(kdLeft->indMat[k]);
@@ -307,7 +317,7 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 	}
 
 	for (i=0; i<d; i++){
-		kdRight->indMat[i] = (int*)malloc((s/2)*sizeof(int));
+		kdRight->indMat[i] = (int*)malloc(rightHalf*sizeof(int));
 		if (kdRight->indMat[i]==NULL){
 			for(int k=0;k<d;k++){
 				free(kdLeft->indMat[k]);
@@ -344,10 +354,10 @@ SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor){
 
 	kdLeft->pointArr = p1;
 	kdRight->pointArr = p2;
-	kdLeft->size = (s-(s/2));
-	kdRight->size = (s/2);
-	splitted[0] = kdLeft;
-	splitted[1] = kdRight;
+	kdLeft->size = leftHalf;
+	kdRight->size = rightHalf;
+	splitted[FIRST] = kdLeft;
+	splitted[SECOND] = kdRight;
 	free(x);
 	free(map1);
 	free(map2);
@@ -358,16 +368,16 @@ int compByAxis(const void* p1, const void* p2){
 	SPPCoor a = *(SPPCoor*)p1;
     SPPCoor b = *(SPPCoor*)p2;
     if (a->val>b->val)
-    	return 1;
+    	return POSITIVE;
     else if (a->val<b->val)
-    	return -1;
+    	return NEGATIVE;
     else
-    	return 0;
+    	return EQUAL;
 }
 
 int spKdarrayGetSize(SPKDArray arr){
 	if (arr==NULL)
-		return -1;
+		return ABORT;
 	return arr->size;
 }
 
@@ -396,17 +406,17 @@ void splittedDestroy(SPKDArray* splitted){
 	int i;
 	if (splitted==NULL)
 		return;
-	free(splitted[0]->pointArr);
-	free(splitted[1]->pointArr);
-	for(i=0; i<splitted[0]->dim; i++){
-		free(splitted[0]->indMat[i]);
+	free(splitted[FIRST]->pointArr);
+	free(splitted[SECOND]->pointArr);
+	for(i=0; i<splitted[FIRST]->dim; i++){
+		free(splitted[FIRST]->indMat[i]);
 	}
-	for(i=0; i<splitted[1]->dim; i++){
-		free(splitted[1]->indMat[i]);
+	for(i=0; i<splitted[SECOND]->dim; i++){
+		free(splitted[SECOND]->indMat[i]);
 	}
-	free(splitted[0]->indMat);
-	free(splitted[1]->indMat);
-	free(splitted[0]);
-	free(splitted[1]);
+	free(splitted[FIRST]->indMat);
+	free(splitted[SECOND]->indMat);
+	free(splitted[FIRST]);
+	free(splitted[SECOND]);
 	free(splitted);
 }

@@ -26,6 +26,21 @@ extern "C"{
 #define BUFSIZE 1024
 #define DEFCON "spcbir.config"
 #define FEATSUF ".feats"
+#define INVALID_ARG "INVAlID ARGUMENT"
+#define MEMORY "OUT OF MEMORY"
+#define MAIN "Main.cpp"
+#define IMAGE_PATH "Please enter an image path:\n"
+#define INVALID_PATH "InvalidPath:\n"
+#define C "-c"
+#define S "-c"
+#define EXIT "<>"
+#define ABORT -1
+#define START -1
+#define INIT 0
+#define EQUAL 0
+#define FINISH 0
+#define THREE 3
+
 using namespace sp;
 void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* img,SPConfig config, int numOfImages);
 int main(int argc, const char* argv[]){
@@ -39,22 +54,22 @@ int main(int argc, const char* argv[]){
 	SP_CONFIG_MSG* msg;
 	char* img;
 	char* filename = (char*)malloc(BUFSIZE);
-	feat = 0;
-	index = 0;
-	totalNumOfFeatures = 0;
+	feat = INIT;
+	index = INIT;
+	totalNumOfFeatures = INIT;
 	numOfFeatures = &feat;
 	if(filename == NULL){
 		free(filename);
-		return -1;
+		return ABORT;
 	}
 	img = (char*)malloc(BUFSIZE);
 	if(img ==NULL){
 		free(filename);
-		return -1;
+		return ABORT;
 	}
 	strcpy(filename,DEFCON);
 	for(i=0; i<argc; i++){
-		if(strcmp(argv[i],"-c")==0){
+		if(strcmp(argv[i],C)==EQUAL){
 			if(i+1<argc)
 				strcpy(filename,argv[i+1]);
 		}
@@ -62,76 +77,68 @@ int main(int argc, const char* argv[]){
 	if(!checkFileName(filename)){
 		free(filename);
 		free(img);
-		return -1;
+		return ABORT;
 	}
-	printf("5\n");
-	fflush(NULL);
 	msg=(SP_CONFIG_MSG*)malloc(sizeof(SP_CONFIG_MSG));
 	if(msg==NULL){
 		free(filename);
 		free(img);
-		return -1;
+		return ABORT;
 	}
 	config = spConfigCreate(filename,msg);
 	ImageProc* imagep = new ImageProc(config);
-	printf("6\n");
-	fflush(NULL);
 	if(*msg != SP_CONFIG_SUCCESS){
 		delete imagep;
 		free(img);
 		free(msg);
 		free(filename);
-		return -1;
+		return ABORT;
 	}
 	level = GetSpLoggerLevelNum(config);
-	printf("7\n");
-	fflush(NULL);
 	assert(spLoggerCreate(GetSpLoggerFilename(config),GetSpLoggerLevel(config)) == SP_LOGGER_SUCCESS);
 	if(spConfigIsExtractionMode(config,msg)){
-		printf("8\n");
-			fflush(NULL);
 		if(*msg != SP_CONFIG_SUCCESS){
-			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			free(img);
 			free(msg);
 			free(filename);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
 		numOfImages= spConfigGetNumOfImages(config,msg);
 		if(*msg != SP_CONFIG_SUCCESS){
-			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			free(img);
 			free(msg);
 			free(filename);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
 		for(i=0; i<numOfImages; i++){
-			char* imagePath = (char*)malloc(BUFSIZE*3+sizeof(int));
+			char* imagePath = (char*)malloc(BUFSIZE*THREE+sizeof(int));
 			if(imagePath == NULL){
-				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, MEMORY, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
 				free(msg);
 				free(imagePath);
 				spConfigDestroy(config);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			*msg =spConfigGetImagePath(imagePath,config,i);
 
 			if(*msg != SP_CONFIG_SUCCESS){
-				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
 				free(msg);
 				free(imagePath);
 				free(filename);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			features = imagep->getImageFeatures(imagePath,i,numOfFeatures);
 
@@ -142,36 +149,34 @@ int main(int argc, const char* argv[]){
 			}
 			free(features);
 		}
-		printf("end of feats calculation:%d \n",totalNumOfFeatures);
-					fflush(NULL);
 		allImgFeaters = (SPPoint*)malloc(totalNumOfFeatures*sizeof(*allImgFeaters));
 		if(allImgFeaters==NULL){
-			ErrorLogger(level, "INVAlID ARGUMENT", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			free(img);
 			free(msg);
 			free(filename);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
 
 		for(i=0; i<numOfImages; i++){
-			char* imagePath = (char*)malloc(BUFSIZE*3+sizeof(int));
+			char* imagePath = (char*)malloc(BUFSIZE*THREE+sizeof(int));
 			char* imagePathnosuf;
 			if(imagePath == NULL){
-				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, MEMORY, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
 				free(msg);
 				free(imagePath);
 				spConfigDestroy(config);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
-			imagePathnosuf = (char*)malloc(BUFSIZE*3+sizeof(int));
+			imagePathnosuf = (char*)malloc(BUFSIZE*THREE+sizeof(int));
 
 			if(imagePathnosuf == NULL){
-				ErrorLogger(level, "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, MEMORY, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
 				free(msg);
@@ -179,13 +184,13 @@ int main(int argc, const char* argv[]){
 				free(imagePathnosuf);
 				spConfigDestroy(config);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 
 
 			*msg =spConfigGetImagePath(imagePath, config, i);
 			if(*msg != SP_CONFIG_SUCCESS){
-				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(img);
 				free(msg);
@@ -193,7 +198,7 @@ int main(int argc, const char* argv[]){
 				free(imagePathnosuf);
 				free(filename);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			features = imagep->getImageFeatures(imagePath,i,numOfFeatures);
 			for(j=0; j<feat; j++){
@@ -202,14 +207,14 @@ int main(int argc, const char* argv[]){
 			}
 			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
 			if(*msg != SP_CONFIG_SUCCESS){
-				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(imagePath);
 				free(msg);
 				free(imagePathnosuf);
 				free(filename);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			strcat(imagePathnosuf,FEATSUF);
 			if(!extractToFile(imagePathnosuf, features, feat, level)){
@@ -219,7 +224,7 @@ int main(int argc, const char* argv[]){
 				free(imagePathnosuf);
 				free(filename);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 
 			free(imagePath);
@@ -228,66 +233,66 @@ int main(int argc, const char* argv[]){
 		}
 	}
 	else{
-		index = 0;
+		index = INIT;
 		char* imagePathnosuf;
 		numOfImages= spConfigGetNumOfImages(config,msg);
 		if(*msg != SP_CONFIG_SUCCESS){
-			ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			free(filename);
 			free(msg);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
-		imagePathnosuf = (char*)malloc(BUFSIZE*3+sizeof(int));
+		imagePathnosuf = (char*)malloc(BUFSIZE*THREE+sizeof(int));
 		if(imagePathnosuf == NULL){
-			ErrorLogger(level, "out of memory", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, MEMORY, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			free(imagePathnosuf);
 			free(filename);
 			free(msg);
 			spConfigDestroy(config);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
 		numOfImages= spConfigGetNumOfImages(config,msg);
 		if(*msg != SP_CONFIG_SUCCESS){
-			ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			free(imagePathnosuf);
 			free(filename);
 			free(msg);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
 		for(i=0; i<numOfImages; i++){
-			numfeats=0;
+			numfeats=INIT;
 			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
 			if(*msg != SP_CONFIG_SUCCESS){
-				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(imagePathnosuf);
 				free(filename);
 				free(msg);
 				delete imagep;
-			return -1;
+			return ABORT;
 			}
 			strcat(imagePathnosuf,FEATSUF);
 			numfeats = getNumOfFeaturesForImage(imagePathnosuf, level);
-			if(numfeats == -1){
+			if(numfeats == ABORT){
 				spConfigDestroy(config);
 				spLoggerDestroy();
 				free(imagePathnosuf);
 				free(filename);
 				free(msg);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			totalNumOfFeatures += numfeats;
 		}
 		allImgFeaters = (SPPoint*)malloc(totalNumOfFeatures*sizeof(SPPoint));
 		if(allImgFeaters == NULL){
-			ErrorLogger(level, "out of memory", "Main.cpp",__func__, __LINE__);
+			ErrorLogger(level, MEMORY, MAIN,__func__, __LINE__);
 			spLoggerDestroy();
 			spConfigDestroy(config);
 			free(imagePathnosuf);
@@ -295,19 +300,19 @@ int main(int argc, const char* argv[]){
 			free(msg);
 			free(allImgFeaters);
 			delete imagep;
-			return -1;
+			return ABORT;
 		}
 		for(i=0; i<numOfImages; i++){
 			*msg =spConfigGetImagePathWithoutSuffix(imagePathnosuf, config, i);
 			if(*msg != SP_CONFIG_SUCCESS){
-				ErrorLogger(level, "Invalid argument", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(level, INVALID_ARG, MAIN,__func__, __LINE__);
 				spLoggerDestroy();
 				free(imagePathnosuf);
 				free(filename);
 				free(msg);
 				free(allImgFeaters);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			strcat(imagePathnosuf,FEATSUF);
 
@@ -323,7 +328,7 @@ int main(int argc, const char* argv[]){
 				free(msg);
 				free(allImgFeaters);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 			for(j=0; j<feat; j++){
 				allImgFeaters[index] = features[j];
@@ -335,47 +340,41 @@ int main(int argc, const char* argv[]){
 	}
 	free(msg);
 	kdarr = spKdarrayInit(allImgFeaters,totalNumOfFeatures);
-	printf("11\n");
-	fflush(NULL);
 	if(kdarr==NULL){
 		free(filename);
 		delete imagep;
-		return -1;
+		return ABORT;
 	}
-	printf("12\n");
-	fflush(NULL);
 	kdtree = buildKDTree(kdarr, GetSplitMethod(config),0);
-	printf("13\n");
-	fflush(NULL);
 	if(kdtree==NULL){
 		free(filename);
 		spKDArrayDestroy(kdarr);
 		delete imagep;
-		return -1;
+		return ABORT;
 	}
-	printf("Please enter an image path:\n");
+	printf(IMAGE_PATH);
 	fflush(NULL);
-	scanf("%s",img);
+	scanf(S,img);
 	fflush(NULL);
 
 
-	while(strcmp(img,"<>")!=0){
+	while(strcmp(img,EXIT)!=EQUAL){
 		if(checkFileName(img)){
 			dealwithImg(kdarr, imagep, kdtree, img, config, numOfImages);
 			if(config==NULL){
 				free(filename);
 				delete imagep;
-				return -1;
+				return ABORT;
 			}
 
 		}
 		else{
-			printf("InvalidPath:\n");
+			printf(INVALID_PATH);
 			fflush(NULL);
 		}
-		printf("Please enter an image path:\n");
+		printf(IMAGE_PATH);
 		fflush(NULL);
-		scanf("%s",img);
+		scanf(S,img);
 		fflush(NULL);
 	}
 	free(filename);
@@ -389,17 +388,17 @@ int main(int argc, const char* argv[]){
 	free(allImgFeaters);
 	KDTreeDestroy(kdtree);
 	delete imagep;
-	return 0;
+	return FINISH;
 }
 void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* img,SPConfig config, int numOfImages){
-	int feats=0;
+	int feats=INIT;
 	int* numOfFeatures=&feats;
 	SP_CONFIG_MSG* msg=(SP_CONFIG_MSG*)malloc(sizeof(SP_CONFIG_MSG));
 	SPPoint* features = imagep->getImageFeatures(img, 0,numOfFeatures);
 	int i,numOfSimilarImages,index;
 	int* counter = kNearest(kdtree, features,config, *numOfFeatures);
 	if(counter==NULL || msg == NULL){
-		ErrorLogger(GetSpLoggerLevelNum(config), "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+		ErrorLogger(GetSpLoggerLevelNum(config), MEMORY, MAIN,__func__, __LINE__);
 		spKDArrayDestroy(kdarr);
 		spLoggerDestroy();
 		KDTreeDestroy(kdtree);
@@ -411,10 +410,10 @@ void dealwithImg(SPKDArray kdarr, ImageProc* imagep, KDTreeNode kdtree, char* im
 		numOfSimilarImages = GetspNumOfSimilarImages(config);
 		for(i=0; i<numOfSimilarImages; i++){
 			index = maxIndex(counter,numOfImages);
-			counter[index]=-1;
+			counter[index]=START;
 			char* path = (char*)malloc(BUFSIZE);
 			if(path == NULL){
-				ErrorLogger(GetSpLoggerLevelNum(config), "OUT OF MEMORY", "Main.cpp",__func__, __LINE__);
+				ErrorLogger(GetSpLoggerLevelNum(config), MEMORY, MAIN,__func__, __LINE__);
 				spConfigDestroy(config);
 				spLoggerDestroy();
 				free(path);
