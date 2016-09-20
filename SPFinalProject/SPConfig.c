@@ -590,13 +590,11 @@ void trim(char* string){
     int src=INIT;
     int len = strlen(string);
     while(isspace(string[src])) src++;
-    for(dest=0; src<len; dest++, src++)
-    {
+    for(dest=0; src<len; dest++, src++){
         string[dest] = string[src];
     }
     string[dest] = ENDOFSTR;
-    for(dest=len-1; isspace(string[dest]); --dest)
-    {
+    for(dest=len-1; isspace(string[dest]); --dest){
     	string[dest] = ENDOFSTR;
     }
 }
@@ -735,7 +733,7 @@ SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config){
 
 SP_LOGGER_LEVEL GetSpLoggerLevel(SPConfig config){
 	if(config == NULL){
-			return SP_CONFIG_INVALID_ARGUMENT;
+		return SP_CONFIG_INVALID_ARGUMENT;
 	}
 	switch(config->spLoggerLevel){
 	case 1:

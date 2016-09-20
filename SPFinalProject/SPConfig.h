@@ -9,6 +9,9 @@
  * A data-structure which is used for configuring the system.
  */
 typedef struct sp_config_t* SPConfig;
+/**
+ * enum for the different massages during the configuration
+ */
 typedef enum sp_config_msg_t {
 	SP_CONFIG_MISSING_DIR,
 	SP_CONFIG_MISSING_PREFIX,
@@ -22,6 +25,9 @@ typedef enum sp_config_msg_t {
 	SP_CONFIG_INDEX_OUT_OF_RANGE,
 	SP_CONFIG_SUCCESS
 } SP_CONFIG_MSG;
+/**
+ * enum for the different methods to split the array
+ */
 typedef enum spKDTreeSplitMethod {
 	MAX_SPREAD,
 	RANDOM,
@@ -54,11 +60,24 @@ typedef enum spKDTreeSplitMethod {
  *
  */
 SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg);
-
+/*
+ * validating that the input's components are good
+ * it returns a massage regarding what component the input lacks
+ * can be directory, prefix, suffix or number of images
+ * if all is good it returns SP_CONFIG_SUCCESS
+ */
 SP_CONFIG_MSG checkinput(const char* filename, int* input, int linenum);
-
+/*
+ * prints the details regarding an error: the file name, the line and the massage
+ */
 void printError(const char* filename, int line, char* msg);
-
+/*
+ * takes the chars from a source array and inserts it to a destination array
+ * without the white spaces
+ *
+ * @param String - a string containing white spaces
+ * @return a string containing all chars but white spaces from the source
+ */
 void trim(char* String);
 /*
  * Returns true if spExtractionMode = true, false otherwise.
@@ -72,7 +91,6 @@ void trim(char* String);
  * - SP_CONFIG_SUCCESS - in case of success
  */
 bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
-
 /*
  * Returns true if spMinimalGUI = true, false otherwise.
  *
@@ -85,7 +103,6 @@ bool spConfigIsExtractionMode(const SPConfig config, SP_CONFIG_MSG* msg);
  * - SP_CONFIG_SUCCESS - in case of success
  */
 bool spConfigMinimalGui(const SPConfig config, SP_CONFIG_MSG* msg);
-
 /*
  * Returns the number of images set in the configuration file, i.e the value
  * of spNumOfImages.
@@ -99,7 +116,6 @@ bool spConfigMinimalGui(const SPConfig config, SP_CONFIG_MSG* msg);
  * - SP_CONFIG_SUCCESS - in case of success
  */
 int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg);
-
 /*
  * Returns the number of features to be extracted. i.e the value
  * of spNumOfFeatures.
@@ -113,7 +129,6 @@ int spConfigGetNumOfImages(const SPConfig config, SP_CONFIG_MSG* msg);
  * - SP_CONFIG_SUCCESS - in case of success
  */
 int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg);
-
 /**
  * Returns the dimension of the PCA. i.e the value of spPCADimension.
  *
@@ -126,7 +141,6 @@ int spConfigGetNumOfFeatures(const SPConfig config, SP_CONFIG_MSG* msg);
  * - SP_CONFIG_SUCCESS - in case of success
  */
 int spConfigGetPCADim(const SPConfig config, SP_CONFIG_MSG* msg);
-
 /**
  * Given an index 'index' the function stores in imagePath the full path of the
  * ith image.
@@ -154,9 +168,9 @@ int spConfigGetPCADim(const SPConfig config, SP_CONFIG_MSG* msg);
  */
 SP_CONFIG_MSG spConfigGetImagePath(char* imagePath, const SPConfig config,
 		int index);
+
 SP_CONFIG_MSG spConfigGetImagePathWithoutSuffix(char* imagePath, const SPConfig config,
 		int index);
-
 /**
  * The function stores in pcaPath the full path of the pca file.
  * For example given the values of:
@@ -174,16 +188,33 @@ SP_CONFIG_MSG spConfigGetImagePathWithoutSuffix(char* imagePath, const SPConfig 
  *  - SP_CONFIG_SUCCESS - in case of success
  */
 SP_CONFIG_MSG spConfigGetPCAPath(char* pcaPath, const SPConfig config);
-
 /**
  * Frees all memory resources associate with config. 
  * If config == NULL nothig is done.
  */
 void spConfigDestroy(SPConfig config);
+/**
+ * prints the massage related to the level of the logger
+ */
 SP_LOGGER_LEVEL GetSpLoggerLevel(SPConfig config);
+/**
+ * a getter for the level of the logger member of the config
+ */
 int GetSpLoggerLevelNum(SPConfig config);
+/**
+ * a getter for the file name of the logger member of the config
+ */
 char* GetSpLoggerFilename(SPConfig config);
+/**
+ * a getter for the number of similar images member of the config
+ */
 int GetspNumOfSimilarImages(SPConfig config);
+/**
+ * a getter for the splitting method member of the config
+ */
 SP_KDTREE_SPLIT_METHOD GetSplitMethod(SPConfig config);
+/**
+ * a getter for the spknn member of the config
+ */
 int GetSpKNN(SPConfig config);
 #endif /* SPCONFIG_H_ */

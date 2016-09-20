@@ -17,7 +17,6 @@ typedef struct sp_kdarray_t* SPKDArray;
  * Type for defining a SPPoint that includes an additional field for coordinate
  */
 typedef struct sp_pcoor_t* SPPCoor;
-
 /**
  * Initializes the kd-array with the data given by arr
  * we create a dXn matrix of indices (where d = dimension and n = number of features)
@@ -29,7 +28,6 @@ typedef struct sp_pcoor_t* SPPCoor;
  * The complexity of this operation is O(d X nlog(n))
  */
 SPKDArray spKdarrayInit(SPPoint* arr, int size);
-
 /**
  * splits one KD-ARRAY into two KD-ARRAYs (kdLeft, kdRight) such that the
  * first [n/2]  points with respect to the coordinate "coor" are in kdLeft
@@ -44,38 +42,39 @@ SPKDArray spKdarrayInit(SPPoint* arr, int size);
  * The complexity of this operation is O(d X n)
  */
 SPKDArray* spKdarraySplit(SPKDArray kdArr, int coor);
-
 /**
  * compares between two SPPOINTs via axis-coordinate "axis"
  */
 int compByAxis(const void* p1, const void* p2);
-
 /**
  * a getter for the KD-ARRAY size field.
  */
 int spKdarrayGetSize(SPKDArray arr);
-
 /**
  * a getter for the KD-ARRAY array of points field.
  */
 SPPoint* spKdarrayGetPointAraay(SPKDArray arr);
-
 /**
- * a setter for the SPPCOOR index field.
+ * a setter for the SPPCOOR index member.
  */
 void spCoorSetIndex(SPPCoor spcoor,int index);
-
-void spCoorSetVal(SPPCoor spcoor,double val);
-
 /**
- * a setter for the SPPCOOR index field.
+ * a setter for the SPPCOOR value member.
+ */
+void spCoorSetVal(SPPCoor spcoor,double val);
+/**
+ * a getter for the SPPCOOR index member.
  */
 int spCoorGetIndex(SPPCoor spcoor);
-
+/**
+ * a getter for the SPPCOOR value member.
+ */
 double spCoorGetVal(SPPCoor spcoor);
-
+/**
+ * Free all memory allocation associated with the 'splitted' array of KD-ARRAYS,
+ * if point is NULL nothing happens.
+ */
 void splittedDestroy(SPKDArray* splitted);
-
 /**
  * Free all memory allocation associated with KD-ARRAY,
  * if point is NULL nothing happens.
