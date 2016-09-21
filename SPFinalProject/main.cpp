@@ -32,7 +32,7 @@ extern "C"{
 #define IMAGE_PATH "Please enter an image path:\n"
 #define INVALID_PATH "InvalidPath:\n"
 #define C "-c"
-#define S "-c"
+#define S "%s"
 #define EXIT "<>"
 #define ABORT -1
 #define START -1

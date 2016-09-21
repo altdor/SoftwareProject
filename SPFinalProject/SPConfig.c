@@ -39,7 +39,7 @@ struct sp_config_t{
 #define NONUM "Parameter spNumOfImages is not set"
 #define SPID "spimagesdirectory"
 #define SPIP "spimagesprefix"
-#define SPIS "spimagesuffix"
+#define SPIS "spimagessuffix"
 #define SPCADIM "sppcadimension"
 #define SPNOI "spnumofimages"
 #define SPFN "sppcafilename"
@@ -83,6 +83,7 @@ struct sp_config_t{
 #define FIRST 0
 #define EQUAL 0
 #define ABORT -1
+
 
 char* strlwr (char *str){
   unsigned char *p = (unsigned char *)str;
@@ -132,7 +133,7 @@ SPConfig spConfigCreate(const char* filename, SP_CONFIG_MSG* msg){
     	return NULL;
     }
     input = (int*)malloc(4*sizeof(int));
-    if(input==0){
+    if(input==NULL){
     	*msg = SP_CONFIG_ALLOC_FAIL;
     	spConfigDestroy(cnfg);
     	fclose(fp);
